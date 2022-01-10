@@ -312,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &325504565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -741,11 +741,11 @@ MonoBehaviour:
   _dialoguePanel: {fileID: 2044106965}
   _dialogueMessageText: {fileID: 1187925783}
   _dialogueNameText: {fileID: 1895539896}
-  _choicesUI: {fileID: 460581535}
   _choices:
   - {fileID: 1592518060}
   - {fileID: 1232078274}
   - {fileID: 325504564}
+  _typeSpeed: 0.1
 --- !u!114 &894249152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,7 +1415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1232078275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1548,7 +1548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1592518061
 MonoBehaviour:
   m_ObjectHideFlags: 0

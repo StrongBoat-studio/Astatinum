@@ -15,12 +15,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject _dialoguePanel;
     [SerializeField] private TextMeshProUGUI _dialogueMessageText;
     [SerializeField] private TextMeshProUGUI _dialogueNameText;
-    [SerializeField] private GameObject _choicesUI;
     [SerializeField] private GameObject[] _choices;
+    [SerializeField] private float _typeSpeed;
     private TextMeshProUGUI[] _choicesText;
 
     private Story _currentStory;
     private bool _dialogueIsPlaying;
+    private bool _isTyping = false;
 
     private void Awake()
     {
@@ -43,7 +44,9 @@ public class DialogueManager : MonoBehaviour
     private void Update()
     {
         if (!_dialogueIsPlaying) return;
-        
+        if (_currentStory.currentChoices.Count != 0) return;
+        if (_isTyping) return;
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             ContinueStory();
@@ -64,19 +67,33 @@ public class DialogueManager : MonoBehaviour
         _dialogueIsPlaying = false;
         _dialoguePanel.SetActive(false);
         _dialogueMessageText.text = "";
+        _dialogueNameText.text = "";
     }
 
     private void ContinueStory()
     {
         if (_currentStory.canContinue)
         {
-            _dialogueMessageText.text = _currentStory.Continue();
-            DisplayChoices();
+            StartCoroutine(TypeMessage(_currentStory.Continue()));
         }
         else
         {
             ExitDialogueMode();
         }
+    }
+
+    private IEnumerator TypeMessage(string msg)
+    {
+        _isTyping = true;
+        _dialogueMessageText.text = "";
+        EvaluateTags();
+        foreach(char c in msg)
+        {
+            _dialogueMessageText.text += c;
+            yield return new WaitForSecondsRealtime(_typeSpeed);
+        }
+        DisplayChoices();
+        _isTyping = false;
     }
 
     private void DisplayChoices()
@@ -99,9 +116,49 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void HideChoices()
+    {
+        foreach (GameObject go in _choices) go.SetActive(false);
+    }
+
     public void MakeChoice(int choiceIndex)
     {
         _currentStory.ChooseChoiceIndex(choiceIndex);
+        HideChoices();
         ContinueStory();
+    }
+
+    private void EvaluateTags()
+    {
+        List<string> tags = _currentStory.currentTags; //Get tag list
+        _dialogueMessageText.fontStyle = FontStyles.Normal; //Rest font style
+
+        foreach (string tag in tags)
+        {
+            string prefix = tag.Split(':')[0];
+            string param = tag.Split(':')[1];
+
+            switch (prefix)
+            {
+                //Speaker name
+                case "name":
+                    _dialogueNameText.text = param;
+                    break;
+                //Message font formatting
+                case "fs":
+                    switch(param)
+                    {
+                        case "italic":
+                            _dialogueMessageText.fontStyle |= FontStyles.Italic;
+                            break;
+                        case "bold":
+                            _dialogueMessageText.fontStyle |= FontStyles.Bold;
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
