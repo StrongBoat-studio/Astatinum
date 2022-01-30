@@ -56,12 +56,14 @@
     <Compile Include="Assets\_Game\Scripts\Door.cs" />
     <Compile Include="Assets\_Game\Scripts\TestDialogue.cs" />
     <Compile Include="Assets\_Game\Scripts\Movement.cs" />
+    <Compile Include="Assets\_Game\Scripts\PlayerInteraction.cs" />
+    <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
     <Compile Include="Assets\_Game\Scripts\Buttons.cs" />
     <Compile Include="Assets\_Game\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\_Game\Scripts\CameraController.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
-    <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
-    <Compile Include="Assets\_Game\Scripts\PlayerInteraction.cs" />
+    <Compile Include="Assets\_Game\Scripts\SceneChanger.cs" />
+    <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

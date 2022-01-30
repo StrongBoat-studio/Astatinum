@@ -8,6 +8,7 @@ public class Door : Interactable
 
     private void MoveToOtherSide(Transform player)
     {
+        //Rewrite?
         Vector3 playerPos = player.gameObject.transform.position;
         Vector3 doorPos = transform.position;
         Vector3 doorScale = transform.localScale;
@@ -18,12 +19,16 @@ public class Door : Interactable
 
     public override void Interact()
     {
+        //Replace with probably static reference to player from singleton
         var p = GameObject.Find("Player").transform;
         MoveToOtherSide(p);
     }
 
     public override string GetInteractionDescription()
     {
-        return "Press [F] to move";
+        //Get key name from action map and replace 'key' with it
+        PlayerControls pc = new PlayerControls();
+        string description = _interactionDescription.Replace("key", pc.Player.Interact.controls[0].name.ToUpper());
+        return description;
     }
 }

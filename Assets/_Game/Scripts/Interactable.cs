@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] protected string _interactionDescription; //Text hint
+
     public abstract void Interact(); //Functionality
-    public abstract string GetInteractionDescription(); //Text hint
+    public abstract string GetInteractionDescription(); //Get text hint
 }

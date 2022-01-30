@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    //[SerializeField] private GameObject _uiInteract;
     [SerializeField] private float _JumpForce = 30f;
     [SerializeField] private float _Speed = 10f;
     private Rigidbody _rigidbody;
@@ -23,7 +22,8 @@ public class Movement : MonoBehaviour
         _playerControls = new PlayerControls();
         _playerControls.Player.Enable();
         _playerControls.Player.Jump.performed += Jump;
-        //_playerControls.Player.Interact.performed += On_InteractPerformed;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -40,17 +40,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-/*    public void On_InteractPerformed(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            if (_interactable != null)
-            {
-                _interactable.GetComponent<IInteractable>().Interact();
-            }
-        }
-    }*/
-
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.name == "Ground")
@@ -66,22 +55,4 @@ public class Movement : MonoBehaviour
             _Check = false;
         }
     }
-
-/*    private void OnTriggerEnter(Collider other)
-    {
-        if(other.GetComponent<IInteractable>() != null)
-        {
-            _uiInteract.SetActive(true);
-            _interactable = other.gameObject;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<IInteractable>() != null)
-        {
-            _uiInteract.SetActive(false);
-            _interactable = null;
-        }
-    }*/
 }
