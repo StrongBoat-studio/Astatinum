@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : Interactable
 {
     [SerializeField] private SceneIndexer.SceneType _sceneToLoad;
+    [SerializeField] private LevelLoader _levelLoader;
+
     public override void Interact()
     {
         //Load scene
@@ -17,7 +19,8 @@ public class SceneChanger : Interactable
                     Debug.LogWarning("Can't move to the same location!");
                 else
                 {
-                    var scene = SceneManager.LoadSceneAsync((int)_sceneToLoad);
+                    //var scene = SceneManager.LoadSceneAsync((int)_sceneToLoad);
+                    _levelLoader.LoadNextLevel((int)_sceneToLoad);
                 }
                 break;
             default:
