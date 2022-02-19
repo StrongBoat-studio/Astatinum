@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private PlayerControls _playerControls;
     private bool _Check= false;
 
+    private GameObject _interactable = null;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class Movement : MonoBehaviour
         _playerControls.Player.Enable();
         _playerControls.Player.Jump.performed += Jump;
 
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
