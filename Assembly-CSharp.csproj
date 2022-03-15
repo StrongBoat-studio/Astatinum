@@ -47,10 +47,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Game\Scripts\Door.cs" />
+     <Compile Include="Assets\_Game\Scripts\LevelLoader.cs" />
      <Compile Include="Assets\_Game\Scripts\TestDialogue.cs" />
      <Compile Include="Assets\_Game\Scripts\Movement.cs" />
+     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
+     <Compile Include="Assets\_Game\Scripts\Animations.cs" />
+     <Compile Include="Assets\_Game\Scripts\SceneChanger.cs" />
+     <Compile Include="Assets\_Game\Scripts\PlayerInteraction.cs" />
+     <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
      <Compile Include="Assets\_Game\Scripts\Buttons.cs" />
      <Compile Include="Assets\_Game\Scripts\DialogueManager.cs" />
+     <Compile Include="Assets\_Game\Scripts\CameraController.cs" />
      <Compile Include="Assets\Input System\PlayerControls.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
