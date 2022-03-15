@@ -15,14 +15,13 @@ public class SceneIndexer : MonoBehaviour
         DialogueScene = 4,
     }
 
-    private SceneIndexer _instance;
-    public SceneIndexer Instance { get => _instance; private set => _instance = value; }
+    public static SceneIndexer Instance { get; private set; }
 
     private void Awake()
     {
-        if(_instance == null)
+        if(Instance == null)
         {
-            _instance = this;
+            Instance = this;
         }
         else Destroy(this);
 
