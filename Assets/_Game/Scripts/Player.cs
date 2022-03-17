@@ -9,30 +9,31 @@ public class Player : MonoBehaviour
     private Inventory _inventory;
     [SerializeField] private UI_Inventory _uiInventory;
 
-    //Testing
-    System.Random random = new System.Random();
-
     private void Awake()
     {
+        //Crate new inventory and reference it to UI
         _inventory = new Inventory(_inventorySize);
         _uiInventory.SetInventory(_inventory);
     }
 
-    //Testing
-    private void Update()
+    public bool TakeWorldItem(Item item)
     {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            System.Array values = System.Enum.GetValues(typeof(Item.ItemType));
-            Item.ItemType randomItem = (Item.ItemType)values.GetValue(random.Next(values.Length));
+        return _inventory.AddItem(item);
+        
+    }
 
-            _inventory.AddItem(new Item { itemType = randomItem });
+    public bool DropWorldItem(Item item)
+    {
+        //Check if item can be removed
+        bool canDrop = _inventory.RemoveItem(item);
+        if (canDrop)
+        {
+            //Spawn new item if it can be removed
+            GameObject itemGO = Instantiate(ItemAssets.Instance.worldItemPrefab, transform.position, Quaternion.identity);
+            //Update item information
+            itemGO.GetComponent<WorldItem>().SetItem(item);
         }
 
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            if(_inventory.items.Count > 0)
-                _inventory.RemoveItem(_inventory.items[Random.Range(0, _inventory.items.Count)]);
-        }
+        return canDrop;
     }
 }

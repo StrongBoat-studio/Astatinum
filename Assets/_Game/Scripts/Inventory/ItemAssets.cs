@@ -17,6 +17,8 @@ public class ItemAssets : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    public GameObject worldItemPrefab;
+
     public Sprite item1;
     public Sprite item2;
     public Sprite item3;
