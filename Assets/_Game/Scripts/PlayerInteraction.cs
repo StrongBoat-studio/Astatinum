@@ -22,18 +22,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         //Activate interaction hint game object
         //Get interaction hint text
+        //Save reference to object
         if (other.GetComponent<Interactable>() != null)
         {
             _interactionText.gameObject.SetActive(true);
             _interactionText.text = other.GetComponent<Interactable>().GetInteractionDescription();
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        //save interactable object reference to variable
-        if (other.GetComponent<Interactable>() != null)
-        {
             _interactable = other.GetComponent<Interactable>();
         }
     }
@@ -53,5 +46,12 @@ public class PlayerInteraction : MonoBehaviour
         //Interaction hint button pressed
         if(_interactable != null)
             _interactable.Interact();
+    }
+
+    public void ForceRemoveInteraction()
+    {
+        _interactable = null;
+        _interactionText.text = "";
+        _interactionText.gameObject.SetActive(false);
     }
 }
