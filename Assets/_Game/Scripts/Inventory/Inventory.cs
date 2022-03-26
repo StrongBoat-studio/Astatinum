@@ -3,56 +3,140 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//Inventory
+//Main inventory class for storing data
+[System.Serializable]
 public class Inventory
 {
-    private List<Item> _items;
-    public List<Item> items { get => _items; }
+    //Inventory slot
+    //Class representing one inventory slot
+    [System.Serializable]
+    public class InventorySlot
+    {
+        private int _index;
+        [SerializeField] private Item _item;
+
+        public InventorySlot(int index)
+        {
+            _index = index;
+        }
+
+        public Item GetItem()
+        {
+            return _item;
+        }
+
+        public void SetItem(Item item)
+        {
+            _item = item;
+        }
+
+        public void RemoveItem()
+        {
+            _item = null;
+        }
+
+        public bool IsEmpty()
+        {
+            return (_item == null);
+        }
+
+        public int GetIndex()
+        {
+            return _index;
+        }
+    }
+
+    [SerializeField] private InventorySlot[] _inventorySlots;
+    public InventorySlot[] inventorySlots { get => _inventorySlots; }
+
     private int _size;
+    public int size { get => _size; }
 
     public event EventHandler OnInventoryItemsChange;
 
     public Inventory(int inventorySize)
     {
-        _items = new List<Item>();
+        //Set inventory size, create new slot array of given size
         _size = inventorySize;
+        _inventorySlots = new InventorySlot[inventorySize];
+
+        //Fill slot array with new slots
+        for (int i = 0; i < inventorySize; i++)
+        { 
+            _inventorySlots[i] = new InventorySlot(i);
+        }
     }
 
+    //Add item to item array
     public bool AddItem(Item item)
     {
-        if (_items.Count < _size)
+        //Get empty slot
+        InventorySlot emptySlot = GetEmptyInventorySlot();
+        if (emptySlot != null)
         {
-            _items.Add(item);
+            //If there is an empty slot, set its item and fire envent
+            emptySlot.SetItem(item);
             OnInventoryItemsChange?.Invoke(this, EventArgs.Empty);
             return true;
         }
-        else
+        return false;
+    }
+
+    //Add item by inventory slot
+    public bool AddItem(InventorySlot tempSlot)
+    {
+        foreach (InventorySlot inventorySlot in _inventorySlots)
         {
-            Debug.Log("Inventory full, can't add item");
-            return false;
+            //Find slot by index 
+            if (inventorySlot.GetIndex() != tempSlot.GetIndex()) continue;
+
+            //Check if slot is empty
+            if (!inventorySlot.IsEmpty()) continue;
+
+            //Set item to inventory slot
+            inventorySlot.SetItem(tempSlot.GetItem());
+
+            //Update visuals
+            OnInventoryItemsChange?.Invoke(this, EventArgs.Empty);
+            
+            return true;
         }
+        return false;
     }
 
     public bool RemoveItem(Item item)
-    {
-        if (_items.Contains(item))
+    { 
+        InventorySlot slotWithItem = GetInventorySlotWithItem(item);
+        if (slotWithItem != null)
         {
-            _items.Remove(item);
+            //If item is in inventory, remove it and update visuals
+            slotWithItem.RemoveItem();
             OnInventoryItemsChange?.Invoke(this, EventArgs.Empty);
             return true;
         }
-        else
-        {
-            Debug.Log("Item not in inventory, can't remove");
-            return false;
-        }
+        return false;
     }
 
-    //Debug
-    public void ConsoleLogInventory()
+    //Return empty slot or null
+    public InventorySlot GetEmptyInventorySlot()
     {
-        foreach(Item item in _items)
+        foreach(InventorySlot slot in _inventorySlots)
         {
-            Debug.Log(item.itemType.ToString());
+            if (slot.IsEmpty()) return slot;
         }
+        Debug.Log("No empty slots found");
+        return null;
+    }
+
+    //Return slot with item or null
+    public InventorySlot GetInventorySlotWithItem(Item item)
+    {
+        foreach(InventorySlot slot in _inventorySlots)
+        {
+            if(slot.GetItem() == item) return slot;
+        }
+        Debug.Log("Item is not in inventory");
+        return null;
     }
 }
