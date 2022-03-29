@@ -4,22 +4,28 @@
 Sample text 1 #name:Person 1 #fs:italic
 Sample text 2 #name:Person 2 #fs:bold
 Sample choice #name:Person 1 #fs:italic #fs:bold
-    +[One] -> C1
-    +[Two] -> C2
-    +[Three] -> C3
--> END
+    +[One] 
+        -> C1
+    +[Two] 
+        -> C2
+    +[Three] 
+        -> C3
     
 === C1 ===
 Chose 1 #name:Person 1
 Choice 2 #name:Person 2
-    +[Four] -> C4
-    +[Five] -> C5
-    
+    +[Four] 
+        -> C4
+    +[Five] 
+        -> C5
+
 === C2 ===
 Chose 2 #name:Person 1
 Choice 3 #name:Person 2
-    +[Six] -> C6
-    +[Seven] -> C7
+    +[Six] 
+        -> C6
+    +[Seven] 
+        -> C7
     
 === C3 ===
 Chose 3 #name:Person 1

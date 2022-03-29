@@ -72,11 +72,12 @@
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\IItemHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\WorldCrafting.cs" />
+    <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
     <Compile Include="Assets\_Game\Scripts\Buttons.cs" />
-    <Compile Include="Assets\_Game\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\UI_Crafting.cs" />
     <Compile Include="Assets\_Game\Scripts\UI_ItemDrag.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Inventory.cs" />
