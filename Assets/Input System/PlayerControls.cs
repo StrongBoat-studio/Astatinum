@@ -177,6 +177,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Dialogue"",
+            ""id"": ""644e3577-3c7b-4a83-890c-2c6e387d90a2"",
+            ""actions"": [
+                {
+                    ""name"": ""AdvanceDialoge"",
+                    ""type"": ""Button"",
+                    ""id"": ""2cc944dd-5d78-441b-8c73-57d449cfc69c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""144b6866-b981-49ea-a018-67a9443a0823"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AdvanceDialoge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -203,6 +230,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_AdvanceDialoge = m_Dialogue.FindAction("AdvanceDialoge", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -297,6 +327,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private IDialogueActions m_DialogueActionsCallbackInterface;
+    private readonly InputAction m_Dialogue_AdvanceDialoge;
+    public struct DialogueActions
+    {
+        private @PlayerControls m_Wrapper;
+        public DialogueActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @AdvanceDialoge => m_Wrapper.m_Dialogue_AdvanceDialoge;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterface != null)
+            {
+                @AdvanceDialoge.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnAdvanceDialoge;
+                @AdvanceDialoge.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnAdvanceDialoge;
+                @AdvanceDialoge.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnAdvanceDialoge;
+            }
+            m_Wrapper.m_DialogueActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @AdvanceDialoge.started += instance.OnAdvanceDialoge;
+                @AdvanceDialoge.performed += instance.OnAdvanceDialoge;
+                @AdvanceDialoge.canceled += instance.OnAdvanceDialoge;
+            }
+        }
+    }
+    public DialogueActions @Dialogue => new DialogueActions(this);
     private int m_KMSchemeIndex = -1;
     public InputControlScheme KMScheme
     {
@@ -311,5 +374,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IDialogueActions
+    {
+        void OnAdvanceDialoge(InputAction.CallbackContext context);
     }
 }

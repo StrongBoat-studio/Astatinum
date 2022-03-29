@@ -8,8 +8,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _JumpForce = 30f;
     [SerializeField] private float _Speed = 10f;
     private Rigidbody _rigidbody;
-    private PlayerInput _playerInput;
-    private PlayerControls _playerControls;
+    //private PlayerInput _playerInput;
+    //private PlayerControls _playerControls;
     private bool _Check= false;
 
     private GameObject _interactable = null;
@@ -17,18 +17,20 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _playerInput = GetComponent<PlayerInput>();
+        //_playerInput = GetComponent<PlayerInput>();
 
-        _playerControls = new PlayerControls();
-        _playerControls.Player.Enable();
-        _playerControls.Player.Jump.performed += Jump;
+        //_playerControls = new PlayerControls();
+        //_playerControls.Player.Enable();
+        //_playerControls.Player.Jump.performed += Jump;
+        GameManager.Instance.playerControls.Player.Jump.performed += Jump;
 
         DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        Vector2 inputVector = _playerControls.Player.Movement.ReadValue<Vector2>();
+        //Vector2 inputVector = _playerControls.Player.Movement.ReadValue<Vector2>();
+        Vector2 inputVector = GameManager.Instance.playerControls.Player.Movement.ReadValue<Vector2>();
         transform.position = transform.position + new Vector3(inputVector.x, 0, inputVector.y) * _Speed * Time.deltaTime;
     }
 

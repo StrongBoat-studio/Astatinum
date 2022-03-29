@@ -8,7 +8,7 @@ public class TestDialogue : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             DialogueManager.Instance.EnterDialogueMode(inkJson);
         }

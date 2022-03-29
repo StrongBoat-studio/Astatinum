@@ -7,15 +7,16 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI _interactionText; //Hint
-    private PlayerControls _playerControls;
+    //private PlayerControls _playerControls;
 
     private Interactable _interactable = null;
 
     private void Start()
     {
-        _playerControls = new PlayerControls();
-        _playerControls.Enable();
-        _playerControls.Player.Interact.started += On_InteractStarted;
+        //_playerControls = new PlayerControls();
+        //_playerControls.Enable();
+        //_playerControls.Player.Interact.started += On_InteractStarted;
+        GameManager.Instance.playerControls.Player.Interact.started += On_InteractStarted;
     }
 
     private void OnTriggerEnter(Collider other)

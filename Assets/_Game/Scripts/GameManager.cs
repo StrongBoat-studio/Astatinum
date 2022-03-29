@@ -15,7 +15,11 @@ public class GameManager : MonoBehaviour
         else Destroy(this);
 
         DontDestroyOnLoad(this);
+
+        playerControls = new PlayerControls();
+        playerControls.Enable();
     }
 
     [SerializeField] public Transform player;
+    public PlayerControls playerControls;
 }
