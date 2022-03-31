@@ -90,6 +90,7 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(TextAsset inkJson)
     {
         GameManager.Instance.playerControls.Player.Disable();
+        GameManager.Instance.playerControls.Interactions.Disable();
         _currentStory = new Story(inkJson.text);
         _dialogueIsPlaying = true;
         _dialoguePanel.gameObject.SetActive(true);
@@ -100,6 +101,7 @@ public class DialogueManager : MonoBehaviour
     private void ExitDialogueMode()
     {
         GameManager.Instance.playerControls.Player.Enable();
+        GameManager.Instance.playerControls.Interactions.Enable();
         _dialogueIsPlaying = false;
         _dialoguePanel.gameObject.SetActive(false);
         _dialogueMessageText.text = "";

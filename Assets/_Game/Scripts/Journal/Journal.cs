@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Journal
 {
-    private List<Post> postList;
+    private List<Note> postList;
 
     public Journal()
     {
-        postList = new List<Post>();
+        postList = new List<Note>();
 
-        AddPost(new Post { postType = Post.PostType.History });
-        AddPost(new Post { postType = Post.PostType.Life });
+        AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[0] });
+        AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[1] });
         Debug.Log(postList.Count);
     }
 
-    public void AddPost(Post post)
+    public bool AddPost(Note post)
     {
         postList.Add(post);
+        return true;
     }
 
-    public List<Post> GetPostList()
+    public List<Note> GetNoteList()
     {
         return postList;
     }

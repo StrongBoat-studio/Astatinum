@@ -33,14 +33,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""f312e905-8c21-4e90-9e5c-548689611e0e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -164,17 +156,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""83333841-dd83-4a9f-862a-29620d1a68ce"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""K&M"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -204,6 +185,60 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Journal"",
+            ""id"": ""e5bf3969-8745-4643-b241-23880737a686"",
+            ""actions"": [
+                {
+                    ""name"": ""OpenJournal"",
+                    ""type"": ""Button"",
+                    ""id"": ""f74c154f-5d61-4320-87ff-6208e47b0684"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5625dcad-0567-43c9-a37b-cdc02f90f134"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenJournal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Interactions"",
+            ""id"": ""e2c15e36-a0c8-4010-a5e4-7377f1051e2b"",
+            ""actions"": [
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""a9fa57a7-1c13-494d-a8a4-c60ff475e0b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""90e4c7f3-53da-4e5e-901d-3a185cf545dc"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -229,10 +264,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_AdvanceDialoge = m_Dialogue.FindAction("AdvanceDialoge", throwIfNotFound: true);
+        // Journal
+        m_Journal = asset.FindActionMap("Journal", throwIfNotFound: true);
+        m_Journal_OpenJournal = m_Journal.FindAction("OpenJournal", throwIfNotFound: true);
+        // Interactions
+        m_Interactions = asset.FindActionMap("Interactions", throwIfNotFound: true);
+        m_Interactions_Interact = m_Interactions.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -284,14 +324,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -307,9 +345,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -320,9 +355,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Interact.started += instance.OnInteract;
-                @Interact.performed += instance.OnInteract;
-                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -360,6 +392,72 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public DialogueActions @Dialogue => new DialogueActions(this);
+
+    // Journal
+    private readonly InputActionMap m_Journal;
+    private IJournalActions m_JournalActionsCallbackInterface;
+    private readonly InputAction m_Journal_OpenJournal;
+    public struct JournalActions
+    {
+        private @PlayerControls m_Wrapper;
+        public JournalActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @OpenJournal => m_Wrapper.m_Journal_OpenJournal;
+        public InputActionMap Get() { return m_Wrapper.m_Journal; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(JournalActions set) { return set.Get(); }
+        public void SetCallbacks(IJournalActions instance)
+        {
+            if (m_Wrapper.m_JournalActionsCallbackInterface != null)
+            {
+                @OpenJournal.started -= m_Wrapper.m_JournalActionsCallbackInterface.OnOpenJournal;
+                @OpenJournal.performed -= m_Wrapper.m_JournalActionsCallbackInterface.OnOpenJournal;
+                @OpenJournal.canceled -= m_Wrapper.m_JournalActionsCallbackInterface.OnOpenJournal;
+            }
+            m_Wrapper.m_JournalActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @OpenJournal.started += instance.OnOpenJournal;
+                @OpenJournal.performed += instance.OnOpenJournal;
+                @OpenJournal.canceled += instance.OnOpenJournal;
+            }
+        }
+    }
+    public JournalActions @Journal => new JournalActions(this);
+
+    // Interactions
+    private readonly InputActionMap m_Interactions;
+    private IInteractionsActions m_InteractionsActionsCallbackInterface;
+    private readonly InputAction m_Interactions_Interact;
+    public struct InteractionsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public InteractionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Interact => m_Wrapper.m_Interactions_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_Interactions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InteractionsActions set) { return set.Get(); }
+        public void SetCallbacks(IInteractionsActions instance)
+        {
+            if (m_Wrapper.m_InteractionsActionsCallbackInterface != null)
+            {
+                @Interact.started -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
+            }
+            m_Wrapper.m_InteractionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+            }
+        }
+    }
+    public InteractionsActions @Interactions => new InteractionsActions(this);
     private int m_KMSchemeIndex = -1;
     public InputControlScheme KMScheme
     {
@@ -373,10 +471,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {
         void OnAdvanceDialoge(InputAction.CallbackContext context);
+    }
+    public interface IJournalActions
+    {
+        void OnOpenJournal(InputAction.CallbackContext context);
+    }
+    public interface IInteractionsActions
+    {
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

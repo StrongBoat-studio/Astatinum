@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,31 +6,35 @@ using UnityEngine;
 public class UI_Journal : MonoBehaviour
 {
     private Journal journal;
-    [SerializeField] private Transform PostContainer;
-    [SerializeField] private Transform Post;
-
-    private void Awake()
-    {
-        //PostContainer = transform.Find("PostContainer");
-        //Post = transform.Find("Post");
-    }
+    [SerializeField] private Transform _noteContainer;
+    [SerializeField] private Transform _notePrefab;
 
     public void SetJournal (Journal journal)
     {
         this.journal = journal;
-        RefreshJournalPost();
+        GameManager.Instance.player.GetComponent<Player>().onOpenJournal += Player_OnOpenJournal;
+        RefreshJournal();
     }
 
-    private void RefreshJournalPost()
+    private void Player_OnOpenJournal(object sender, EventArgs e)
     {
+        RefreshJournal();
+    }
+
+    private void RefreshJournal()
+    {
+        foreach (RectTransform child in _noteContainer)
+            Destroy(child.gameObject);
+
         int x = 0;
-        float y = PostContainer.GetComponent<RectTransform>().rect.yMin;
-        foreach (Post post in journal.GetPostList())
+        float y = _noteContainer.GetComponent<RectTransform>().rect.yMax - _notePrefab.GetComponent<RectTransform>().rect.height / 2;
+        foreach (Note note in journal.GetNoteList())
         {
-            RectTransform postSlotRectTransform = Instantiate(Post, PostContainer).GetComponent<RectTransform>();
-            postSlotRectTransform.gameObject.SetActive(true);
-            postSlotRectTransform.localPosition = new Vector2(x, y);
-            y+=Post.GetComponent<RectTransform>().rect.height;
+            RectTransform noteSlotRect = Instantiate(_notePrefab, _noteContainer).GetComponent<RectTransform>();
+            noteSlotRect.gameObject.SetActive(true);
+            noteSlotRect.localPosition = new Vector2(x, y);
+            noteSlotRect.GetComponent<UI_Note>().SetNote(note);
+            y-=_notePrefab.GetComponent<RectTransform>().rect.height;
         }
     }
 }

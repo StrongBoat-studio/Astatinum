@@ -17,7 +17,7 @@ public class WorldItem : Interactable
         //Get key name from action map and replace 'key' with it
         //Get item name and replace 'item' with it
         PlayerControls pc = new PlayerControls();
-        string description = _interactionDescription.Replace("key", pc.Player.Interact.controls[0].name.ToUpper()).Replace("item", _item.GetItemName());
+        string description = _interactionDescription.Replace("key", pc.Interactions.Interact.controls[0].name.ToUpper()).Replace("item", _item.GetItemName());
         return description;
     }
 
