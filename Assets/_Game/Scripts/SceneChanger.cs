@@ -34,7 +34,7 @@ public class SceneChanger : Interactable
         //Get key name from action map and replace 'key' with it
         //Get location name from SceneIndexer singleton and replace 'location' with it
         PlayerControls pc = new PlayerControls();
-        string description = _interactionDescription.Replace("key", pc.Player.Interact.controls[0].name.ToUpper()).Replace("location", SceneIndexer.GetSceneNameByType(_sceneToLoad));
+        string description = _interactionDescription.Replace("key", pc.Interactions.Interact.controls[0].name.ToUpper()).Replace("location", SceneIndexer.GetSceneNameByType(_sceneToLoad));
         return description;
     }
 }

@@ -16,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
         //_playerControls = new PlayerControls();
         //_playerControls.Enable();
         //_playerControls.Player.Interact.started += On_InteractStarted;
-        GameManager.Instance.playerControls.Player.Interact.started += On_InteractStarted;
+        GameManager.Instance.playerControls.Interactions.Interact.started += On_InteractStarted;
     }
 
     private void OnTriggerEnter(Collider other)
