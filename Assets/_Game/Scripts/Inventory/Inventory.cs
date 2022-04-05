@@ -54,6 +54,8 @@ public class Inventory
     public int size { get => _size; }
 
     public event EventHandler OnInventoryItemsChange;
+    public event EventHandler OnInventoryAddItem;
+    public event EventHandler OnInventoryRemoveItem;
 
     public Inventory(int inventorySize)
     {
@@ -78,6 +80,7 @@ public class Inventory
             //If there is an empty slot, set its item and fire envent
             emptySlot.SetItem(item);
             OnInventoryItemsChange?.Invoke(this, EventArgs.Empty);
+            OnInventoryAddItem?.Invoke(this, EventArgs.Empty);
             return true;
         }
         return false;
@@ -99,7 +102,8 @@ public class Inventory
 
             //Update visuals
             OnInventoryItemsChange?.Invoke(this, EventArgs.Empty);
-            
+   
+            OnInventoryAddItem?.Invoke(this, EventArgs.Empty);
             return true;
         }
         return false;
@@ -113,6 +117,7 @@ public class Inventory
             //If item is in inventory, remove it and update visuals
             slotWithItem.RemoveItem();
             OnInventoryItemsChange?.Invoke(this, EventArgs.Empty);
+            OnInventoryRemoveItem?.Invoke(this, EventArgs.Empty);
             return true;
         }
         return false;

@@ -1852,6 +1852,7 @@ GameObject:
   - component: {fileID: 1213112572}
   - component: {fileID: 1213112570}
   - component: {fileID: 1213112573}
+  - component: {fileID: 1213112574}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1913,6 +1914,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCanvas: {fileID: 1038674901}
   _dialoguePanelPrefab: {fileID: 6601198901150457636, guid: f3c199a3222afd7429a1e4cafd5941bf, type: 3}
+--- !u!114 &1213112574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213112569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ac41e16c03b4449437e35510f742e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - {fileID: 11400000, guid: c766d1b9f155d8040bf66c8430066f04, type: 2}
 --- !u!4 &1215383551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5345055794413275006, guid: 15014121e2faa2942bcbc6a2fcbd343b, type: 3}
@@ -3458,7 +3473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067673519071339615, guid: 90887ed18e5268f4bba1a7398de8ee82, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90887ed18e5268f4bba1a7398de8ee82, type: 3}
