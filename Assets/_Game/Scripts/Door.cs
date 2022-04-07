@@ -28,7 +28,7 @@ public class Door : Interactable
     {
         //Get key name from action map and replace 'key' with it
         PlayerControls pc = new PlayerControls();
-        string description = _interactionDescription.Replace("key", pc.Player.Interact.controls[0].name.ToUpper());
+        string description = _interactionDescription.Replace("key", pc.Interactions.Interact.controls[0].name.ToUpper());
         return description;
     }
 }

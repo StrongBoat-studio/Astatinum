@@ -13,6 +13,7 @@ public class SceneIndexer : MonoBehaviour
         TutorialScene = 1,
         LocationOneScene = 5,
         DialogueScene = 4,
+        DomEzila=6,    
     }
 
     public static SceneIndexer Instance { get; private set; }
