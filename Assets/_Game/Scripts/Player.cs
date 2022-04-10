@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     [SerializeField] private UI_Journal _uiJournal;
     public event EventHandler onOpenJournal;
 
+    private QuestSystem _questSystem;
+    public QuestSystem questSystem { get => _questSystem; }
+    [SerializeField] private UI_QuestSystem _uiQuestSystem;
+
     [SerializeField] private List<RecipeScriptableObject> _craftingRecipes;
     public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; } 
 
@@ -28,8 +32,12 @@ public class Player : MonoBehaviour
 
         _journal = new Journal();
         _uiJournal.SetJournal(_journal);
-
         GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
+
+        _questSystem = new QuestSystem();
+        _uiQuestSystem.SetQuestSystem(_questSystem);
+        _questSystem.AddQuest(new QuestFindItems(QuestAssets.Instance.questFindItem[0], QuestAssets.Instance.questFindItemGoal[0]));
+        _questSystem.AddQuest(new QuestFindItems(QuestAssets.Instance.questFindItem[1], QuestAssets.Instance.questFindItemGoal[1]));
     }
 
     private void On_OpenJournal(InputAction.CallbackContext obj)

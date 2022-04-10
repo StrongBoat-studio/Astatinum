@@ -12,7 +12,6 @@ public class Journal
 
         AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[0] });
         AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[1] });
-        Debug.Log(postList.Count);
     }
 
     public bool AddPost(Note post)
