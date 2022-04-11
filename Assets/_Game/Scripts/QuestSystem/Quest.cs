@@ -5,13 +5,29 @@ using System;
 
 public class Quest
 {
-    private bool _isCompleted = false;
-    public bool isCompleted { get => _isCompleted; }
     public QuestScriptableObject questData;
+
+    public class QuestCompletedEventArgs
+    {
+        public Quest quest;
+    }
+    public event EventHandler<QuestCompletedEventArgs> onQuestCompleted;
+
+    protected bool _canBeCompleted = false;
+    public bool canBeCompleted { get => _canBeCompleted; }
+
+    protected bool _isCompleted = false;
+    public bool isCompleted { get => _isCompleted; }
+
     public virtual bool UpdateQuest() { return false; }
     public virtual List<string> QuestCompletionText() { return null; }
-    protected void QuestCompleted()
+
+    protected void QuestCanBeCompleted() { _canBeCompleted = true; }
+    protected void QuestCannotBeCompleted() { _canBeCompleted = false; }
+
+    public virtual bool CompleteQuest() { return false; }
+    protected void CompleteQuestEvent()
     {
-        _isCompleted = true;
+        onQuestCompleted?.Invoke(this, new QuestCompletedEventArgs { quest = this });
     }
 }

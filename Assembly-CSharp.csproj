@@ -66,10 +66,11 @@
     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\Quest.cs" />
     <Compile Include="Assets\_Game\Scripts\Animations.cs" />
-    <Compile Include="Assets\_Game\Scripts\Inventory\ItemScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\Inventory\ItemData.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\RecipeScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\UI_QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Note.cs" />
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
@@ -98,7 +99,8 @@
     <Compile Include="Assets\_Game\Scripts\GameManager.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
-    <Compile Include="Assets\_Game\Scripts\QuestSystem\UI_QuestSystem.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestGiver.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTarger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

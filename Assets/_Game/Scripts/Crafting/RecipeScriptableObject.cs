@@ -5,21 +5,21 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable objects/Recipes")]
 public class RecipeScriptableObject : ScriptableObject
 {
-    public ItemScriptableObject output;
+    public ItemData output;
 
-    public ItemScriptableObject item_00;
-    public ItemScriptableObject item_10;
-    public ItemScriptableObject item_20;
+    public ItemData item_00;
+    public ItemData item_10;
+    public ItemData item_20;
                                 
-    public ItemScriptableObject item_01;
-    public ItemScriptableObject item_11;
-    public ItemScriptableObject item_21;
+    public ItemData item_01;
+    public ItemData item_11;
+    public ItemData item_21;
                                 
-    public ItemScriptableObject item_02;
-    public ItemScriptableObject item_12;
-    public ItemScriptableObject item_22;
+    public ItemData item_02;
+    public ItemData item_12;
+    public ItemData item_22;
 
-    public ItemScriptableObject GetItem(int x, int y)
+    public ItemData GetItem(int x, int y)
     {
         if (x == 0 && y == 0) return item_00;
         else if (x == 1 && y == 0) return item_10;

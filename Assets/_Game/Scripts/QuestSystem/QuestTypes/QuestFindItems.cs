@@ -60,10 +60,43 @@ public class QuestFindItems : Quest
 
         if (completed)
         {
-            QuestCompleted();
+            QuestCanBeCompleted();
+            questChanged = true;
+        }
+        else
+        {
+            QuestCannotBeCompleted();
             questChanged = true;
         }
 
         return questChanged;
+    }
+
+    public override bool CompleteQuest()
+    {
+        UpdateQuest();
+        if (!_canBeCompleted) return false;
+
+        _isCompleted = true;
+        Inventory pinv = GameManager.Instance.player.GetComponent<Player>().inventory;
+        foreach(QuestFindItemsData.QuestGoal qg in questGoalData.items)
+        {
+            for(int i = 0; i < qg.amount; i++)
+            {
+                Inventory.InventorySlot slot = pinv.GetFirstInventorySlotWithItemOfItemData(qg.item);
+                if (!slot.IsEmpty())
+                {
+                    pinv.RemoveItem(slot.GetItem());
+                }
+                else
+                {
+                    Debug.Log("Coudn't find item/s!");
+                    return false;
+                }
+            }  
+        }
+
+        CompleteQuestEvent();
+        return true;
     }
 }

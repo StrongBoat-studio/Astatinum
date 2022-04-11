@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class QuestSystem : MonoBehaviour
+public class QuestSystem
 {
     private List<Quest> _activeQuests;
     public List<Quest> activeQuests { get => _activeQuests; }
@@ -23,31 +23,27 @@ public class QuestSystem : MonoBehaviour
 
     private void Inventory_OnInventoryItemsChange(object sender, EventArgs e)
     {
-        List<Quest> _completedQuests = new List<Quest>();
-
         foreach(Quest q in _activeQuests)
         {
             switch (q.questData.questType)
             {
                 case QuestScriptableObject.QuestType.FindItem:
-                    bool questChanged = q.UpdateQuest();
-                    if(q.isCompleted) _completedQuests.Add(q);
-                    if (questChanged) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
+                    if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
                     break;
             }
         }
+    }
 
-        foreach (Quest q in _completedQuests)
-        {
-            Debug.Log("Quest " + q.questData.questTitle + " has been completed");
-            RemoveQuest(q);
-        }
+    private void Quest_OnQuestCompleted(object sender, Quest.QuestCompletedEventArgs e)
+    {
+        RemoveQuest(e.quest);
     }
 
     public void AddQuest(Quest quest)
     {
         Debug.Log("Adding quest: " + quest.questData.questTitle);
         _activeQuests.Add(quest);
+        quest.onQuestCompleted += Quest_OnQuestCompleted;
         onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = quest });
     }
 

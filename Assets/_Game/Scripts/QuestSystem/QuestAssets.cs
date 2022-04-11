@@ -19,4 +19,14 @@ public class QuestAssets : MonoBehaviour
 
     public List<QuestScriptableObject> questFindItem;
     public List<QuestFindItemsData> questFindItemGoal;
+
+    public Quest CreateQuest(QuestScriptableObject.QuestType questType, int questID)
+    {
+        switch(questType)
+        {
+            case QuestScriptableObject.QuestType.FindItem:
+                return new QuestFindItems(questFindItem[questID], questFindItemGoal[questID]);
+            default: return null;
+        }
+    }
 }

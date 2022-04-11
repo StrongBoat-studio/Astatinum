@@ -8,7 +8,7 @@ public class QuestFindItemsData : ScriptableObject
     [System.Serializable]
     public class QuestGoal
     {
-        public ItemScriptableObject item;
+        public ItemData item;
         public int amount;
     }
 

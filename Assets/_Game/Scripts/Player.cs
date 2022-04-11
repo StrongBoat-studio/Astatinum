@@ -36,8 +36,6 @@ public class Player : MonoBehaviour
 
         _questSystem = new QuestSystem();
         _uiQuestSystem.SetQuestSystem(_questSystem);
-        _questSystem.AddQuest(new QuestFindItems(QuestAssets.Instance.questFindItem[0], QuestAssets.Instance.questFindItemGoal[0]));
-        _questSystem.AddQuest(new QuestFindItems(QuestAssets.Instance.questFindItem[1], QuestAssets.Instance.questFindItemGoal[1]));
     }
 
     private void On_OpenJournal(InputAction.CallbackContext obj)

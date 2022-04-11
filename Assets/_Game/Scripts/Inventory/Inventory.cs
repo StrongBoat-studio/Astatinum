@@ -155,4 +155,16 @@ public class Inventory
         Debug.Log("Item is not in inventory");
         return null;
     }
+
+    //Return first slot with matching ItemData
+    public InventorySlot GetFirstInventorySlotWithItemOfItemData(ItemData itemData)
+    {
+        foreach (InventorySlot slot in _inventorySlots)
+        {
+            if(!slot.IsEmpty())
+                if (slot.GetItem().itemData == itemData) return slot;
+        }
+        Debug.Log("Not items of given ItemData");
+        return null;
+    }
 }

@@ -152,7 +152,7 @@ public class CraftingSystem
     }
 
     //Try crafting item by checking all recipes
-    private ItemScriptableObject TryCraft()
+    private ItemData TryCraft()
     {
         foreach (RecipeScriptableObject recipe in _recipes)
         {
@@ -166,7 +166,7 @@ public class CraftingSystem
                     if(recipe.GetItem(x, y) != null)
                     {
                         //Check if recipe has an item on [x, y] position
-                        if(IsEmpty(x, y) || GetItem(x, y).itemScriptableObject != recipe.GetItem(x, y))
+                        if(IsEmpty(x, y) || GetItem(x, y).itemData != recipe.GetItem(x, y))
                         {
                             //Check if crafting grid on [x, y] has an item
                             //Check if item in crafing grid on [x, y] has the same item
@@ -188,11 +188,11 @@ public class CraftingSystem
     public void CreateOutput()
     {
         //Try to craft item
-        ItemScriptableObject output = TryCraft();
+        ItemData output = TryCraft();
         if (output != null)
         {
             //if crafted item is not null, set _itemOutput
-            Item outputItem = new Item { itemScriptableObject = output };
+            Item outputItem = new Item { itemData = output };
             _itemOutput.SetItem(outputItem);
         }
         //If not, _itemOutput is null

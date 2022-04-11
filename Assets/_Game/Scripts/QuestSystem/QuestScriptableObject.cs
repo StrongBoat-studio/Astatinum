@@ -15,8 +15,8 @@ public class QuestScriptableObject : ScriptableObject
         Trade
     }
 
+    public int questID;
     public QuestType questType;
     public string questTitle;
     public string questDescription;
-    public int intQuestGoal;
 }
