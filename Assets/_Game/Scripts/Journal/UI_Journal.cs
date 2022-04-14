@@ -6,7 +6,7 @@ using UnityEngine;
 public class UI_Journal : MonoBehaviour
 {
     private Journal journal;
-    [SerializeField] private Transform _noteContainer;
+    [SerializeField] private Transform _tabPagesContainer;
     [SerializeField] private Transform _notePrefab;
 
     public void SetJournal (Journal journal)
@@ -23,18 +23,22 @@ public class UI_Journal : MonoBehaviour
 
     private void RefreshJournal()
     {
-        foreach (RectTransform child in _noteContainer)
-            Destroy(child.gameObject);
+        foreach (RectTransform page in _tabPagesContainer)
+            foreach (RectTransform pageContainer in page)
+                foreach (RectTransform child in pageContainer)
+                    Destroy(child.gameObject);
 
-        int x = 0;
-        float y = _noteContainer.GetComponent<RectTransform>().rect.yMax - _notePrefab.GetComponent<RectTransform>().rect.height / 2;
+        //int x = 0;
+        //float y = _tabPagesContainer.GetComponent<RectTransform>().rect.yMax - _notePrefab.GetComponent<RectTransform>().rect.height / 2;
         foreach (Note note in journal.GetNoteList())
         {
-            RectTransform noteSlotRect = Instantiate(_notePrefab, _noteContainer).GetComponent<RectTransform>();
+            int pageIndex = (int)note.GetNoteType();
+            Transform page = _tabPagesContainer.GetChild(pageIndex).GetChild(0);
+            RectTransform noteSlotRect = Instantiate(_notePrefab, page).GetComponent<RectTransform>();
             noteSlotRect.gameObject.SetActive(true);
-            noteSlotRect.localPosition = new Vector2(x, y);
+            //noteSlotRect.localPosition = new Vector2(x, y);
             noteSlotRect.GetComponent<UI_Note>().SetNote(note);
-            y-=_notePrefab.GetComponent<RectTransform>().rect.height;
+            //y-=_notePrefab.GetComponent<RectTransform>().rect.height;
         }
     }
 }
