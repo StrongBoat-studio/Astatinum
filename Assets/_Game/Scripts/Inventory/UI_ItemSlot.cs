@@ -18,7 +18,11 @@ public class UI_ItemSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        UI_ItemDrag.Instance.Hide();
-        _onDropAction();
+        //Check if dropped thing is accually an item :)
+        if (UI_ItemDrag.Instance.GetItem() != null)
+        {
+            UI_ItemDrag.Instance.Hide();
+            _onDropAction();
+        }
     }
 }
