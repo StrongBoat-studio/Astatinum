@@ -101,6 +101,8 @@
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestGiver.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTarger.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\JournalTabButton.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\JournalTabGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
