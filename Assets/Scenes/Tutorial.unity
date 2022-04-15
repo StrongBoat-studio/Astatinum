@@ -705,8 +705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionDescription: Lol
-  questType: 1
-  questID: 0
+  questType: 0
+  questID: 2
 --- !u!1 &292838756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionDescription: Lol
-  questToReceive: {fileID: 11400000, guid: d91edf1776fbbee4dab2f654c913c7cc, type: 2}
+  questToReceive: {fileID: 11400000, guid: 8b6a63df15988784d88bcd0595ecd94a, type: 2}
 --- !u!1 &743944337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,12 +3257,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436ac41e16c03b4449437e35510f742e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questFindItem:
+  questFindItems:
   - {fileID: 11400000, guid: d91edf1776fbbee4dab2f654c913c7cc, type: 2}
   - {fileID: 11400000, guid: 37d6d16163d927849b09ded41fe86b4b, type: 2}
   questFindItemGoal:
   - {fileID: 11400000, guid: fa0f78e46dd6d934f9e29e5e02614703, type: 2}
-  - {fileID: 11400000, guid: a1055cb769ba07e4db00b42580fc01eb, type: 2}
+  - {fileID: 11400000, guid: d9eeb2015bf19c74c851acb7bcbf2338, type: 2}
+  questFindInformation:
+  - {fileID: 11400000, guid: 8b6a63df15988784d88bcd0595ecd94a, type: 2}
+  questFindInformationGoal:
+  - {fileID: 11400000, guid: a992dd6bd1f20f643a93a7ec259ff9b6, type: 2}
 --- !u!4 &1215383551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5345055794413275006, guid: 15014121e2faa2942bcbc6a2fcbd343b, type: 3}
@@ -5028,8 +5032,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u017Bycie"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

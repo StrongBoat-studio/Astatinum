@@ -43,6 +43,7 @@ public class UI_QuestSystem : MonoBehaviour
             switch (quest.questData.questType)
             {
                 case QuestScriptableObject.QuestType.FindItem:
+                case QuestScriptableObject.QuestType.FindInformation:
                     List<string> taskTexts = quest.QuestCompletionText();
 
                     int lastIndex = 0;

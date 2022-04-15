@@ -11,7 +11,7 @@ public class Note
         Life,
     }
 
-        public NoteScriptableObject _noteScriptableObject;
+    public NoteScriptableObject _noteScriptableObject;
     
     public string GetNoteTitle()
     {

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4011098c49fcba4d97a1e9ffb0eba49, type: 3}
-  m_Name: QuestTwoData
+  m_Script: {fileID: 11500000, guid: 51eb6743ae9a72e4cabcf25cc16b63b8, type: 3}
+  m_Name: InformationQuestOne
   m_EditorClassIdentifier: 
-  items:
-  - item: {fileID: 11400000, guid: e507078c4d5d94247871f923981ee2c4, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: ffe00bba57bd74e47bc726278e84b239, type: 2}
-    amount: 2
+  questID: 2
+  questType: 0
+  questTitle: Test
+  questDescription: :)

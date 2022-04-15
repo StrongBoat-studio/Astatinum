@@ -36,6 +36,15 @@ public class Player : MonoBehaviour
 
         _questSystem = new QuestSystem();
         _uiQuestSystem.SetQuestSystem(_questSystem);
+        _questSystem.SetPlayer(this);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[0] });
+        }
     }
 
     private void On_OpenJournal(InputAction.CallbackContext obj)

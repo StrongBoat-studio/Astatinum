@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[System.Serializable]
 public class QuestSystem
 {
-    private List<Quest> _activeQuests;
+    [SerializeField] private List<Quest> _activeQuests;
     public List<Quest> activeQuests { get => _activeQuests; }
+
+    private Player _player;
 
     public class QuestChangeEventArgs : EventArgs
     { 
@@ -17,17 +20,25 @@ public class QuestSystem
     public QuestSystem()
     {
         _activeQuests = new List<Quest>();
-        Player player = GameManager.Instance.player.GetComponent<Player>();
-        player.inventory.OnInventoryItemsChange += Inventory_OnInventoryItemsChange;
     }
 
-    private void Inventory_OnInventoryItemsChange(object sender, EventArgs e)
+    public void SetPlayer(Player player)
+    {
+        _player = player;
+        player.inventory.OnInventoryItemsChange += QuestChangedEvent;
+        player.journal.onAddNote += QuestChangedEvent;
+    }
+
+    private void QuestChangedEvent(object sender, EventArgs e)
     {
         foreach(Quest q in _activeQuests)
         {
             switch (q.questData.questType)
             {
                 case QuestScriptableObject.QuestType.FindItem:
+                    if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
+                    break;
+                case QuestScriptableObject.QuestType.FindInformation:
                     if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
                     break;
             }
