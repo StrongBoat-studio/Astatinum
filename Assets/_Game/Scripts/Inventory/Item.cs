@@ -16,20 +16,20 @@ public class Item
         Item5
     }
 
-    public ItemScriptableObject itemScriptableObject;
+    public ItemData itemData;
 
     public Sprite GetItemSprite()
     {
-        return itemScriptableObject.itemSprite;
+        return itemData.itemSprite;
     }
 
     public string GetItemName()
     {
-        return itemScriptableObject.itemName;
+        return itemData.itemName;
     }
 
     public ItemType GetItemType()
     {
-        return itemScriptableObject.itemType;
+        return itemData.itemType;
     }
 }

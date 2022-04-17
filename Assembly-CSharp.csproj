@@ -55,19 +55,27 @@
   <ItemGroup>
     <Compile Include="Assets\_Game\Scripts\Journal\Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\WorldItem.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\JournalTabGroup.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\CraftingSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Item.cs" />
     <Compile Include="Assets\_Game\Scripts\Door.cs" />
     <Compile Include="Assets\_Game\Scripts\LevelLoader.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\JournalTabButton.cs" />
     <Compile Include="Assets\_Game\Scripts\TestDialogue.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestGiver.cs" />
     <Compile Include="Assets\_Game\Scripts\Movement.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\NoteScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInformation.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\Quest.cs" />
     <Compile Include="Assets\_Game\Scripts\Animations.cs" />
-    <Compile Include="Assets\_Game\Scripts\Inventory\ItemScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTarger.cs" />
+    <Compile Include="Assets\_Game\Scripts\Inventory\ItemData.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\RecipeScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\UI_QuestSystem.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Note.cs" />
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\IItemHolder.cs" />
@@ -76,10 +84,14 @@
     <Compile Include="Assets\_Game\Scripts\Crafting\WorldCrafting.cs" />
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemAssets.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\JournalButton.cs" />
     <Compile Include="Assets\_Game\Scripts\PlayerInteraction.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInforationData.cs" />
     <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Note.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindItems.cs" />
     <Compile Include="Assets\_Game\Scripts\Buttons.cs" />
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\UI_Crafting.cs" />
@@ -89,11 +101,10 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\CameraController.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindItemsData.cs" />
     <Compile Include="Assets\_Game\Scripts\GameManager.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\JournalTabButton.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\JournalTabGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

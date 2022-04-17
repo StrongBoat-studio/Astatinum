@@ -5,7 +5,7 @@ using UnityEngine;
 //Item scripatble obecjt
 //Stores item data
 [CreateAssetMenu(menuName = "Scriptable objects/Item")]
-public class ItemScriptableObject : ScriptableObject
+public class ItemData : ScriptableObject
 {
     public Item.ItemType itemType;
     public string itemName;
