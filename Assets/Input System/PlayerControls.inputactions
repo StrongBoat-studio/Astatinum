@@ -145,6 +145,87 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "644e3577-3c7b-4a83-890c-2c6e387d90a2",
+            "actions": [
+                {
+                    "name": "AdvanceDialoge",
+                    "type": "Button",
+                    "id": "2cc944dd-5d78-441b-8c73-57d449cfc69c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "144b6866-b981-49ea-a018-67a9443a0823",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AdvanceDialoge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Journal",
+            "id": "e5bf3969-8745-4643-b241-23880737a686",
+            "actions": [
+                {
+                    "name": "OpenJournal",
+                    "type": "Button",
+                    "id": "f74c154f-5d61-4320-87ff-6208e47b0684",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5625dcad-0567-43c9-a37b-cdc02f90f134",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenJournal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Interactions",
+            "id": "e2c15e36-a0c8-4010-a5e4-7377f1051e2b",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "a9fa57a7-1c13-494d-a8a4-c60ff475e0b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "90e4c7f3-53da-4e5e-901d-3a185cf545dc",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "K&M",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -5,36 +5,40 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float jump_force = 30f;
-    [SerializeField] private float speed = 10f;
-    private Rigidbody rigidbody;
-    private PlayerInput playerInput;
-    private PlayerControls playerControls;
-    private float check = 0f;
+    [SerializeField] private float _JumpForce = 30f;
+    [SerializeField] private float _Speed = 10f;
+    private Rigidbody _rigidbody;
+    //private PlayerInput _playerInput;
+    //private PlayerControls _playerControls;
+    private bool _Check= false;
 
+    private GameObject _interactable = null;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        playerInput = GetComponent<PlayerInput>();
+        _rigidbody = GetComponent<Rigidbody>();
+        //_playerInput = GetComponent<PlayerInput>();
 
-        playerControls = new PlayerControls();
-        playerControls.Player.Enable();
-        playerControls.Player.Jump.performed += Jump;
+        //_playerControls = new PlayerControls();
+        //_playerControls.Player.Enable();
+        //_playerControls.Player.Jump.performed += Jump;
+        GameManager.Instance.playerControls.Player.Jump.performed += Jump;
 
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        Vector2 inputVector = playerControls.Player.Movement.ReadValue<Vector2>();
-        transform.position = transform.position + new Vector3(inputVector.x, 0, inputVector.y) * speed * Time.deltaTime;
+        //Vector2 inputVector = _playerControls.Player.Movement.ReadValue<Vector2>();
+        Vector2 inputVector = GameManager.Instance.playerControls.Player.Movement.ReadValue<Vector2>();
+        transform.position = transform.position + new Vector3(inputVector.x, 0, inputVector.y) * _Speed * Time.deltaTime;
     }
 
     public void Jump (InputAction.CallbackContext context)
     {
-        if (context.performed && check==0)
+        if (context.performed && _Check)
         {
-            rigidbody.AddForce(Vector3.up * jump_force, ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.up * _JumpForce, ForceMode.Impulse);
         }
     }
 
@@ -42,7 +46,7 @@ public class Movement : MonoBehaviour
     {
         if(collision.gameObject.name == "Ground")
         {
-            check = 0f;
+            _Check = true;
         }
     }
 
@@ -50,7 +54,7 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.name == "Ground")
         {
-            check = 1f;
+            _Check = false;
         }
     }
 }
