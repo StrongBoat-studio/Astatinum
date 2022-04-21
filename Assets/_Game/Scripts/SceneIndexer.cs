@@ -45,6 +45,8 @@ public class SceneIndexer : MonoBehaviour
                 return _locationOneSceneName;
             case SceneType.DialogueScene:
                 return _dialogueSceneName;
+            case SceneType.DomEzila:
+                return _domEzilaName;
             default:
                 return "Invalid scene";
         }
@@ -57,5 +59,6 @@ public class SceneIndexer : MonoBehaviour
     private string _authorsMenuSceneName = "Authors";
     private string _optionsMenuSceneName = "Options menu";
     private string _dialogueSceneName = "Dialogue scene";
+    private string _domEzilaName = "Dom Ezila";
 
 }

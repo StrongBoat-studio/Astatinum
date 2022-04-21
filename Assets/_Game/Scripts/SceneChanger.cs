@@ -7,6 +7,7 @@ public class SceneChanger : Interactable
 {
     [SerializeField] private SceneIndexer.SceneType _sceneToLoad;
     [SerializeField] private LevelLoader _levelLoader;
+    [SerializeField] private Vector3 _spawnPositionOnNewScene;
 
     public override void Interact()
     {
@@ -15,6 +16,7 @@ public class SceneChanger : Interactable
         {
             case SceneIndexer.SceneType.TutorialScene:
             case SceneIndexer.SceneType.LocationOneScene:
+            case SceneIndexer.SceneType.DomEzila:
                 if ((int)_sceneToLoad == SceneManager.GetActiveScene().buildIndex)
                     Debug.LogWarning("Can't move to the same location!");
                 else
