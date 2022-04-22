@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 10
   itemName: Mar3k
-  itemSprite: {fileID: 21300000, guid: be2961bc73be62a44a9c8379fa1fb428, type: 3}
+  itemSprite: {fileID: 21300000, guid: ffb06900c5de1a543b7e0622293ca147, type: 3}
