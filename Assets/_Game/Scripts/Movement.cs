@@ -31,7 +31,8 @@ public class Movement : MonoBehaviour
     {
         //Vector2 inputVector = _playerControls.Player.Movement.ReadValue<Vector2>();
         Vector2 inputVector = GameManager.Instance.playerControls.Player.Movement.ReadValue<Vector2>();
-        transform.position = transform.position + new Vector3(inputVector.x, 0, inputVector.y) * _Speed * Time.deltaTime;
+        //transform.position += new Vector3(inputVector.x, 0, inputVector.y) * _Speed * Time.deltaTime;
+        _rigidbody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * _Speed * Time.deltaTime);
     }
 
     public void Jump (InputAction.CallbackContext context)
