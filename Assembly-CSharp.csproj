@@ -107,6 +107,8 @@
     <Compile Include="Assets\_Game\Scripts\GameManager.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
+    <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveOptionsData.cs" />
+    <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -116,6 +118,7 @@
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{70809160-90dd-4460-8b28-464e41413944}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Workspace.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{61bd5460-331f-492e-acfe-5343785b32c2}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Bank\{33451697-9d20-49d2-b8ce-3f6201867329}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\BankFolder\{f867c027-8fc0-4889-bd55-a1129e21fed7}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
@@ -135,6 +138,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Group\{651b1fc0-3ad3-4374-af98-192cc7df0cfb}.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Tags.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Platform\{3fade4bd-3906-452c-b384-1526fbc3b3a3}.xml" />
@@ -147,6 +151,7 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\ProfilerFolder\{90f6bd68-261a-4dd9-94b3-4d96a2ad3548}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{f1e3b495-6aad-49f0-82f1-ffda81044384}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{7c7ad67c-3c2d-4c4a-b2cc-af3d3f145f8a}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\EffectPresetFolder\{c4c716b7-fa6b-4f5b-9d53-770972a5e2b1}.xml" />
@@ -765,10 +770,6 @@
       <Project>{A78DC01A-1B96-DA07-5C4F-3EEDEFB33489}</Project>
       <Name>InkEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="FMODUnityResonanceEditor.csproj">
-      <Project>{9C83E2B6-F380-8C45-ECFC-7C5C222C8DD5}</Project>
-      <Name>FMODUnityResonanceEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="FMODUnity.csproj">
       <Project>{F27BBDB7-3E09-AC46-629E-1C583DCA51CA}</Project>
       <Name>FMODUnity</Name>
@@ -780,6 +781,10 @@
     <ProjectReference Include="FMODUnityResonance.csproj">
       <Project>{935BECE6-CD6C-4007-CBF9-23C1C6CC6A23}</Project>
       <Name>FMODUnityResonance</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonanceEditor.csproj">
+      <Project>{9C83E2B6-F380-8C45-ECFC-7C5C222C8DD5}</Project>
+      <Name>FMODUnityResonanceEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
