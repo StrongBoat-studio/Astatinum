@@ -15,8 +15,13 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] private TMP_Dropdown _qualityDropdown;
     private List<string> _qualities;
 
+    private FMOD.Studio.VCA _vcaController;
+    [SerializeField] private string _vcaName;
+    [SerializeField] private Slider _masterAudioSlider;
+
     private void Start()
     {
+        //Resolution
         _resolutions = Screen.resolutions;
         _resolutionsDropdown.ClearOptions();
 
@@ -33,8 +38,15 @@ public class OptionsMenu : MonoBehaviour
         _resolutionsDropdown.value = _curResIndex;
         _resolutionsDropdown.RefreshShownValue();
 
+        //Quality
         _qualityDropdown.value = QualitySettings.GetQualityLevel();
         _qualityDropdown.RefreshShownValue();
+
+        //Audio
+        _vcaController = FMODUnity.RuntimeManager.GetVCA("vca:/" + _vcaName);
+        float masterVolume;
+        _vcaController.getVolume(out masterVolume);
+        _masterAudioSlider.value = masterVolume;
     }
 
     public void SetResolution(int resIndex)
@@ -53,8 +65,14 @@ public class OptionsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
+    public void SetMasterVolume(float value)
+    {
+        _vcaController.setVolume(value);
+    }
+
     public void MenuButton()
     {
-        _levelLoader.LoadNextLevel((int)SceneIndexer.SceneType.MainMenu);
+        //_levelLoader.LoadNextLevel((int)SceneIndexer.SceneType.MainMenu);
+        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.OptionsMenu);
     }
 }

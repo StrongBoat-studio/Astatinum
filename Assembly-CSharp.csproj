@@ -72,6 +72,7 @@
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTarger.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemData.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneChanger.cs" />
+    <Compile Include="Assets\_Game\Scripts\PlayerAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\RecipeScriptableObject.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\UI_QuestSystem.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\_Game\Scripts\UI_ItemDrag.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_ItemSlot.cs" />
+    <Compile Include="Assets\_Game\Scripts\Options\OptionsMenu.cs" />
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\CameraController.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
@@ -105,30 +107,49 @@
     <Compile Include="Assets\_Game\Scripts\GameManager.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
-    <Compile Include="Assets\_Game\Scripts\Options\OptionsMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Mixer.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{1af375f3-d491-4845-bec6-f5f7710ea919}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{70809160-90dd-4460-8b28-464e41413944}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Workspace.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Bank\{33451697-9d20-49d2-b8ce-3f6201867329}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\BankFolder\{f867c027-8fc0-4889-bd55-a1129e21fed7}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\EncodingSetting\{fffdea00-2f3e-465b-8d44-2daf300ebb90}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{30b6c5cd-496e-4550-b131-334acb59c22d}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\SnapshotGroup\{b7ff5b67-a48b-4dc5-8108-1e17aa830f57}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Group\{64a1ad50-c93a-4f9e-a759-4c452c262b12}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Master.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\SandboxFolder\{d059454e-3c4e-44e9-b105-a1f9d9bf95d4}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Tags.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Platform\{3fade4bd-3906-452c-b384-1526fbc3b3a3}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\EventFolder\{7f12f95a-54f2-4d82-9bc6-a63470f73915}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Return\{a20c9804-940e-4a1b-b733-a3760b6aac12}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\ParameterPresetFolder\{58e44dad-76da-4d91-aec8-c61c62f4f5ee}.xml" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\ProfilerFolder\{90f6bd68-261a-4dd9-94b3-4d96a2ad3548}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{7c7ad67c-3c2d-4c4a-b2cc-af3d3f145f8a}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\EffectPresetFolder\{c4c716b7-fa6b-4f5b-9d53-770972a5e2b1}.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -743,6 +764,22 @@
     <ProjectReference Include="InkEditor.csproj">
       <Project>{A78DC01A-1B96-DA07-5C4F-3EEDEFB33489}</Project>
       <Name>InkEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonanceEditor.csproj">
+      <Project>{9C83E2B6-F380-8C45-ECFC-7C5C222C8DD5}</Project>
+      <Name>FMODUnityResonanceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnity.csproj">
+      <Project>{F27BBDB7-3E09-AC46-629E-1C583DCA51CA}</Project>
+      <Name>FMODUnity</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityEditor.csproj">
+      <Project>{7769BF8E-98CA-8E41-B5C5-638794AC1739}</Project>
+      <Name>FMODUnityEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonance.csproj">
+      <Project>{935BECE6-CD6C-4007-CBF9-23C1C6CC6A23}</Project>
+      <Name>FMODUnityResonance</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
