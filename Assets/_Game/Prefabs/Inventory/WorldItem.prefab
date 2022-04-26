@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fd84c3dbe1bc1594a9b3ec24a1a3cf53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be721038292e3084d966898e12b96c89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e6289a52c189b84aa1bb6fe27591143, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactionDescription: Press [key] to pick up [item]
   _item:
-    itemType: 0
+    itemData: {fileID: 0}
   _spriteRenderer: {fileID: 452759794311307129}
 --- !u!135 &4596457577875597606
 SphereCollider:
@@ -142,5 +142,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.35
   m_Center: {x: 0, y: 0, z: 0}

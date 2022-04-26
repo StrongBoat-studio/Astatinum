@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] private UI_QuestSystem _uiQuestSystem;
 
     [SerializeField] private List<RecipeScriptableObject> _craftingRecipes;
-    public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; } 
+    public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; }
 
     private void Awake()
     {
@@ -37,6 +37,14 @@ public class Player : MonoBehaviour
         _questSystem = new QuestSystem();
         _uiQuestSystem.SetQuestSystem(_questSystem);
         _questSystem.SetPlayer(this);
+
+        SceneManager.activeSceneChanged += OnSceneChanged;
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(SceneManager.GetActiveScene().buildIndex);   
+    }
+
+    private void OnSceneChanged(Scene arg0, Scene arg1)
+    {
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(arg1.buildIndex);
     }
 
     private void Update()
