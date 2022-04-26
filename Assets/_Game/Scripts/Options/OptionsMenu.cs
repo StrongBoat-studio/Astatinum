@@ -7,17 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class OptionsMenu : MonoBehaviour
 {
+    [SerializeField] private SaveOptionsData _saveOptions;
     [SerializeField] private LevelLoader _levelLoader;
 
+    //Resolution
     [SerializeField] private TMP_Dropdown _resolutionsDropdown;
     private Resolution[] _resolutions;
 
+    //Fullscreen
+    [SerializeField] Toggle _fullscreenToggle;
+
+    //Quality
     [SerializeField] private TMP_Dropdown _qualityDropdown;
     private List<string> _qualities;
 
-    private FMOD.Studio.VCA _vcaController;
-    [SerializeField] private string _vcaName;
+    //Audio
+    private FMOD.Studio.VCA _vcaMaster;
+    private FMOD.Studio.VCA _vcaMusic;
+    private FMOD.Studio.VCA _vcaSFX;
     [SerializeField] private Slider _masterAudioSlider;
+    [SerializeField] private Slider _musicAudioSlider;
+    [SerializeField] private Slider _sfxAudioSlider;
 
     private void Start()
     {
@@ -38,36 +48,57 @@ public class OptionsMenu : MonoBehaviour
         _resolutionsDropdown.value = _curResIndex;
         _resolutionsDropdown.RefreshShownValue();
 
+        //Fullscreen
+        _fullscreenToggle.isOn = Screen.fullScreen;
+
         //Quality
         _qualityDropdown.value = QualitySettings.GetQualityLevel();
         _qualityDropdown.RefreshShownValue();
 
         //Audio
-        _vcaController = FMODUnity.RuntimeManager.GetVCA("vca:/" + _vcaName);
-        float masterVolume;
-        _vcaController.getVolume(out masterVolume);
-        _masterAudioSlider.value = masterVolume;
+        _vcaMaster = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMasterName);
+        _vcaMusic = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMusicName);
+        _vcaSFX = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaSFXName);
+        _masterAudioSlider.value = _saveOptions.masterVolume;
+        _musicAudioSlider.value = _saveOptions.musicVolume;
+        _sfxAudioSlider.value = _saveOptions.sfxVolume;
     }
 
     public void SetResolution(int resIndex)
     {
         Resolution _res = _resolutions[resIndex];
         Screen.SetResolution(_res.width, _res.height, Screen.fullScreen);
+        _saveOptions.resolution = _res;
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+        _saveOptions.isFullscreen = isFullscreen;
     }
 
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        _saveOptions.qualityLevel = qualityIndex;
     }
 
     public void SetMasterVolume(float value)
     {
-        _vcaController.setVolume(value);
+        _vcaMaster.setVolume(value);
+        _saveOptions.masterVolume = value;
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        _vcaMusic.setVolume(value);
+        _saveOptions.musicVolume = value;
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        _vcaSFX.setVolume(value);
+        _saveOptions.sfxVolume = value;
     }
 
     public void MenuButton()
