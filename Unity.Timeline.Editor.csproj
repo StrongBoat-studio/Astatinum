@@ -84,8 +84,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\TimelineSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\Drawers\Layers\ItemsLayer.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Undo\UndoExtensions.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Manipulators\Cursors\TimelineCursors.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Window\Modes\TimelineActiveMode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Manipulators\Cursors\TimelineCursors.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Signals\SignalUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Utilities\MarkerModifier.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Manipulators\AddDelete\IAddDeleteItemMode.cs" />
@@ -114,8 +114,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Analytics\TimelineAnalytics.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\TimelineDragging.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\TimelineTreeView.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Actions\Menus\TimelineContextMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Utilities\CustomTrackDrawerAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Actions\Menus\TimelineContextMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Signals\SignalReceiverInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\CustomEditors\MarkerTrackEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\UnityEditorInternals.cs" />
@@ -215,10 +215,10 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Animation\ClipCurveEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Actions\TimelineAction.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\TimelineClipHandle.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Actions\TrackActions.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Items\MarkerItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\inspectors\CurvesOwner\CurvesOwnerInspectorHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Manipulators\AddDelete\AddDeleteItemModeMix.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Actions\TrackActions.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\ItemGui\TimelineItemGUI.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Window\TimelineWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Signals\SignalAssetInspector.cs" />
@@ -280,8 +280,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Manipulators\TimeAreaAutoPanner.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Signals\TreeView\SignalListFactory.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Playables\ControlPlayableInspector.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\Manipulator.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Window\TimelineWindow_HeaderGui.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\Manipulator.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\inspectors\ClipInspector\ClipInspectorSelectionInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\DirectorStyles.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Manipulators\AddDelete\AddDeleteItemModeRipple.cs" />
@@ -548,6 +548,12 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>G:\Unity\Editors\2020.3.21f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -557,11 +563,8 @@
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.6.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,9 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="G:\Visual Studio Community 2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\_Game\Scripts\Journal\Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\WorldItem.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\JournalTabGroup.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Assets\_Game\Scripts\Journal\JournalTabButton.cs" />
     <Compile Include="Assets\_Game\Scripts\TestDialogue.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestGiver.cs" />
+    <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveOptionsData.cs" />
     <Compile Include="Assets\_Game\Scripts\Movement.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\NoteScriptableObject.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInformation.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInforationData.cs" />
     <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Note.cs" />
+    <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveLoader.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestScriptableObject.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindItems.cs" />
     <Compile Include="Assets\_Game\Scripts\Buttons.cs" />
@@ -107,13 +112,12 @@
     <Compile Include="Assets\_Game\Scripts\GameManager.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
-    <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveOptionsData.cs" />
-    <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Mixer.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\_Game\UPR\Shaders\SurfaceInput.hlsl" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{1af375f3-d491-4845-bec6-f5f7710ea919}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{70809160-90dd-4460-8b28-464e41413944}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -127,8 +131,10 @@
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{30b6c5cd-496e-4550-b131-334acb59c22d}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\SnapshotGroup\{b7ff5b67-a48b-4dc5-8108-1e17aa830f57}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\_Game\UPR\Shaders\UnlitSprite.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Group\{64a1ad50-c93a-4f9e-a759-4c452c262b12}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Master.xml" />
+    <None Include="Assets\_Game\UPR\Shaders\UnlitInput.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -137,6 +143,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\_Game\UPR\Shaders\DepthOnlyPass.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Group\{651b1fc0-3ad3-4374-af98-192cc7df0cfb}.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -152,6 +159,7 @@
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\ProfilerFolder\{90f6bd68-261a-4dd9-94b3-4d96a2ad3548}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{f1e3b495-6aad-49f0-82f1-ffda81044384}.xml" />
+    <None Include="Assets\_Game\UPR\Shaders\UnlitMetaPass.hlsl" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{7c7ad67c-3c2d-4c4a-b2cc-af3d3f145f8a}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\EffectPresetFolder\{c4c716b7-fa6b-4f5b-9d53-770972a5e2b1}.xml" />
@@ -745,20 +753,50 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -785,6 +823,14 @@
     <ProjectReference Include="FMODUnityResonanceEditor.csproj">
       <Project>{9C83E2B6-F380-8C45-ECFC-7C5C222C8DD5}</Project>
       <Name>FMODUnityResonanceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{0EA02750-1595-AC79-9304-558C34FB107A}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{BB5DCDFB-7D43-84A4-A5BF-A97296079877}</Project>
+      <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
