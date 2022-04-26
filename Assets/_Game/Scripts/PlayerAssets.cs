@@ -23,6 +23,8 @@ public class PlayerAssets : MonoBehaviour
                 return _domEzilaSpawn;
             case (int)SceneIndexer.SceneType.TutorialScene:
                 return _tutorialSpawn;
+            case (int)SceneIndexer.SceneType.LocationOneScene:
+                return _tutorialSpawn;
             default:
                 return new Vector3(0f, 2f, 0f);
         }
@@ -30,4 +32,5 @@ public class PlayerAssets : MonoBehaviour
 
     [SerializeField] private Vector3 _domEzilaSpawn;
     [SerializeField] private Vector3 _tutorialSpawn;
+    [SerializeField] private Vector3 _locationOneSceneName;
 }

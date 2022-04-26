@@ -17,6 +17,7 @@ public class SceneChanger : Interactable
             case SceneIndexer.SceneType.TutorialScene:
             case SceneIndexer.SceneType.LocationOneScene:
             case SceneIndexer.SceneType.DomEzila:
+            case SceneIndexer.SceneType.Jankyard:
                 if ((int)_sceneToLoad == SceneManager.GetActiveScene().buildIndex)
                     Debug.LogWarning("Can't move to the same location!");
                 else
