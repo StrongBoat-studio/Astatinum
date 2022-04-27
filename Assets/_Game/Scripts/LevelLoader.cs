@@ -17,11 +17,11 @@ public class LevelLoader : MonoBehaviour
     {
         //Play animation
         _transition.SetTrigger("Start");
-      
+
         //Wait for the animation to finish
         yield return new WaitForSeconds(_transitionTime);
 
         //Load scene
-        SceneManager.LoadScene(index);
+        SceneManager.LoadSceneAsync(index).completed += delegate{ GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(); };
     }
 }
