@@ -7,6 +7,7 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private Animator _transition;
     [SerializeField] private float _transitionTime;
+    public AsyncOperation loadAsyncAction { get; private set; }
 
     public void LoadNextLevel(int index)
     {
@@ -22,6 +23,7 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
 
         //Load scene
-        SceneManager.LoadSceneAsync(index).completed += delegate{ GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(); };
+        loadAsyncAction = SceneManager.LoadSceneAsync(index);
+        loadAsyncAction.completed += delegate { GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(); };
     }
 }

@@ -10,22 +10,27 @@ public class Player : MonoBehaviour
     [SerializeField] private int _inventorySize;
     private Inventory _inventory;
     public Inventory inventory { get => _inventory; }
-    [SerializeField] private UI_Inventory _uiInventory;
+    private UI_Inventory _uiInventory;
 
     private Journal _journal;
     public Journal journal { get => _journal; }
-    [SerializeField] private UI_Journal _uiJournal;
+    private UI_Journal _uiJournal;
     public event EventHandler onOpenJournal;
 
     private QuestSystem _questSystem;
     public QuestSystem questSystem { get => _questSystem; }
-    [SerializeField] private UI_QuestSystem _uiQuestSystem;
+    private UI_QuestSystem _uiQuestSystem;
 
     [SerializeField] private List<RecipeScriptableObject> _craftingRecipes;
     public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; }
 
     private void Awake()
     {
+        //Get UI references
+        _uiInventory = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Inventory>(true);
+        _uiJournal = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Journal>(true);
+        _uiQuestSystem = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_QuestSystem>(true);
+
         //Crate new inventory and reference it to UI
         _inventory = new Inventory(_inventorySize);
         _uiInventory.SetInventory(_inventory);

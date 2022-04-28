@@ -25,7 +25,7 @@ public class PlayerAssets : MonoBehaviour
                 return _tutorialSpawn;
             case (int)SceneIndexer.SceneType.LocationOneScene:
                 return _locationOneSceneName;
-            case (int)SceneIndexer.SceneType.Jankyard:
+            case (int)SceneIndexer.SceneType.Junkyard:
                 return _JankyardName;
             default:
                 return new Vector3(0f, 2f, 0f);

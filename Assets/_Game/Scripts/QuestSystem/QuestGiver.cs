@@ -6,23 +6,24 @@ using UnityEngine;
 //This script goes onto gameobject which is responsible for giving player given quest
 public class QuestGiver : Interactable
 {
-    [SerializeField] private QuestScriptableObject.QuestType questType;
-    [SerializeField] private int questID;
+    [SerializeField] private QuestScriptableObject quest;
+    bool questTaken = false;
 
     public override string GetInteractionDescription()
     {
-        return "Press F to take";
+        string description = _interactionDescription.Replace("key", GameManager.Instance.playerControls.Interactions.Interact.controls[0].name.ToUpper()).Replace("quest", quest.questTitle);
+        return description;
     }
 
     public override void Interact()
     {
-        if (questID >= 0)
+        if (!questTaken)
         {
             Player player = GameManager.Instance.player.GetComponent<Player>();
             PlayerInteraction playerInteraction = GameManager.Instance.player.GetComponent<PlayerInteraction>();
-            player.questSystem.AddQuest(QuestAssets.Instance.CreateQuest(questType, questID));
+            player.questSystem.AddQuest(QuestAssets.Instance.CreateQuest(quest.questType, quest.questID));
             playerInteraction.ForceRemoveInteraction();
-            questID = -1;
+            questTaken = true;
             if (gameObject.GetComponent<SphereCollider>().isTrigger)
             {
                 gameObject.GetComponent<SphereCollider>().enabled = false;

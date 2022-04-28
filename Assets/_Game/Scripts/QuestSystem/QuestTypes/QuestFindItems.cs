@@ -86,7 +86,7 @@ public class QuestFindItems : Quest
                 Inventory.InventorySlot slot = pinv.GetFirstInventorySlotWithItemOfItemData(qg.item);
                 if (!slot.IsEmpty())
                 {
-                    pinv.RemoveItem(slot.GetItem());
+                    //pinv.RemoveItem(slot.GetItem());
                 }
                 else
                 {

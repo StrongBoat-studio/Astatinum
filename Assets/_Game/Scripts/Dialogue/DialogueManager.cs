@@ -10,8 +10,7 @@ using System;
 
 public class DialogueManager : MonoBehaviour
 {
-    private static DialogueManager _instance;
-    public static DialogueManager Instance { get => _instance; }
+    public static DialogueManager Instance { get; private set; }
 
     [Header("Dialogue UI")]
     [SerializeField] private Transform _mainCanvas;
@@ -30,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null) _instance = this;
+        if (Instance == null) Instance = this;
         else Destroy(this);
 
         //If dialoge panel is not in mainCanvas, instanciate it
@@ -68,11 +67,11 @@ public class DialogueManager : MonoBehaviour
         _dialoguePanel.gameObject.SetActive(false);
 
         //Get choice button text references
-        _choicesText = new TextMeshProUGUI[_choices.Length];
+/*        _choicesText = new TextMeshProUGUI[_choices.Length];
         for (int i = 0; i < _choices.Length; i++)
         {
             _choicesText[i] = _choices[i].GetComponentInChildren<TextMeshProUGUI>();
-        }
+        }*/
 
         //Player controls
         GameManager.Instance.playerControls.Dialogue.AdvanceDialoge.performed += OnKeyAdvanceDialoge;
