@@ -20,20 +20,20 @@ public class PlayerAssets : MonoBehaviour
         switch(sceneIndex)
         {
             case (int)SceneIndexer.SceneType.DomEzila:
-                return _domEzilaSpawn;
+                return domEzilaSpawn;
             case (int)SceneIndexer.SceneType.TutorialScene:
-                return _tutorialSpawn;
+                return tutorialSpawn;
             case (int)SceneIndexer.SceneType.LocationOneScene:
-                return _locationOneSceneName;
+                return locationOneSceneSpawn;
             case (int)SceneIndexer.SceneType.Junkyard:
-                return _JankyardName;
+                return junkyardSpawn;
             default:
                 return new Vector3(0f, 2f, 0f);
         }
     }
 
-    [SerializeField] private Vector3 _domEzilaSpawn;
-    [SerializeField] private Vector3 _tutorialSpawn;
-    [SerializeField] private Vector3 _locationOneSceneName;
-    [SerializeField] private Vector3 _JankyardName;
+    public Vector3 domEzilaSpawn;
+    public Vector3 tutorialSpawn;
+    public Vector3 locationOneSceneSpawn;
+    public Vector3 junkyardSpawn;
 }

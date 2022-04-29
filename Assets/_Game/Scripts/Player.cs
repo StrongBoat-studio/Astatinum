@@ -26,6 +26,10 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        //Init player
+        if (GameManager.Instance.player != null) { }
+        else GameManager.Instance.player = transform;
+
         //Get UI references
         _uiInventory = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Inventory>(true);
         _uiJournal = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Journal>(true);
@@ -44,11 +48,12 @@ public class Player : MonoBehaviour
         _questSystem.SetPlayer(this);
 
         SceneManager.activeSceneChanged += OnSceneChanged;
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(SceneManager.GetActiveScene().buildIndex);   
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevel);   
     }
 
     private void OnSceneChanged(Scene arg0, Scene arg1)
     {
+        GameManager.Instance.currentLevel = arg1.buildIndex;
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(arg1.buildIndex);
     }
 

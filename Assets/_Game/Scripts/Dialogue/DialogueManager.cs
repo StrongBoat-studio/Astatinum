@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance { get; private set; }
 
     [Header("Dialogue UI")]
-    [SerializeField] private Transform _mainCanvas;
+    private Transform _mainCanvas;
     [SerializeField] private GameObject _dialoguePanelPrefab;
     private Transform _dialoguePanel;
     private TextMeshProUGUI _dialogueMessageText;
@@ -31,6 +31,14 @@ public class DialogueManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(this);
+
+        //Reference main canvas
+        if (_mainCanvas != null) { }
+        else
+        {
+            Debug.Log(GameManager.Instance.mainCanvas);
+            _mainCanvas = GameManager.Instance.mainCanvas;
+        }
 
         //If dialoge panel is not in mainCanvas, instanciate it
         if (_mainCanvas.Find(_dialoguePanelPrefab.name) == null)

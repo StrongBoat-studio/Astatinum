@@ -7,5 +7,7 @@ public class CanvasManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
+
+        GameManager.Instance.mainCanvas = transform;
     }
 }
