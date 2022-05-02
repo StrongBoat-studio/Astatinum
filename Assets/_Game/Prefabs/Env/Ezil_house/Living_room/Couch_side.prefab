@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7181548639835293893}
   - component: {fileID: 7181548639835293914}
   m_Layer: 0
-  m_Name: Couch_2
+  m_Name: Couch_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181548639835293915}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.2, y: 0.8, z: 7.4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7181548640501633301}
@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 1.6, z: 2}
-  m_Center: {x: 0, y: 0, z: 0.61}
+  m_Size: {x: 0.85, y: 1.6, z: 0.71}
+  m_Center: {x: -0.02, y: 0, z: 0}
 --- !u!1 &7181548640501633322
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,12 +116,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4efce315fd415ca4296384b51b8081f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41317765fda9c7b4485c8564dec7d64f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.03125, y: 0.75}
+  m_Size: {x: 0.875, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
