@@ -10,11 +10,10 @@ using System;
 
 public class DialogueManager : MonoBehaviour
 {
-    private static DialogueManager _instance;
-    public static DialogueManager Instance { get => _instance; }
+    public static DialogueManager Instance { get; private set; }
 
     [Header("Dialogue UI")]
-    [SerializeField] private Transform _mainCanvas;
+    private Transform _mainCanvas;
     [SerializeField] private GameObject _dialoguePanelPrefab;
     private Transform _dialoguePanel;
     private TextMeshProUGUI _dialogueMessageText;
@@ -30,8 +29,16 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null) _instance = this;
+        if (Instance == null) Instance = this;
         else Destroy(this);
+
+        //Reference main canvas
+        if (_mainCanvas != null) { }
+        else
+        {
+            Debug.Log(GameManager.Instance.mainCanvas);
+            _mainCanvas = GameManager.Instance.mainCanvas;
+        }
 
         //If dialoge panel is not in mainCanvas, instanciate it
         if (_mainCanvas.Find(_dialoguePanelPrefab.name) == null)
@@ -68,11 +75,11 @@ public class DialogueManager : MonoBehaviour
         _dialoguePanel.gameObject.SetActive(false);
 
         //Get choice button text references
-        _choicesText = new TextMeshProUGUI[_choices.Length];
+/*        _choicesText = new TextMeshProUGUI[_choices.Length];
         for (int i = 0; i < _choices.Length; i++)
         {
             _choicesText[i] = _choices[i].GetComponentInChildren<TextMeshProUGUI>();
-        }
+        }*/
 
         //Player controls
         GameManager.Instance.playerControls.Dialogue.AdvanceDialoge.performed += OnKeyAdvanceDialoge;

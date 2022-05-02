@@ -6,6 +6,7 @@ using System;
 public class Quest
 {
     public QuestScriptableObject questData;
+    private bool actionDone = false;
 
     public class QuestCompletedEventArgs
     {
@@ -22,7 +23,19 @@ public class Quest
     public virtual bool UpdateQuest() { return false; }
     public virtual List<string> QuestCompletionText() { return null; }
 
-    protected void QuestCanBeCompleted() { _canBeCompleted = true; }
+    protected void QuestCanBeCompleted() 
+    { 
+        _canBeCompleted = true;
+        if (questData.onCompletedAction != null)
+        {
+            if (!actionDone)
+            {
+                questData.onCompletedAction.Do();
+                actionDone = true;
+            }
+        }
+    }
+
     protected void QuestCannotBeCompleted() { _canBeCompleted = false; }
 
     public virtual bool CompleteQuest() { return false; }

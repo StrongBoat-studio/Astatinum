@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DomEzila.unity
     guid: c39e92c5150e68840887da23f9ad3c72
+  - enabled: 1
+    path: Assets/Scenes/Junkyard.unity
+    guid: 3b425fe216e29e74eb6e5636e4d4c171
   m_configObjects: {}

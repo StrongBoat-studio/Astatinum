@@ -96,8 +96,8 @@
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Controls\InputControlLayoutAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Devices\Commands\QuerySamplingFrequencyCommand.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Editor\Internal\AdvancedDropdown\AdvancedDropdownDataSource.cs" />
-    <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Devices\IInputUpdateCallbackReceiver.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Editor\Internal\AdvancedDropdown\AdvancedDropdownGUI.cs" />
+    <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Devices\IInputUpdateCallbackReceiver.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Events\InputEventPtr.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Controls\Processors\CompensateDirectionProcessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Actions\Composites\AxisComposite.cs" />
@@ -320,9 +320,9 @@
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Editor\Internal\GUIHelpers.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Plugins\XR\Devices\Oculus.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\InputSystem.cs" />
+    <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Editor\Debugger\InputDeviceDebuggerWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Utilities\StringHelpers.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Devices\Commands\RequestResetCommand.cs" />
-    <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Editor\Debugger\InputDeviceDebuggerWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Utilities\PrimitiveValue.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\InputSystemObject.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\Editor\InputParameterEditor.cs" />
@@ -581,6 +581,12 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>G:\Unity\Editors\2020.3.21f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -590,11 +596,8 @@
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.13.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.6.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>G:\Unity\Editors\2020.3.21f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

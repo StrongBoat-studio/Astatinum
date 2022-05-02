@@ -19,4 +19,6 @@ public class QuestScriptableObject : ScriptableObject
     public QuestType questType;
     public string questTitle;
     public string questDescription;
+    public bool autoComplete;
+    public QuestAction onCompletedAction;
 }

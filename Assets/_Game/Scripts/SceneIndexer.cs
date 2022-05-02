@@ -13,7 +13,8 @@ public class SceneIndexer : MonoBehaviour
         TutorialScene = 1,
         LocationOneScene = 5,
         DialogueScene = 4,
-        DomEzila = 6,    
+        DomEzila = 6,   
+        Junkyard = 7, 
     }
 
     public static SceneIndexer Instance { get; private set; }
@@ -47,6 +48,8 @@ public class SceneIndexer : MonoBehaviour
                 return _dialogueSceneName;
             case SceneType.DomEzila:
                 return _domEzilaName;
+            case SceneType.Junkyard:
+                return _jankyardName;
             default:
                 return "Invalid scene";
         }
@@ -60,5 +63,6 @@ public class SceneIndexer : MonoBehaviour
     private string _optionsMenuSceneName = "Options menu";
     private string _dialogueSceneName = "Dialogue scene";
     private string _domEzilaName = "Dom Ezila";
+    private string _jankyardName = "Jankyard";
 
 }
