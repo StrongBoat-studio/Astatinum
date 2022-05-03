@@ -15,3 +15,4 @@ MonoBehaviour:
   itemType: 10
   itemName: Mar3k
   itemSprite: {fileID: 21300000, guid: ffb06900c5de1a543b7e0622293ca147, type: 3}
+  itemUseAction: {fileID: 11400000, guid: 0bda2b2c31cb120409e7b578794f7721, type: 2}
