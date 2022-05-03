@@ -10,4 +10,5 @@ public class ItemData : ScriptableObject
     public Item.ItemType itemType;
     public string itemName;
     public Sprite itemSprite;
+    public ItemUseAction itemUseAction;
 }
