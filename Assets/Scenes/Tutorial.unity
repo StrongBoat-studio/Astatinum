@@ -962,6 +962,8 @@ GameObject:
   m_Component:
   - component: {fileID: 575037419}
   - component: {fileID: 575037420}
+  - component: {fileID: 575037422}
+  - component: {fileID: 575037421}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -1034,6 +1036,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &575037421
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575037418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.11
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &575037422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575037418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDescription: '[key]'
+  _name: "Rega\u0142"
+  _dialogue: {fileID: 4900000, guid: 508ff7c76c6460841acb87a9d5d9e7a0, type: 3}
 --- !u!4 &585331971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8975208130652015492, guid: 04f9efbcb722b6d489ed8848cac91c19, type: 3}
@@ -1749,6 +1779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialoguePanelPrefab: {fileID: 6601198901150457636, guid: f3c199a3222afd7429a1e4cafd5941bf, type: 3}
+  _typeSpeed: 0.05
 --- !u!114 &1213112574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2872,7 +2903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377760012987522990, guid: 25adb1ee6aee2e3479b97ce223f2f073, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1377760012987522990, guid: 25adb1ee6aee2e3479b97ce223f2f073, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2880,7 +2911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377760012987522990, guid: 25adb1ee6aee2e3479b97ce223f2f073, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1377760012987522990, guid: 25adb1ee6aee2e3479b97ce223f2f073, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2888,7 +2919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377760012987522990, guid: 25adb1ee6aee2e3479b97ce223f2f073, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1377760012987522990, guid: 25adb1ee6aee2e3479b97ce223f2f073, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3132,7 +3163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067673519071339615, guid: 90887ed18e5268f4bba1a7398de8ee82, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90887ed18e5268f4bba1a7398de8ee82, type: 3}

@@ -20,7 +20,8 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI _dialogueNameText;
     private GameObject[] _choices;
     private TextMeshProUGUI[] _choicesText;
-    private float _typeSpeed = 0.05f;
+    [SerializeField] private float _typeSpeed = 0.05f;
+    private float _currentTypeSpeed;
 
     private Story _currentStory;
     private bool _dialogueIsPlaying;
@@ -31,6 +32,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(this);
+
+        _currentTypeSpeed = _typeSpeed;
 
         //Reference main canvas
         if (_mainCanvas != null) { }
@@ -75,11 +78,11 @@ public class DialogueManager : MonoBehaviour
         _dialoguePanel.gameObject.SetActive(false);
 
         //Get choice button text references
-/*        _choicesText = new TextMeshProUGUI[_choices.Length];
+        _choicesText = new TextMeshProUGUI[_choices.Length];
         for (int i = 0; i < _choices.Length; i++)
         {
             _choicesText[i] = _choices[i].GetComponentInChildren<TextMeshProUGUI>();
-        }*/
+        }
 
         //Player controls
         GameManager.Instance.playerControls.Dialogue.AdvanceDialoge.performed += OnKeyAdvanceDialoge;
@@ -88,6 +91,7 @@ public class DialogueManager : MonoBehaviour
     private void OnKeyAdvanceDialoge(InputAction.CallbackContext obj)
     {
         if (!_dialogueIsPlaying) return;
+        else _currentTypeSpeed = 0f;
         if (_isTyping) return;
         if (!_canAdvance) return;
 
@@ -117,6 +121,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
+        _currentTypeSpeed = _typeSpeed;
         if (_currentStory.canContinue)
         {
             StartCoroutine(TypeMessage(_currentStory.Continue()));
@@ -140,7 +145,7 @@ public class DialogueManager : MonoBehaviour
         foreach(char c in msg)
         {
             _dialogueMessageText.text += c;
-            yield return new WaitForSecondsRealtime(_typeSpeed);
+            yield return new WaitForSecondsRealtime(_currentTypeSpeed);
         }
         DisplayChoices();
         _isTyping = false;
