@@ -217,6 +217,22 @@ public class DialogueManager : MonoBehaviour
                             break;
                     }
                     break;
+                case "event":
+                    string eventType = param.Split('=')[0];
+                    string eventParam = param.Split('=')[1];
+                    switch(eventType)
+                    {
+                        case "giveitem":
+                            foreach(ItemData itemData in ItemAssets.Instance.itemsData)
+                            {
+                                if(itemData.itemType.ToString() == eventParam)
+                                {
+                                    GameManager.Instance.player.GetComponent<Player>().inventory.AddItem(new Item { itemData = itemData });
+                                }
+                            }
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }
