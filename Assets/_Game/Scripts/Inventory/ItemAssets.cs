@@ -20,4 +20,6 @@ public class ItemAssets : MonoBehaviour
     }
 
     public GameObject worldItemPrefab;
+
+    public List<ItemData> itemsData;
 }

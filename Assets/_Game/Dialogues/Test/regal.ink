@@ -20,7 +20,7 @@ Ernest Hemingway "Stary człowiek i morze". Hmm... być może dlatego, że sam j
     Ale przyjemnie ci było zabić dentusa - pomyślał. - Żywi on się żywymi rybami, tak jak ty. Nie jest jakimś padlinożercą czy po prostu ruchomym apetytem jak niektóre rekiny. Jest piękny, szlachetny i nie zna strachu przed niczym.
     \- Zabiłem go w samoobronie - powiedział. - I zabiłem dobrze.
     A zresztą - pomyślał - wszystko w jakiś sposób zabija wszystko inne. Łowienie ryb zabija mnie dokładnie tak samo, jak utrzymuje przy życiu. Ale chłopiec pomaga mi wyżyć. Nie powinienem zanadto się łudzić."
-    \*Coś wypadło z książki\*
+    \*Coś wypadło z książki\* #event:giveitem=Key
     Stary, brudny klucz. Może do czegoś się przyda. #name:Asta
     ->END
     

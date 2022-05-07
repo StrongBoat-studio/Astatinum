@@ -1735,6 +1735,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemPrefab: {fileID: 730990306962326294, guid: 15014121e2faa2942bcbc6a2fcbd343b, type: 3}
+  itemsData:
+  - {fileID: 11400000, guid: 3b0e6d99f5c29d84ca1a1fe2a5b3daca, type: 2}
+  - {fileID: 11400000, guid: ffe00bba57bd74e47bc726278e84b239, type: 2}
+  - {fileID: 11400000, guid: e21a432a43101fc4fb959135599cd09f, type: 2}
+  - {fileID: 11400000, guid: e507078c4d5d94247871f923981ee2c4, type: 2}
+  - {fileID: 11400000, guid: 14d9691aec718af4ab49ae6afc8435a3, type: 2}
+  - {fileID: 11400000, guid: fdf7fa6b2e52518469bef40492737641, type: 2}
+  - {fileID: 11400000, guid: a943951f28a83f149831226928923be3, type: 2}
+  - {fileID: 11400000, guid: 2e045e87c54deb9489c23f8d139801b8, type: 2}
+  - {fileID: 11400000, guid: 800e52a9e62131349aec490ad807417a, type: 2}
+  - {fileID: 11400000, guid: 8470560377937044fb26705b209bc82b, type: 2}
+  - {fileID: 11400000, guid: 6c56ee45615df68478dc9262e75ae7d1, type: 2}
 --- !u!4 &1213112571
 Transform:
   m_ObjectHideFlags: 0
