@@ -1859,6 +1859,7 @@ MonoBehaviour:
   tutorialSpawn: {x: -37, y: 0.35, z: 8.3}
   locationOneSceneSpawn: {x: -13.5, y: 2.85, z: -15.73}
   junkyardSpawn: {x: 0.94, y: 0.34, z: -5.29}
+  astaroomSpawn: {x: -40, y: 0.35, z: 8}
 --- !u!4 &1215383551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5345055794413275006, guid: 15014121e2faa2942bcbc6a2fcbd343b, type: 3}

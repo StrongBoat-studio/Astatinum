@@ -27,6 +27,8 @@ public class PlayerAssets : MonoBehaviour
                 return locationOneSceneSpawn;
             case (int)SceneIndexer.SceneType.Junkyard:
                 return junkyardSpawn;
+            case (int)SceneIndexer.SceneType.AstaRoom:
+                return astaroomSpawn;
             default:
                 return new Vector3(0f, 2f, 0f);
         }
@@ -36,4 +38,5 @@ public class PlayerAssets : MonoBehaviour
     public Vector3 tutorialSpawn;
     public Vector3 locationOneSceneSpawn;
     public Vector3 junkyardSpawn;
+    public Vector3 astaroomSpawn;
 }

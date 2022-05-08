@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Junkyard.unity
     guid: 3b425fe216e29e74eb6e5636e4d4c171
+  - enabled: 1
+    path: Assets/Scenes/Asta_room.unity
+    guid: 31196ada1eb847e4e93cf56821de8f93
   m_configObjects: {}
