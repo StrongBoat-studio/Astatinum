@@ -36,7 +36,7 @@ public class WorldNote : Interactable
         if (GameManager.Instance.player.GetComponent<Player>().TakeWorldNote(_note))
         {
             _isTaken = true;
-            GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction();
+            GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
         }
     }
 }

@@ -22,7 +22,7 @@ public class QuestGiver : Interactable
             Player player = GameManager.Instance.player.GetComponent<Player>();
             PlayerInteraction playerInteraction = GameManager.Instance.player.GetComponent<PlayerInteraction>();
             player.questSystem.AddQuest(QuestAssets.Instance.CreateQuest(quest.questType, quest.questID));
-            playerInteraction.ForceRemoveInteraction();
+            playerInteraction.ForceRemoveInteraction(GetComponent<Interactable>());
             questTaken = true;
             if (gameObject.GetComponent<SphereCollider>().isTrigger)
             {
