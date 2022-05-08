@@ -58,4 +58,9 @@ public class Movement : MonoBehaviour
             _Check = false;
         }
     }
+
+    public float GetMovementSpeed()
+    {
+        return _Speed;
+    }
 }
