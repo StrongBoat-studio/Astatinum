@@ -23,7 +23,7 @@ public class QuestTarger : Interactable
             {
                 if (quest.CompleteQuest())
                 {
-                    playerInteraction.ForceRemoveInteraction();
+                    playerInteraction.ForceRemoveInteraction(GetComponent<Interactable>());
                     if (gameObject.GetComponent<SphereCollider>().isTrigger)
                     {
                         gameObject.GetComponent<SphereCollider>().enabled = false;

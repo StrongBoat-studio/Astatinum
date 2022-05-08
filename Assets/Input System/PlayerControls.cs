@@ -224,6 +224,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChooseInteraction"",
+                    ""type"": ""Value"",
+                    ""id"": ""d3fa9ca2-e16a-45b3-bd73-927906c06b54"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -235,6 +243,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""K&M"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""77d96ca0-90ff-4a55-9c1e-2ecdd4a93f73"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseInteraction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -273,6 +292,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Interactions
         m_Interactions = asset.FindActionMap("Interactions", throwIfNotFound: true);
         m_Interactions_Interact = m_Interactions.FindAction("Interact", throwIfNotFound: true);
+        m_Interactions_ChooseInteraction = m_Interactions.FindAction("ChooseInteraction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -430,11 +450,13 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Interactions;
     private IInteractionsActions m_InteractionsActionsCallbackInterface;
     private readonly InputAction m_Interactions_Interact;
+    private readonly InputAction m_Interactions_ChooseInteraction;
     public struct InteractionsActions
     {
         private @PlayerControls m_Wrapper;
         public InteractionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Interact => m_Wrapper.m_Interactions_Interact;
+        public InputAction @ChooseInteraction => m_Wrapper.m_Interactions_ChooseInteraction;
         public InputActionMap Get() { return m_Wrapper.m_Interactions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -447,6 +469,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
+                @ChooseInteraction.started -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnChooseInteraction;
+                @ChooseInteraction.performed -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnChooseInteraction;
+                @ChooseInteraction.canceled -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnChooseInteraction;
             }
             m_Wrapper.m_InteractionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -454,6 +479,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @ChooseInteraction.started += instance.OnChooseInteraction;
+                @ChooseInteraction.performed += instance.OnChooseInteraction;
+                @ChooseInteraction.canceled += instance.OnChooseInteraction;
             }
         }
     }
@@ -483,5 +511,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IInteractionsActions
     {
         void OnInteract(InputAction.CallbackContext context);
+        void OnChooseInteraction(InputAction.CallbackContext context);
     }
 }

@@ -24,6 +24,6 @@ public class LevelLoader : MonoBehaviour
 
         //Load scene
         loadAsyncAction = SceneManager.LoadSceneAsync(index);
-        loadAsyncAction.completed += delegate { GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(); };
+        loadAsyncAction.completed += delegate { GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>()); };
     }
 }

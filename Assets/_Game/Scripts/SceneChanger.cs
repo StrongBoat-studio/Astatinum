@@ -25,6 +25,7 @@ public class SceneChanger : Interactable
                 {
                     //var scene = SceneManager.LoadSceneAsync((int)_sceneToLoad);
                     _levelLoader.LoadNextLevel((int)_sceneToLoad);
+                    GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
                 }
                 break;
             default:
