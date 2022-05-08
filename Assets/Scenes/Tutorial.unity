@@ -1660,16 +1660,6 @@ MonoBehaviour:
   locationOneSceneSpawn: {x: -13.5, y: 2.85, z: -15.73}
   junkyardSpawn: {x: 0.94, y: 0.34, z: -5.29}
   astaroomSpawn: {x: -40, y: 0.35, z: 8}
---- !u!4 &1215383551 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5345055794413275006, guid: 15014121e2faa2942bcbc6a2fcbd343b, type: 3}
-  m_PrefabInstance: {fileID: 1683640709}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1245216797 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5345055794413275006, guid: 15014121e2faa2942bcbc6a2fcbd343b, type: 3}
-  m_PrefabInstance: {fileID: 1665660710}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1359081434
 GameObject:
   m_ObjectHideFlags: 0
