@@ -1923,6 +1923,7 @@ GameObject:
   - component: {fileID: 1848728107}
   - component: {fileID: 1848728109}
   - component: {fileID: 1848728108}
+  - component: {fileID: 1848728110}
   m_Layer: 0
   m_Name: Workbench_c
   m_TagString: Untagged
@@ -1988,6 +1989,22 @@ MonoBehaviour:
   craftingUI: {fileID: 1865234372}
   _uiCrafting: {fileID: 402483941}
   _recipes: []
+--- !u!114 &1848728110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848728105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDescription: "Najci\u015Bnij [key], aby otworzy\u0107 szuflad\u0119"
+  _name: "St\xF3\u0142"
+  _dialogue: {fileID: 4900000, guid: bf3109942122f9346b2c43a3ec35d9cd, type: 3}
+  _interactCondition: hasitem:Key
 --- !u!1 &1865234371
 GameObject:
   m_ObjectHideFlags: 0
