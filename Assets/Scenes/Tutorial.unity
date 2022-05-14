@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1629,7 +1629,8 @@ MonoBehaviour:
   tutorialSpawn: {x: -37, y: 0.35, z: 8.3}
   locationOneSceneSpawn: {x: -13.5, y: 2.85, z: -15.73}
   junkyardSpawn: {x: 0.94, y: 0.34, z: -5.29}
-  astaroomSpawn: {x: -40, y: 0.5, z: 8}
+  astaroomSpawn: {x: -40, y: 0.35, z: 8}
+  bathroomSpawn: {x: -40, y: 0.35, z: 8}
 --- !u!1 &1359081434
 GameObject:
   m_ObjectHideFlags: 0

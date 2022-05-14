@@ -15,7 +15,8 @@ public class SceneIndexer : MonoBehaviour
         DialogueScene = 4,
         DomEzila = 6,   
         Junkyard = 7,
-        AstaRoom = 8,  
+        AstaRoom = 8,
+        Bathroom = 9,
     }
 
     public static SceneIndexer Instance { get; private set; }
@@ -53,6 +54,8 @@ public class SceneIndexer : MonoBehaviour
                 return _jankyardName;
             case SceneType.AstaRoom:
                 return _astaRoom;
+            case SceneType.Bathroom:
+                return _bathroom;
             default:
                 return "Invalid scene";
         }
@@ -68,5 +71,6 @@ public class SceneIndexer : MonoBehaviour
     private string _domEzilaName = "Dom Ezila";
     private string _jankyardName = "Jankyard";
     private string _astaRoom = "Asta Room";
+    private string _bathroom = "Bathroom";
 
 }

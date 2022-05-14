@@ -19,6 +19,7 @@ public class SceneChanger : Interactable
             case SceneIndexer.SceneType.DomEzila:
             case SceneIndexer.SceneType.Junkyard:
             case SceneIndexer.SceneType.AstaRoom:
+            case SceneIndexer.SceneType.Bathroom:
                 if ((int)_sceneToLoad == SceneManager.GetActiveScene().buildIndex)
                     Debug.LogWarning("Can't move to the same location!");
                 else
