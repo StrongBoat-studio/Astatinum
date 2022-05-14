@@ -22,7 +22,8 @@ public class Buttons : MonoBehaviour
 
     public void OnOpcjeClicked()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.OptionsMenu, LoadSceneMode.Additive);
+        //SceneManager.LoadScene(3);
     }
 
     public void OnDialogClicked()

@@ -13,23 +13,29 @@ public class Item
         Item2,
         Item3,
         Item4,
-        Item5
+        Key,
+        Mar3K_head,
+        Mar3K_arm_left,
+        Mar3K_arm_right,
+        Mar3K_body,
+        Mar3K_legs,
+        Mar3k
     }
 
-    public ItemScriptableObject itemScriptableObject;
+    public ItemData itemData;
 
     public Sprite GetItemSprite()
     {
-        return itemScriptableObject.itemSprite;
+        return itemData.itemSprite;
     }
 
     public string GetItemName()
     {
-        return itemScriptableObject.itemName;
+        return itemData.itemName;
     }
 
     public ItemType GetItemType()
     {
-        return itemScriptableObject.itemType;
+        return itemData.itemType;
     }
 }

@@ -16,7 +16,7 @@ public class WorldItem : Interactable
     {
         //Get key name from action map and replace 'key' with it
         //Get item name and replace 'item' with it
-        PlayerControls pc = new PlayerControls();
+        PlayerControls pc = GameManager.Instance.playerControls;
         string description = _interactionDescription.Replace("key", pc.Interactions.Interact.controls[0].name.ToUpper()).Replace("item", _item.GetItemName());
         return description;
     }
@@ -26,7 +26,7 @@ public class WorldItem : Interactable
         if (GameManager.Instance.player.GetComponent<Player>().TakeWorldItem(_item))
         {
             Destroy(gameObject);
-            GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction();
+            GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
         }
     }
 

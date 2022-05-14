@@ -54,10 +54,6 @@ public class UI_Inventory : MonoBehaviour, IItemHolder
                 uiItem.localPosition = uiItemSlotPosition;
                 uiItem.GetComponent<UI_Item>().SetItem(inventorySlot.GetItem());
                 uiItem.GetComponent<UI_Item>().SetSprite(inventorySlot.GetItem().GetItemSprite());
-                uiItem.GetComponent<Button>().onClick.AddListener(() => {
-                    Instantiate(ItemAssets.Instance.worldItemPrefab, GameManager.Instance.player.position, Quaternion.identity).GetComponent<WorldItem>().SetItem(item);
-                    _inventory.RemoveItem(item);
-                });
             }
 
             //Set onDropAction for slot

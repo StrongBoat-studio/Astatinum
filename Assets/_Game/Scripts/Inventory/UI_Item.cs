@@ -7,7 +7,7 @@ using System;
 
 //UI item
 //Class represents item displayed on UI
-public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerClickHandler
 {
     private Canvas _canvas;
     private CanvasGroup _canvasGroup;
@@ -49,6 +49,25 @@ public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IE
 
     public void OnPointerDown(PointerEventData eventData)
     {
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //Check if item has been clicked with rmb or lmb
+        if(eventData.button == PointerEventData.InputButton.Left)
+        {
+            //lmb = use item if item has a use action assigned
+            if(_item.itemData.itemUseAction != null)
+                _item.itemData.itemUseAction.Do(_item);
+        }
+        else if(eventData.button == PointerEventData.InputButton.Right)
+        {
+            //rmb = drop item if it can be removed (spawn item prefab and remove from inventory)
+            if(GameManager.Instance.player.GetComponent<Player>().inventory.RemoveItem(_item))
+            {
+                Instantiate(ItemAssets.Instance.worldItemPrefab, GameManager.Instance.player.position, Quaternion.identity).GetComponent<WorldItem>().SetItem(_item);
+            }
+        }
     }
 
     public Item GetItem()

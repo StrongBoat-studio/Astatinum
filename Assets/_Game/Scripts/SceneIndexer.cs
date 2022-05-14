@@ -13,14 +13,16 @@ public class SceneIndexer : MonoBehaviour
         TutorialScene = 1,
         LocationOneScene = 5,
         DialogueScene = 4,
-        DomEzila=6,    
+        DomEzila = 6,   
+        Junkyard = 7,
+        AstaRoom = 8,  
     }
 
     public static SceneIndexer Instance { get; private set; }
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -29,7 +31,7 @@ public class SceneIndexer : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public static string GetSceneNameByType(SceneType type)
+    public string GetSceneNameByType(SceneType type)
     {
         switch(type)
         {
@@ -45,17 +47,26 @@ public class SceneIndexer : MonoBehaviour
                 return _locationOneSceneName;
             case SceneType.DialogueScene:
                 return _dialogueSceneName;
+            case SceneType.DomEzila:
+                return _domEzilaName;
+            case SceneType.Junkyard:
+                return _jankyardName;
+            case SceneType.AstaRoom:
+                return _astaRoom;
             default:
                 return "Invalid scene";
         }
     }
 
     //Location names
-    private static string _tutorialSceneName = "Tutorial location";
-    private static string _locationOneSceneName = "Location one";
-    private static string _mainMenuSceneName = "Main menu";
-    private static string _authorsMenuSceneName = "Authors";
-    private static string _optionsMenuSceneName = "Options menu";
-    private static string _dialogueSceneName = "Dialogue scene";
+    private string _tutorialSceneName = "Tutorial location";
+    private string _locationOneSceneName = "Location one";
+    private string _mainMenuSceneName = "Main menu";
+    private string _authorsMenuSceneName = "Authors";
+    private string _optionsMenuSceneName = "Options menu";
+    private string _dialogueSceneName = "Dialogue scene";
+    private string _domEzilaName = "Dom Ezila";
+    private string _jankyardName = "Jankyard";
+    private string _astaRoom = "Asta Room";
 
 }
