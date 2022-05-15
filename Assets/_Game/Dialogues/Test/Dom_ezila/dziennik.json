@@ -1,1 +1,1 @@
-﻿{"inkVersion":20,"root":[[{"->":"dziennik"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"dziennik":["^O! Tu jesteś! Teraz mogę iść na złomowisko. ",{"#":"name:Asta"},"\n","end",{"#f":1}],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":20,"root":[[{"->":"dziennik"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"dziennik":["^O! Tu jesteś! Teraz mogę iść na złomowisko. ",{"#":"name:Asta"},{"#":"event:unlockjournal=true"},"\n","end",{"#f":1}],"#f":1}],"listDefs":{}}

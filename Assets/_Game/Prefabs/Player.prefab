@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabb984f139adb941a94e3ef795dd1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventorySize: 5
+  _inventorySize: 6
   _craftingRecipes:
   - {fileID: 11400000, guid: bcb12a5fd3933314eb8ffbf3f1f94f41, type: 2}
   - {fileID: 11400000, guid: 15b61b60ee6115a499899c5a360a5bd6, type: 2}

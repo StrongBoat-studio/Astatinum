@@ -231,6 +231,9 @@ public class DialogueManager : MonoBehaviour
                                 }
                             }
                             break;
+                        case "unlockjournal":
+                            GameManager.Instance.player.GetComponent<Player>().UnlockJournal();
+                            break;
                     }
                     break;
                 default:

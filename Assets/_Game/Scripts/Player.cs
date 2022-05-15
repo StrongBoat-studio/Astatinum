@@ -39,9 +39,9 @@ public class Player : MonoBehaviour
         _inventory = new Inventory(_inventorySize);
         _uiInventory.SetInventory(_inventory);
 
-        _journal = new Journal();
-        _uiJournal.SetJournal(_journal);
-        GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
+        //_journal = new Journal();
+        //_uiJournal.SetJournal(_journal);
+        //GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
 
         _questSystem = new QuestSystem();
         _uiQuestSystem.SetQuestSystem(_questSystem);
@@ -84,5 +84,12 @@ public class Player : MonoBehaviour
     public bool TakeWorldNote(Note note)
     {
         return _journal.AddPost(note);
+    }
+
+    public void UnlockJournal()
+    {
+        _journal = new Journal();
+        _uiJournal.SetJournal(_journal);
+        GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
     }
 }

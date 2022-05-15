@@ -31,16 +31,13 @@ public class PlayerInteraction : MonoBehaviour
         //Save reference to objects
         if (other.GetComponent<Interactable>() != null)
         {
-            bool canAdd = true;
-
-            foreach (Interactable i in _interactables)
+            Interactable[] allInteractables = other.GetComponents<Interactable>();
+            foreach (Interactable interactable in allInteractables)
             {
-                if (i == other.GetComponent<Interactable>()) canAdd = false;
-            }
+                foreach (Interactable i in _interactables)
+                    if (_interactables.Contains(i)) continue;
 
-            if (canAdd)
-            {
-                _interactables.Add(other.GetComponent<Interactable>());
+                _interactables.Add(interactable);
                 RefreshUI();
             }
         }
@@ -53,13 +50,17 @@ public class PlayerInteraction : MonoBehaviour
         //disable interaction hint text
         if (other.GetComponent<Interactable>() != null)
         {
-            foreach (Interactable i in _interactables)
+            Interactable[] allInteractables = other.GetComponents<Interactable>();
+            foreach (Interactable interactable in allInteractables)
             {
-                if (i == other.GetComponent<Interactable>())
+                foreach (Interactable i in _interactables)
                 {
-                    _interactables.Remove(i);
-                    RefreshUI();
-                    break;
+                    if (_interactables.Contains(i))
+                    {
+                        _interactables.Remove(i);
+                        RefreshUI();
+                        break;
+                    }
                 }
             }
         }
@@ -119,7 +120,17 @@ public class PlayerInteraction : MonoBehaviour
 
     public void ForceRemoveInteraction(Interactable interaction)
     {
+        //Fix pointer after remove
         _interactables.Remove(interaction);
+        _currentInteraction = 0;
+        RefreshUI();
+    }
+
+    public void ForceRemoveAllInteraction()
+    {
+        //Fix pointer after remove
+        _interactables.Clear();
+        _currentInteraction = 0;
         RefreshUI();
     }
 }
