@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class OptionsMenu : MonoBehaviour
 
     private void Start()
     {
+        //Scene load
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         //Resolution
         _resolutions = Screen.resolutions;
         _resolutionsDropdown.ClearOptions();
@@ -59,6 +63,16 @@ public class OptionsMenu : MonoBehaviour
         _vcaMaster = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMasterName);
         _vcaMusic = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMusicName);
         _vcaSFX = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaSFXName);
+        _masterAudioSlider.value = _saveOptions.masterVolume;
+        _musicAudioSlider.value = _saveOptions.musicVolume;
+        _sfxAudioSlider.value = _saveOptions.sfxVolume;
+    }
+
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        //Refresh options' values when scene is loaded
+        _resolutionsDropdown.RefreshShownValue();
+        _qualityDropdown.RefreshShownValue();
         _masterAudioSlider.value = _saveOptions.masterVolume;
         _musicAudioSlider.value = _saveOptions.musicVolume;
         _sfxAudioSlider.value = _saveOptions.sfxVolume;
