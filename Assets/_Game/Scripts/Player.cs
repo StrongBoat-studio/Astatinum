@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
         _questSystem = new QuestSystem();
         _uiQuestSystem.SetQuestSystem(_questSystem);
         _questSystem.SetPlayer(this);
+        _questSystem.SetInventoryEvent(_inventory);
 
         SceneManager.activeSceneChanged += OnSceneChanged;
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevel);   
@@ -91,5 +92,6 @@ public class Player : MonoBehaviour
         _journal = new Journal();
         _uiJournal.SetJournal(_journal);
         GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
+        _questSystem.SetJournalEvent(_journal);
     }
 }
