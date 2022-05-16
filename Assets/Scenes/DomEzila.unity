@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -662,8 +662,7 @@ MonoBehaviour:
   _interactionDescription: Press [key] to read the dialogue
   _name: Table
   _dialogue: {fileID: 4900000, guid: 45ffa69a1e70c0446860a1484eda1ecc, type: 3}
-  _id: 
-  _unlocked: 1
+  _interactCondition: 
 --- !u!135 &514692628
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1089,8 +1088,7 @@ MonoBehaviour:
   _interactionDescription: Press [key] to read the dialogue
   _name: Fridge
   _dialogue: {fileID: 4900000, guid: cdcc79a64c9e0874a965a44f1979b3b4, type: 3}
-  _id: 
-  _unlocked: 1
+  _interactCondition: 
 --- !u!135 &788204483
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1919,8 +1917,7 @@ MonoBehaviour:
   _interactionDescription: Press [key] to read the dialogue
   _name: Mirror
   _dialogue: {fileID: 4900000, guid: c97f0f264974f934b9c633e28ca3763e, type: 3}
-  _id: 
-  _unlocked: 0
+  _interactCondition: 
 --- !u!135 &1209267332
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2619,6 +2616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8362374103234971747, guid: 1900dbf55ee5a8f4fab04f3e7ab006aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60348ca3c7b1ff54bae3e9794d223af8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1900dbf55ee5a8f4fab04f3e7ab006aa, type: 3}
 --- !u!4 &1720937099 stripped
