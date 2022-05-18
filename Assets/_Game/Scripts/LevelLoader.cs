@@ -23,7 +23,9 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
 
         //Load scene
-        loadAsyncAction = SceneManager.LoadSceneAsync(index);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        loadAsyncAction = SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
         GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteraction();
+        GameManager.Instance.currentLevel = index;
     }
 }

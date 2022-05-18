@@ -17,12 +17,21 @@ public class CanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
 
         GameManager.Instance.mainCanvas = transform;
         GameManager.Instance.playerControls.Menu.PauseMenu.performed += OnMenuPause;
 
+        _pauseMenu = transform.Find("PauseMenu").GetComponent<RectTransform>();
+
         SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnDestroy()
+    {
+        //Unsubscribe events
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        GameManager.Instance.playerControls.Menu.PauseMenu.performed -= OnMenuPause;
     }
 
     private void OnSceneUnloaded(Scene arg0)
@@ -79,6 +88,7 @@ public class CanvasManager : MonoBehaviour
     {
         //Pause game - disable playercontrolls, show pause menu overlay, stop time
         gamePaused = true;
+        Debug.Log(_pauseMenu.name);
         _pauseMenu.gameObject.SetActive(true);
         Time.timeScale = 0f;
         GameManager.Instance.playerControls.Player.Disable();
@@ -113,6 +123,9 @@ public class CanvasManager : MonoBehaviour
 
     public void PauseMenuExit()
     {
+        //Resume game
+        ResumeGame();
+
         //Load menu scene
         SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.MainMenu);
     }

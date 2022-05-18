@@ -16,7 +16,7 @@ public class ItemAssets : MonoBehaviour
         }
         else Destroy(this);
 
-        DontDestroyOnLoad(this);
+        //ontDestroyOnLoad(this);
     }
 
     public GameObject worldItemPrefab;

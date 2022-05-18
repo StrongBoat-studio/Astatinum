@@ -14,7 +14,7 @@ public class DialogueAssets : MonoBehaviour
         }
         else Destroy(this);
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     [Header("Tutorial/Warsztat")]
