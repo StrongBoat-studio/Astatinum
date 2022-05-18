@@ -22,6 +22,12 @@ public class PlayerInteraction : MonoBehaviour
 
         GameManager.Instance.playerControls.Interactions.Interact.started += On_InteractStarted;
         GameManager.Instance.playerControls.Interactions.ChooseInteraction.started += On_ChooseInteractionStarted;
+
+        _interactable = null;
+        _interactables = new List<Interactable>();
+        _currentInteraction = 0;
+
+        RefreshUI();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -64,6 +70,12 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.playerControls.Interactions.Interact.started -= On_InteractStarted;
+        GameManager.Instance.playerControls.Interactions.ChooseInteraction.started -= On_ChooseInteractionStarted;
     }
 
     private void RefreshUI()

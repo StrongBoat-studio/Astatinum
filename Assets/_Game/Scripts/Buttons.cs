@@ -7,7 +7,8 @@ public class Buttons : MonoBehaviour
 {
    public void OnStartClicked ()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive);
     }
 
     public void OnAutorClicked()

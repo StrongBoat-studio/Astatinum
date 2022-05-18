@@ -12,11 +12,12 @@ public class Mar3K : MonoBehaviour
     {
         //Get referene to player
         _player = GameManager.Instance.player;
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByBuildIndex((int)SceneIndexer.SceneType.PlayerObjects));
 
         //Scene chanaged event
-        SceneManager.activeSceneChanged += OnSceneChange;
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     private void Start() 
@@ -34,9 +35,8 @@ public class Mar3K : MonoBehaviour
         transform.position = Vector3.MoveTowards(_player.position, transform.position, 1f);
     }
 
-    private void OnSceneChange(Scene arg0, Scene arg1)
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        //Set Mar3K's position to spawn location of loaded scene
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(arg1.buildIndex);
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevel);
     }
 }

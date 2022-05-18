@@ -17,8 +17,6 @@ public class Movement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         GameManager.Instance.playerControls.Player.Jump.performed += Jump;
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void FixedUpdate()

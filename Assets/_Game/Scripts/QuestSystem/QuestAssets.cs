@@ -15,7 +15,7 @@ public class QuestAssets : MonoBehaviour
         }
         else Destroy(this);
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     public List<QuestScriptableObject> questFindItems;

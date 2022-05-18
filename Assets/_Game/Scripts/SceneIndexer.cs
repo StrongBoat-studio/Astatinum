@@ -17,6 +17,7 @@ public class SceneIndexer : MonoBehaviour
         Junkyard = 7,
         AstaRoom = 8,
         Bathroom = 9,
+        PlayerObjects = 10
     }
 
     public static SceneIndexer Instance { get; private set; }
@@ -29,7 +30,7 @@ public class SceneIndexer : MonoBehaviour
         }
         else Destroy(this);
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     public string GetSceneNameByType(SceneType type)
