@@ -49,14 +49,14 @@ public class Player : MonoBehaviour
 
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevel);   
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);   
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
         //GameManager.Instance.currentLevel = arg0.buildIndex;
         //transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(arg0.buildIndex);
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevel);
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void Update()

@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
 
         //DontDestroyOnLoad(this);
 
-        currentLevel = SceneManager.GetActiveScene().buildIndex;
+        //currentLevel = SceneManager.GetActiveScene().buildIndex;
+        currentLevelSceneIndex = (int)SceneIndexer.SceneType.TutorialScene;
 
         playerControls = new PlayerControls();
         playerControls.Enable();
@@ -54,4 +55,5 @@ public class GameManager : MonoBehaviour
     public Transform mainCanvas;
     public Transform mainCanvasPrefab;
     public int currentLevel;
+    public int currentLevelSceneIndex;
 }
