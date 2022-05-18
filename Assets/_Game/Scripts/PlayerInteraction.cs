@@ -72,6 +72,12 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.playerControls.Interactions.Interact.started -= On_InteractStarted;
+        GameManager.Instance.playerControls.Interactions.ChooseInteraction.started -= On_ChooseInteractionStarted;
+    }
+
     private void RefreshUI()
     { 
         //If there are no interaction distable whole UI
