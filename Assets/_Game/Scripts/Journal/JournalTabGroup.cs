@@ -24,7 +24,7 @@ public class JournalTabGroup : MonoBehaviour
         ResetTabs();
         if (_tabButtonSelected == null || button != _tabButtonSelected)
         {
-            button.background.sprite = _tabHover;
+            //button.background.sprite = _tabHover;
         }
     }
 
@@ -37,18 +37,18 @@ public class JournalTabGroup : MonoBehaviour
     {
         _tabButtonSelected = button;
         ResetTabs();
-        button.background.sprite = _tabSelected;
+        //button.background.sprite = _tabSelected;
 
-        foreach(Transform page in _tabPages)
+        /*foreach(Transform page in _tabPages)
         {
             if(page.GetSiblingIndex() == button.transform.GetSiblingIndex()) page.gameObject.SetActive(true);
             else page.gameObject.SetActive(false);
-        }
+        }*/
     }
 
     private void ResetTabs()
     {
-        foreach(JournalTabButton button in _tabButtons)
+        /*foreach(JournalTabButton button in _tabButtons)
         {
             if (_tabButtonSelected != null && button == _tabButtonSelected)
             {
@@ -56,6 +56,6 @@ public class JournalTabGroup : MonoBehaviour
             }
 
             button.background.sprite = _tabNormal;
-        }
+        }*/
     }
 }

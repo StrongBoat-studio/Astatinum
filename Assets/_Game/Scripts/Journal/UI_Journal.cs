@@ -9,6 +9,9 @@ public class UI_Journal : MonoBehaviour
     [SerializeField] private Transform _tabPagesContainer;
     [SerializeField] private Transform _notePrefab;
 
+    [SerializeField] private Transform _tabs;
+    [SerializeField] private Transform _pages;
+
     public void SetJournal (Journal journal)
     {
         this.journal = journal;
@@ -21,7 +24,7 @@ public class UI_Journal : MonoBehaviour
         RefreshJournal();
     }
 
-    private void RefreshJournal()
+    /*private void RefreshJournal()
     {
         foreach (RectTransform page in _tabPagesContainer)
             foreach (RectTransform pageContainer in page)
@@ -39,6 +42,15 @@ public class UI_Journal : MonoBehaviour
             //noteSlotRect.localPosition = new Vector2(x, y);
             noteSlotRect.GetComponent<UI_Note>().SetNote(note);
             //y-=_notePrefab.GetComponent<RectTransform>().rect.height;
+        }
+    }*/
+
+    private void RefreshJournal()
+    {
+        foreach(Transform jpage in _pages)
+        {
+            if(jpage.GetComponent<JournalPageHisotry>() != null)
+                jpage.GetComponent<JournalPageHisotry>().RefreshPage();
         }
     }
 }

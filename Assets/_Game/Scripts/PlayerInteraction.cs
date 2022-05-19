@@ -89,7 +89,7 @@ public class PlayerInteraction : MonoBehaviour
         //If there are no interaction distable whole UI
         if(_interactables.Count == 0)
         {
-            GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(false);
+            GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(false);  
         }
         else
         {
