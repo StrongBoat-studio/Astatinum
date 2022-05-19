@@ -27,8 +27,16 @@ public class QuestSystem
     public void SetPlayer(Player player)
     {
         _player = player;
-        player.inventory.OnInventoryItemsChange += QuestChangedEvent;
-        player.journal.onAddNote += QuestChangedEvent;
+    }
+
+    public void SetInventoryEvent(Inventory inventory)
+    {
+        inventory.OnInventoryItemsChange += QuestChangedEvent;
+    }
+
+    public void SetJournalEvent(Journal journal)
+    {
+        journal.onAddNote += QuestChangedEvent;
     }
 
     private void QuestChangedEvent(object sender, EventArgs e)

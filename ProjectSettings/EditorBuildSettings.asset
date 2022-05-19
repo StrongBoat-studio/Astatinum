@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Asta_room.unity
     guid: 31196ada1eb847e4e93cf56821de8f93
+  - enabled: 1
+    path: Assets/Scenes/Bathroom.unity
+    guid: 922cb9e14a45a824c8a6274f62cd3e08
+  - enabled: 1
+    path: Assets/Scenes/PlayerObjects.unity
+    guid: b3f0ed0c200cc284dbf242a688d716a4
   m_configObjects: {}

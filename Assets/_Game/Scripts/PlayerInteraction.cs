@@ -12,16 +12,22 @@ public class PlayerInteraction : MonoBehaviour
     private RectTransform _interactionPointerUI;
     private int _currentInteraction = 0;
 
-    private Interactable _interactable = null;
+    //private Interactable _interactable = null;
     private List<Interactable> _interactables = new List<Interactable>();
 
     private void Start()
     {
+        //_interactable = null;
+        _interactables = new List<Interactable>();
+        _currentInteraction = 0;
+
         _interactionsText.AddRange(GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().GetComponentsInChildren<TextMeshProUGUI>());
         _interactionPointerUI = GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().Find("Pointer").GetComponent<RectTransform>();
 
         GameManager.Instance.playerControls.Interactions.Interact.started += On_InteractStarted;
         GameManager.Instance.playerControls.Interactions.ChooseInteraction.started += On_ChooseInteractionStarted;
+
+        RefreshUI();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,6 +72,18 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        //_interactable = null;
+        _interactables = new List<Interactable>();
+        _currentInteraction = 0;
+
+        GameManager.Instance.playerControls.Interactions.Interact.started -= On_InteractStarted;
+        GameManager.Instance.playerControls.Interactions.ChooseInteraction.started -= On_ChooseInteractionStarted;
+
+        RefreshUI();
+    }
+
     private void RefreshUI()
     { 
         //If there are no interaction distable whole UI
@@ -97,6 +115,10 @@ public class PlayerInteraction : MonoBehaviour
     public void On_InteractStarted(InputAction.CallbackContext context)
     {
         //Interaction hint button pressed
+
+        //Are there any interactions available?
+        if (_interactables.Count <= 0) return;
+
         if (_interactables[_currentInteraction] != null)
         {
             _interactables[_currentInteraction].Interact();

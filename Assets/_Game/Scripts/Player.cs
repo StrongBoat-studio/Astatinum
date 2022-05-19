@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        //DontDestroyOnLoad(this);
+
         //Init player
         if (GameManager.Instance.player != null) { }
         else GameManager.Instance.player = transform;
@@ -39,22 +41,22 @@ public class Player : MonoBehaviour
         _inventory = new Inventory(_inventorySize);
         _uiInventory.SetInventory(_inventory);
 
-        //_journal = new Journal();
-        //_uiJournal.SetJournal(_journal);
-        //GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
-
+        //Quest system
         _questSystem = new QuestSystem();
         _uiQuestSystem.SetQuestSystem(_questSystem);
         _questSystem.SetPlayer(this);
+        _questSystem.SetInventoryEvent(_inventory);
 
-        SceneManager.activeSceneChanged += OnSceneChanged;
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevel);   
+        //Scene change event
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);   
     }
 
-    private void OnSceneChanged(Scene arg0, Scene arg1)
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        GameManager.Instance.currentLevel = arg1.buildIndex;
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(arg1.buildIndex);
+        //GameManager.Instance.currentLevel = arg0.buildIndex;
+        //transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(arg0.buildIndex);
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void Update()
@@ -76,6 +78,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        //Unsubscribe events
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     public bool TakeWorldItem(Item item)
     {
         return _inventory.AddItem(item); 
@@ -91,5 +99,6 @@ public class Player : MonoBehaviour
         _journal = new Journal();
         _uiJournal.SetJournal(_journal);
         GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
+        _questSystem.SetJournalEvent(_journal);
     }
 }

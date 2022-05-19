@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,14 +16,15 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(this);
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
 
-        currentLevel = SceneManager.GetActiveScene().buildIndex;
+        //currentLevel = SceneManager.GetActiveScene().buildIndex;
+        currentLevelSceneIndex = (int)SceneIndexer.SceneType.TutorialScene;
 
         playerControls = new PlayerControls();
         playerControls.Enable();
 
-        if(mainCanvas == null)
+        /*if(mainCanvas == null)
         {
             if (GameObject.FindGameObjectWithTag("MainCanvas") == null)
             {
@@ -32,9 +34,9 @@ public class GameManager : MonoBehaviour
             {
                 mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").transform;
             }
-        }
+        }*/
 
-        if (player == null)
+        /*if (player == null)
         {
             if(FindObjectOfType<Player>() == null)
             {
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
             {
                 player = FindObjectOfType<Player>().transform;
             }
-        }
+        }*/
     }
 
     public Transform player;
@@ -53,4 +55,5 @@ public class GameManager : MonoBehaviour
     public Transform mainCanvas;
     public Transform mainCanvasPrefab;
     public int currentLevel;
+    public int currentLevelSceneIndex;
 }

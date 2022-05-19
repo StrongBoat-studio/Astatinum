@@ -22,8 +22,17 @@ public class LevelLoader : MonoBehaviour
         //Wait for the animation to finish
         yield return new WaitForSeconds(_transitionTime);
 
-        //Load scene
-        loadAsyncAction = SceneManager.LoadSceneAsync(index);
+        //Unload current level scene
+        SceneManager.UnloadSceneAsync(GameManager.Instance.currentLevelSceneIndex);
+
+        //Load new level scene
+        SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
+
+        //Update current level index
+        GameManager.Instance.currentLevelSceneIndex = index;
+
+        //Force remove interactions
         GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteraction();
+        
     }
 }
