@@ -19,6 +19,11 @@ public class UI_Journal : MonoBehaviour
         RefreshJournal();
     }
 
+    public Journal GetJournal()
+    {
+        return this.journal;
+    }
+
     private void Player_OnOpenJournal(object sender, EventArgs e)
     {
         RefreshJournal();
@@ -49,8 +54,8 @@ public class UI_Journal : MonoBehaviour
     {
         foreach(Transform jpage in _pages)
         {
-            if(jpage.GetComponent<JournalPageHisotry>() != null)
-                jpage.GetComponent<JournalPageHisotry>().RefreshPage();
+            if (jpage.GetChild(0).GetComponent<UI_JournalPageHistory>() != null)
+                jpage.GetChild(0).GetComponent<UI_JournalPageHistory>().Refresh();
         }
     }
 }

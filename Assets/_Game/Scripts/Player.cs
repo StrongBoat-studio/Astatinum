@@ -49,7 +49,10 @@ public class Player : MonoBehaviour
 
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);   
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+
+        //Debug
+        UnlockJournal();
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -64,6 +67,11 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha0))
         {
             _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[0] });
+            _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[1] });
+            _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[2] });
+            _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[3] });
+            _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[4] });
+            _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[5] });
         }
     }
 

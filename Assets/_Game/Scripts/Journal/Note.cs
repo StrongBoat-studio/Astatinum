@@ -8,7 +8,9 @@ public class Note
     public enum NoteType
     {
         History,
-        Life,
+        Items,
+        Characters,
+        Quests
     }
 
     public NoteScriptableObject _noteScriptableObject;

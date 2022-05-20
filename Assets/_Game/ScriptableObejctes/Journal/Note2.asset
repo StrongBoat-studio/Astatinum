@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54478b61c4d862f45890df8ee771219d, type: 3}
   m_Name: Note2
   m_EditorClassIdentifier: 
+  noteID: 1
   title: Notatka 2
-  text: "Przyk\u0142adowa notatka"
-  type: 1
+  text: 'Jeszcze fajniejsza notatka
+
+'
+  type: 0
