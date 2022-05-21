@@ -10,18 +10,18 @@ using System;
 
 public class DialogueManager : MonoBehaviour
 {
-    private static DialogueManager _instance;
-    public static DialogueManager Instance { get => _instance; }
+    public static DialogueManager Instance { get; private set; }
 
     [Header("Dialogue UI")]
-    [SerializeField] private Transform _mainCanvas;
+    private Transform _mainCanvas;
     [SerializeField] private GameObject _dialoguePanelPrefab;
     private Transform _dialoguePanel;
     private TextMeshProUGUI _dialogueMessageText;
     private TextMeshProUGUI _dialogueNameText;
     private GameObject[] _choices;
     private TextMeshProUGUI[] _choicesText;
-    private float _typeSpeed = 0.05f;
+    [SerializeField] private float _typeSpeed = 0.05f;
+    private float _currentTypeSpeed;
 
     private Story _currentStory;
     private bool _dialogueIsPlaying;
@@ -30,8 +30,18 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null) _instance = this;
+        if (Instance == null) Instance = this;
         else Destroy(this);
+
+        _currentTypeSpeed = _typeSpeed;
+
+        //Reference main canvas
+        if (_mainCanvas != null) { }
+        else
+        {
+            Debug.Log(GameManager.Instance.mainCanvas);
+            _mainCanvas = GameManager.Instance.mainCanvas;
+        }
 
         //If dialoge panel is not in mainCanvas, instanciate it
         if (_mainCanvas.Find(_dialoguePanelPrefab.name) == null)
@@ -81,6 +91,7 @@ public class DialogueManager : MonoBehaviour
     private void OnKeyAdvanceDialoge(InputAction.CallbackContext obj)
     {
         if (!_dialogueIsPlaying) return;
+        else _currentTypeSpeed = 0f;
         if (_isTyping) return;
         if (!_canAdvance) return;
 
@@ -110,6 +121,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
+        _currentTypeSpeed = _typeSpeed;
         if (_currentStory.canContinue)
         {
             StartCoroutine(TypeMessage(_currentStory.Continue()));
@@ -133,7 +145,7 @@ public class DialogueManager : MonoBehaviour
         foreach(char c in msg)
         {
             _dialogueMessageText.text += c;
-            yield return new WaitForSecondsRealtime(_typeSpeed);
+            yield return new WaitForSecondsRealtime(_currentTypeSpeed);
         }
         DisplayChoices();
         _isTyping = false;
@@ -202,6 +214,25 @@ public class DialogueManager : MonoBehaviour
                             break;
                         case "bold":
                             _dialogueMessageText.fontStyle |= FontStyles.Bold;
+                            break;
+                    }
+                    break;
+                case "event":
+                    string eventType = param.Split('=')[0];
+                    string eventParam = param.Split('=')[1];
+                    switch(eventType)
+                    {
+                        case "giveitem":
+                            foreach(ItemData itemData in ItemAssets.Instance.itemsData)
+                            {
+                                if(itemData.itemType.ToString() == eventParam)
+                                {
+                                    GameManager.Instance.player.GetComponent<Player>().inventory.AddItem(new Item { itemData = itemData });
+                                }
+                            }
+                            break;
+                        case "unlockjournal":
+                            GameManager.Instance.player.GetComponent<Player>().UnlockJournal();
                             break;
                     }
                     break;

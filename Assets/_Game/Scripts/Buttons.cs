@@ -7,7 +7,8 @@ public class Buttons : MonoBehaviour
 {
    public void OnStartClicked ()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive);
     }
 
     public void OnAutorClicked()
@@ -22,7 +23,8 @@ public class Buttons : MonoBehaviour
 
     public void OnOpcjeClicked()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.OptionsMenu, LoadSceneMode.Additive);
+        //SceneManager.LoadScene(3);
     }
 
     public void OnDialogClicked()

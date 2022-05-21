@@ -8,23 +8,25 @@ public class Note
     public enum NoteType
     {
         History,
-        Life,
+        Items,
+        Characters,
+        Quests
     }
 
-    public NoteScriptableObject _noteScriptableObject;
+    public NoteData _noteData;
     
     public string GetNoteTitle()
     {
-        return _noteScriptableObject.title;
+        return _noteData.title;
     }
 
     public string GetNoteText()
     {
-        return _noteScriptableObject.text;
+        return _noteData.text;
     }
 
     public NoteType GetNoteType()
     {
-        return _noteScriptableObject.type;
+        return _noteData.type;
     }
 }

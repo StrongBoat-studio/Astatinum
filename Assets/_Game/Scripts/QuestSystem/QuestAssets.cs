@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class QuestAssets : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class QuestAssets : MonoBehaviour
         }
         else Destroy(this);
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     public List<QuestScriptableObject> questFindItems;

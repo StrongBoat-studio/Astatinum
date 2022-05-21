@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private Animator _transition;
-    [SerializeField] private float _transitionTime;   
+    [SerializeField] private float _transitionTime;
+    public AsyncOperation loadAsyncAction { get; private set; }
 
     public void LoadNextLevel(int index)
     {
@@ -17,11 +18,21 @@ public class LevelLoader : MonoBehaviour
     {
         //Play animation
         _transition.SetTrigger("Start");
-      
+
         //Wait for the animation to finish
         yield return new WaitForSeconds(_transitionTime);
 
-        //Load scene
-        SceneManager.LoadScene(index);
+        //Unload current level scene
+        SceneManager.UnloadSceneAsync(GameManager.Instance.currentLevelSceneIndex);
+
+        //Load new level scene
+        SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
+
+        //Update current level index
+        GameManager.Instance.currentLevelSceneIndex = index;
+
+        //Force remove interactions
+        GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteraction();
+        
     }
 }

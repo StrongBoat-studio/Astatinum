@@ -3,47 +3,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _inventorySize;
     private Inventory _inventory;
     public Inventory inventory { get => _inventory; }
-    [SerializeField] private UI_Inventory _uiInventory;
+    private UI_Inventory _uiInventory;
 
     private Journal _journal;
     public Journal journal { get => _journal; }
-    [SerializeField] private UI_Journal _uiJournal;
+    private UI_Journal _uiJournal;
     public event EventHandler onOpenJournal;
 
     private QuestSystem _questSystem;
     public QuestSystem questSystem { get => _questSystem; }
-    [SerializeField] private UI_QuestSystem _uiQuestSystem;
+    private UI_QuestSystem _uiQuestSystem;
 
     [SerializeField] private List<RecipeScriptableObject> _craftingRecipes;
-    public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; } 
+    public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; }
 
     private void Awake()
     {
+        //DontDestroyOnLoad(this);
+
+        //Init player
+        if (GameManager.Instance.player != null) { }
+        else GameManager.Instance.player = transform;
+
+        //Get UI references
+        _uiInventory = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Inventory>(true);
+        _uiJournal = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Journal>(true);
+        _uiQuestSystem = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_QuestSystem>(true);
+
         //Crate new inventory and reference it to UI
         _inventory = new Inventory(_inventorySize);
         _uiInventory.SetInventory(_inventory);
 
-        _journal = new Journal();
-        _uiJournal.SetJournal(_journal);
-        GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
-
+        //Quest system
         _questSystem = new QuestSystem();
         _uiQuestSystem.SetQuestSystem(_questSystem);
         _questSystem.SetPlayer(this);
+        _questSystem.SetInventoryEvent(_inventory);
+
+        //Scene change event
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+    }
+
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha0))
         {
-            _journal.AddPost(new Note { _noteScriptableObject = NoteAssets.Instance.notes[0] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[0] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[1] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[2] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[3] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[4] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[5] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[6] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[7] });
+            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[8] });
         }
     }
 
@@ -58,6 +84,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        //Unsubscribe events
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     public bool TakeWorldItem(Item item)
     {
         return _inventory.AddItem(item); 
@@ -66,5 +98,13 @@ public class Player : MonoBehaviour
     public bool TakeWorldNote(Note note)
     {
         return _journal.AddPost(note);
+    }
+
+    public void UnlockJournal()
+    {
+        _journal = new Journal();
+        _uiJournal.SetJournal(_journal);
+        GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
+        _questSystem.SetJournalEvent(_journal);
     }
 }

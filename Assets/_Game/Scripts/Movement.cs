@@ -5,56 +5,117 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float _JumpForce = 30f;
-    [SerializeField] private float _Speed = 10f;
-    private Rigidbody _rigidbody;
-    //private PlayerInput _playerInput;
-    //private PlayerControls _playerControls;
-    private bool _Check= false;
-
-    private GameObject _interactable = null;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private float _jumpForce = 30f;
+    [SerializeField] private float _movementSpeed = 10f;
+    private Vector3 _move;
+    private bool _jump = false;
+    private Rigidbody _rb;
+    private bool _check = false;
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        //_playerInput = GetComponent<PlayerInput>();
-
-        //_playerControls = new PlayerControls();
-        //_playerControls.Player.Enable();
-        //_playerControls.Player.Jump.performed += Jump;
+        _rb = GetComponent<Rigidbody>();
         GameManager.Instance.playerControls.Player.Jump.performed += Jump;
+    }
 
-        DontDestroyOnLoad(gameObject);
+    private void FixedUpdate()
+    {
+        //Change velocity
+        _rb.velocity = _move * _movementSpeed * Time.deltaTime;
+
+        //Jump if can
+        if(_jump)
+        {
+            _rb.AddForce(Vector3.up * _jumpForce * Time.deltaTime, ForceMode.Impulse);
+            _jump = false;
+        }
     }
 
     private void Update()
     {
-        //Vector2 inputVector = _playerControls.Player.Movement.ReadValue<Vector2>();
-        Vector2 inputVector = GameManager.Instance.playerControls.Player.Movement.ReadValue<Vector2>();
-        transform.position = transform.position + new Vector3(inputVector.x, 0, inputVector.y) * _Speed * Time.deltaTime;
+        //Set _move vector 
+        Vector2 move2D = GameManager.Instance.playerControls.Player.Movement.ReadValue<Vector2>();
+        _move = new Vector3(move2D.x, _rb.velocity.y, move2D.y);
+
+        //Movement animations logic
+        if (move2D == Vector2.zero)
+        {
+            //Idle
+            if(_animator.GetBool("Walk") == true)
+            {
+                _animator.SetBool("Walk", false);
+                _animator.SetBool("WalkFront", false);
+                _animator.SetBool("IdleFront", false);
+                _animator.SetBool("Idle", true);
+            }
+            else if(_animator.GetBool("WalkFront") == true)
+            {
+                _animator.SetBool("Walk", false);
+                _animator.SetBool("WalkFront", false);
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("IdleFront", true);
+            }
+        }
+        else
+        {
+            //Horizontal movement
+            if(move2D.x > 0)
+            {
+                //Right
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("IdleFront", false);
+                _animator.SetBool("WalkFront", false);
+                _animator.SetBool("Walk", true);
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else if(move2D.x < 0)
+            {
+                //Left
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("IdleFront", false);
+                _animator.SetBool("WalkFront", false);
+                _animator.SetBool("Walk", true);
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            //Vertical movement
+            else if (move2D.y > 0 || move2D.y < 0)
+            {
+                //Up & Down
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("IdleFront", false);
+                _animator.SetBool("Walk", false);
+                _animator.SetBool("WalkFront", true);
+            }
+        }
     }
 
     public void Jump (InputAction.CallbackContext context)
     {
-        if (context.performed && _Check)
+        if (context.performed && _check)
         {
-            _rigidbody.AddForce(Vector3.up * _JumpForce, ForceMode.Impulse);
+            _jump = true;
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Ground")
+        if(collision.gameObject.tag == "Ground")
         {
-            _Check = true;
+            _check = true;
         }
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.name == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
-            _Check = false;
+            _check = false;
         }
+    }
+
+    public float GetMovementSpeed()
+    {
+        return _movementSpeed;
     }
 }
