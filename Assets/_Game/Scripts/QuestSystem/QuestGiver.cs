@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 //Quest Giver
 //This script goes onto gameobject which is responsible for giving player given quest
 public class QuestGiver : Interactable
 {
-    [SerializeField] private QuestScriptableObject quest;
+    [SerializeField] private QuestData quest;
     bool questTaken = false;
+
+    public class QuestGiverEventArgs : EventArgs
+    {
+        public QuestData quest;
+    }
+    public event EventHandler<QuestGiverEventArgs> onQuestTaken;
 
     public override string GetInteractionDescription()
     {
@@ -24,10 +31,7 @@ public class QuestGiver : Interactable
             player.questSystem.AddQuest(QuestAssets.Instance.CreateQuest(quest.questType, quest.questID));
             playerInteraction.ForceRemoveInteraction(GetComponent<Interactable>());
             questTaken = true;
-            if (gameObject.GetComponent<SphereCollider>().isTrigger)
-            {
-                gameObject.GetComponent<SphereCollider>().enabled = false;
-            }
+            _canBeInteractedWith = false;
         }
     }
 }

@@ -25,6 +25,7 @@ public class WorldItem : Interactable
     {
         if (GameManager.Instance.player.GetComponent<Player>().TakeWorldItem(_item))
         {
+            _canBeInteractedWith = false;
             Destroy(gameObject);
             GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
         }

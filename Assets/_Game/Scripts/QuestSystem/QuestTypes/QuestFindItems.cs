@@ -8,7 +8,7 @@ public class QuestFindItems : Quest
     public QuestFindItemsData questGoalData;
     private List<QuestFindItemsData.QuestGoal> goalsCompletion;
 
-    public QuestFindItems(QuestScriptableObject questData, QuestFindItemsData questGoalData)
+    public QuestFindItems(QuestData questData, QuestFindItemsData questGoalData)
     {
         this.questData = questData;
         this.questGoalData = questGoalData;

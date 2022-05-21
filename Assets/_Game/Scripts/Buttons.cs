@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
 {
    public void OnStartClicked ()
-    {
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene);
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive);
-    }
+   {
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene, LoadSceneMode.Additive);
+   }
 
     public void OnAutorClicked()
     {

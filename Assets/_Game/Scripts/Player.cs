@@ -26,12 +26,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //DontDestroyOnLoad(this);
-
-        //Init player
-        if (GameManager.Instance.player != null) { }
-        else GameManager.Instance.player = transform;
-
         //Get UI references
         _uiInventory = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Inventory>(true);
         _uiJournal = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Journal>(true);

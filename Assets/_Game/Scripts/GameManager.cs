@@ -16,37 +16,10 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(this);
 
-        //DontDestroyOnLoad(this);
-
-        //currentLevel = SceneManager.GetActiveScene().buildIndex;
         currentLevelSceneIndex = (int)SceneIndexer.SceneType.TutorialScene;
 
         playerControls = new PlayerControls();
         playerControls.Enable();
-
-        /*if(mainCanvas == null)
-        {
-            if (GameObject.FindGameObjectWithTag("MainCanvas") == null)
-            {
-                Instantiate(mainCanvasPrefab);
-            }
-            else
-            {
-                mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").transform;
-            }
-        }*/
-
-        /*if (player == null)
-        {
-            if(FindObjectOfType<Player>() == null)
-            {
-                Instantiate(playerPrefab);
-            }
-            else
-            {
-                player = FindObjectOfType<Player>().transform;
-            }
-        }*/
     }
 
     public Transform player;
