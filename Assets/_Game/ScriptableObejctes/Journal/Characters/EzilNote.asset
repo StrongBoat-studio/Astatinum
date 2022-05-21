@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54478b61c4d862f45890df8ee771219d, type: 3}
-  m_Name: New Note Scriptable Object
+  m_Script: {fileID: 11500000, guid: e129f8b30d375814baec7408212df4ec, type: 3}
+  m_Name: EzilNote
   m_EditorClassIdentifier: 
-  noteID: 1
-  title: Notatka 1
-  text: "Przyk\u0142adowa notatka"
-  type: 0
+  noteID: 201
+  title: Wide Ezil
+  text: Wide boi Ezil
+  type: 2
+  sprite: {fileID: 21300000, guid: de7e265944fe291439d9d7b82d9af48c, type: 3}

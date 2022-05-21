@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54478b61c4d862f45890df8ee771219d, type: 3}
-  m_Name: Note1
+  m_Script: {fileID: 11500000, guid: 9b9855395d3c7fb43b544d6ea2f4f362, type: 3}
+  m_Name: HistoryNote3
   m_EditorClassIdentifier: 
-  title: Notatka 1
-  text: "Przyk\u0142adowa notatka"
+  noteID: 2
+  title: Notatka 3
+  text: "Szkoda \u017Ce nie ma tu normalnego tekstu"
   type: 0

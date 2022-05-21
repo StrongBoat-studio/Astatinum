@@ -5,17 +5,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class JournalTabButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class UI_JournalTabButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private JournalTabGroup _tabGroup;
-    private Image _background;
-    public Image background { get => _background; }
-
-    private void Awake()
-    {
-        _background = GetComponent<Image>();
-        _tabGroup.Subscribe(this);
-    }
+    [SerializeField] private UI_JournalTabGroup _tabGroup;
+    public Vector2 _originPosition;
+    public Note.NoteType type;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -30,5 +24,15 @@ public class JournalTabButton : MonoBehaviour, IPointerClickHandler, IPointerEnt
     public void OnPointerExit(PointerEventData eventData)
     {
         _tabGroup.OnTabExit(this);
+    }
+
+    public void Highlight()
+    {
+        transform.localPosition = _originPosition + new Vector2(0, 10);
+    }
+
+    public void ResetHighlight()
+    {
+        transform.localPosition = _originPosition;
     }
 }

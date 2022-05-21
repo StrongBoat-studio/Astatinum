@@ -15,5 +15,5 @@ public class NoteAssets : MonoBehaviour
         else Destroy(this);
     }
 
-    public List<NoteScriptableObject> notes;
+    public List<NoteData> notes;
 }
