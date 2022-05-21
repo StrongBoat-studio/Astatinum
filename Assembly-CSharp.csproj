@@ -96,13 +96,15 @@
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Item.cs" />
     <Compile Include="Assets\_Game\Scripts\TestDialogue.cs" />
     <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveOptionsData.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\NoteScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteData.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageHistory.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\Quest.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemData.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\UI_QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\IItemHolder.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabGroup.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\WorldNote.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\WorldCrafting.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInforationData.cs" />
@@ -115,8 +117,11 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalPageHistory.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabGroup.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteHistoryData.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteItemsData.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageItems.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteChractersData.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageCharacters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

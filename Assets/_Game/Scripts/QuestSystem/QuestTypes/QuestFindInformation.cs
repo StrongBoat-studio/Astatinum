@@ -42,7 +42,7 @@ public class QuestFindInformation : Quest
         {
             foreach (QuestFindInforationData.QuestGoal goal in goalsCompletion)
             {
-                if (note._noteScriptableObject.noteID == goal.note._noteScriptableObject.noteID)
+                if (note._noteData.noteID == goal.note._noteData.noteID)
                 {
                     goal.found = true;
                     questChanged = true;
