@@ -14,22 +14,20 @@ public class QuestAssets : MonoBehaviour
             Instance = this;
         }
         else Destroy(this);
-
-        //DontDestroyOnLoad(this);
     }
 
-    public List<QuestScriptableObject> questFindItems;
+    public List<QuestData> questFindItems;
     public List<QuestFindItemsData> questFindItemGoal;
 
-    public List<QuestScriptableObject> questFindInformation;
+    public List<QuestData> questFindInformation;
     public List<QuestFindInforationData> questFindInformationGoal;
 
-    public Quest CreateQuest(QuestScriptableObject.QuestType questType, int questID)
+    public Quest CreateQuest(QuestData.QuestType questType, int questID)
     {
         switch(questType)
         {
-            case QuestScriptableObject.QuestType.FindItem:
-                foreach(QuestScriptableObject quest in questFindItems)
+            case QuestData.QuestType.FindItem:
+                foreach(QuestData quest in questFindItems)
                 {
                     if(quest.questID == questID)
                     {
@@ -37,8 +35,8 @@ public class QuestAssets : MonoBehaviour
                     }
                 }
                 return null;
-            case QuestScriptableObject.QuestType.FindInformation:
-                foreach (QuestScriptableObject quest in questFindInformation)
+            case QuestData.QuestType.FindInformation:
+                foreach (QuestData quest in questFindInformation)
                 {
                     if (quest.questID == questID)
                     {

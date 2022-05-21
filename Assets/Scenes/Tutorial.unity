@@ -302,7 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32ff31503c6dcf41a35406e5239e6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionDescription: Press [key] to start quest [quest]
+  _interactionDescription: "Naci\u015Bnij [key] aby rozpocz\u0105\u0107 zadanie [quest]"
+  _canBeInteractedWith: 1
   quest: {fileID: 11400000, guid: f89fbd40f244d8241a63e1ae41567f8e, type: 2}
 --- !u!135 &36002443
 SphereCollider:
@@ -329,8 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae77fd620291fe4f90707ebf4b24ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionDescription: Press [key] to finish quest [quest]
-  questToReceive: {fileID: 11400000, guid: f89fbd40f244d8241a63e1ae41567f8e, type: 2}
+  _interactionDescription: "Naci\u015Bnij [key] aby zako\u0144czy\u0107 zadanie [quest]"
+  _canBeInteractedWith: 1
+  _questToReceive: {fileID: 11400000, guid: f89fbd40f244d8241a63e1ae41567f8e, type: 2}
 --- !u!1 &76016675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +1993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionDescription: "Naci\u015Bniej [key] aby u\u017Cy\u0107 sto\u0142u "
+  _canBeInteractedWith: 1
   craftingUI: {fileID: 1865234372}
   _uiCrafting: {fileID: 402483941}
   _recipes: []
@@ -2007,6 +2010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionDescription: "Najci\u015Bnij [key], aby otworzy\u0107 szuflad\u0119"
+  _canBeInteractedWith: 1
   _name: "St\xF3\u0142"
   _dialogue: {fileID: 4900000, guid: bf3109942122f9346b2c43a3ec35d9cd, type: 3}
   _interactCondition: hasitem:Key

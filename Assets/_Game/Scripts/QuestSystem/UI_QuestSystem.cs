@@ -50,8 +50,8 @@ public class UI_QuestSystem : MonoBehaviour
 
             switch (quest.questData.questType)
             {
-                case QuestScriptableObject.QuestType.FindItem:
-                case QuestScriptableObject.QuestType.FindInformation:
+                case QuestData.QuestType.FindItem:
+                case QuestData.QuestType.FindInformation:
                     List<string> taskTexts = quest.QuestCompletionText();
                     foreach(string task in taskTexts)
                     {

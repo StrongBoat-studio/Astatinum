@@ -32,7 +32,7 @@ public class LevelLoader : MonoBehaviour
         GameManager.Instance.currentLevelSceneIndex = index;
 
         //Force remove interactions
-        GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteraction();
+        GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteractions();
         
     }
 }

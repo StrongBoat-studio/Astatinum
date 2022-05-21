@@ -7,12 +7,10 @@ using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] private TMPro.TextMeshProUGUI _interactionText; //Hints
     private List<TextMeshProUGUI> _interactionsText = new List<TextMeshProUGUI>();
     private RectTransform _interactionPointerUI;
     private int _currentInteraction = 0;
 
-    //private Interactable _interactable = null;
     private List<Interactable> _interactables = new List<Interactable>();
 
     private void Start()
@@ -27,49 +25,22 @@ public class PlayerInteraction : MonoBehaviour
         GameManager.Instance.playerControls.Interactions.Interact.started += On_InteractStarted;
         GameManager.Instance.playerControls.Interactions.ChooseInteraction.started += On_ChooseInteractionStarted;
 
-        RefreshUI();
+        RefreshUI(null);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Activate interaction hint game object
-        //Get interaction hint text
-        //Save reference to objects
-        if (other.GetComponent<Interactable>() != null)
-        {
-            Interactable[] allInteractables = other.GetComponents<Interactable>();
-            foreach (Interactable interactable in allInteractables)
-            {
-                foreach (Interactable i in _interactables)
-                    if (_interactables.Contains(i)) continue;
+        RefreshUI(other);
+    }
 
-                _interactables.Add(interactable);
-                RefreshUI();
-            }
-        }
+    private void OnTriggerStay(Collider other)
+    {
+        RefreshUI(other);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //delete interactable object reference
-        //set interaction hint text to empty string
-        //disable interaction hint text
-        if (other.GetComponent<Interactable>() != null)
-        {
-            Interactable[] allInteractables = other.GetComponents<Interactable>();
-            foreach (Interactable interactable in allInteractables)
-            {
-                foreach (Interactable i in _interactables)
-                {
-                    if (_interactables.Contains(i))
-                    {
-                        _interactables.Remove(i);
-                        RefreshUI();
-                        break;
-                    }
-                }
-            }
-        }
+        RefreshUI(other);
     }
 
     private void OnDestroy()
@@ -81,13 +52,30 @@ public class PlayerInteraction : MonoBehaviour
         GameManager.Instance.playerControls.Interactions.Interact.started -= On_InteractStarted;
         GameManager.Instance.playerControls.Interactions.ChooseInteraction.started -= On_ChooseInteractionStarted;
 
-        RefreshUI();
+        RefreshUI(null);
     }
 
-    private void RefreshUI()
-    { 
+    private void RefreshUI(Collider other)
+    {
+        if (other != null)
+        {
+            _interactables.Clear();
+            if (other.GetComponent<Interactable>() != null)
+            {
+                Interactable[] allInteractables = other.GetComponents<Interactable>();
+                foreach (Interactable interactable in allInteractables)
+                {
+                    foreach (Interactable i in _interactables)
+                        if (_interactables.Contains(i)) continue;
+
+                    if (interactable.GetCanBeInteractedWith())
+                        _interactables.Add(interactable);
+                }
+            }
+        }
+
         //If there are no interaction distable whole UI
-        if(_interactables.Count == 0)
+        if (_interactables.Count == 0)
         {
             GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(false);  
         }
@@ -137,7 +125,7 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteraction--;
         }
 
-        RefreshUI();
+        RefreshUI(null);
     }
 
     public void ForceRemoveInteraction(Interactable interaction)
@@ -145,14 +133,14 @@ public class PlayerInteraction : MonoBehaviour
         //Fix pointer after remove
         _interactables.Remove(interaction);
         _currentInteraction = 0;
-        RefreshUI();
+        RefreshUI(null);
     }
 
-    public void ForceRemoveAllInteraction()
+    public void ForceRemoveAllInteractions()
     {
         //Fix pointer after remove
         _interactables.Clear();
         _currentInteraction = 0;
-        RefreshUI();
+        RefreshUI(null);
     }
 }

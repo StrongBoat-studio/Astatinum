@@ -39,7 +39,6 @@ public class DialogueManager : MonoBehaviour
         if (_mainCanvas != null) { }
         else
         {
-            Debug.Log(GameManager.Instance.mainCanvas);
             _mainCanvas = GameManager.Instance.mainCanvas;
         }
 

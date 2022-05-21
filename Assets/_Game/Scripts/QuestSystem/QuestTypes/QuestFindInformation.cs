@@ -7,7 +7,7 @@ public class QuestFindInformation : Quest
     private QuestFindInforationData questGoalData;
     private List<QuestFindInforationData.QuestGoal> goalsCompletion;
 
-    public QuestFindInformation(QuestScriptableObject questData, QuestFindInforationData questGoalData)
+    public QuestFindInformation(QuestData questData, QuestFindInforationData questGoalData)
     {
         this.questData = questData;
         this.questGoalData = questGoalData;
