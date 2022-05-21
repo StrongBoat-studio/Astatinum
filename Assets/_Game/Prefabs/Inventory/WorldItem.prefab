@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4a55477aa620b4c8d8fecd45f8e304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionDescription: Press [key] to pick up [item]
+  _interactionDescription: "Naci\u015Bniej [key] aby podnie\u015B\u0107 [item]"
   _item:
     itemData: {fileID: 0}
   _spriteRenderer: {fileID: 452759794311307129}
