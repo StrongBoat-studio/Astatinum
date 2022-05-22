@@ -280,3 +280,7 @@ G:\Unity\GitKraken\Astatinum\obj\Debug\Ink-Libraries.csproj.CoreCompileInputs.ca
 G:\Unity\GitKraken\Astatinum\obj\Debug\Ink-Libraries.csproj.CopyComplete
 G:\Unity\GitKraken\Astatinum\obj\Debug\Ink-Libraries.dll
 G:\Unity\GitKraken\Astatinum\obj\Debug\Ink-Libraries.pdb
+G:\Unity\GitHub\Astatinum\obj\Debug\Ink-Libraries.csproj.AssemblyReference.cache
+G:\Unity\GitHub\Astatinum\obj\Debug\Ink-Libraries.csproj.CoreCompileInputs.cache
+G:\Unity\GitHub\Astatinum\obj\Debug\Ink-Libraries.dll
+G:\Unity\GitHub\Astatinum\obj\Debug\Ink-Libraries.pdb

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : Interactable
 {
     [SerializeField] private SceneIndexer.SceneType _sceneToLoad;
-    [SerializeField] private LevelLoader _levelLoader;
+    //[SerializeField] private LevelLoader _levelLoader;
     [SerializeField] private Vector3 _spawnPositionOnNewScene;
 
     public override void Interact()
@@ -25,7 +25,8 @@ public class SceneChanger : Interactable
                 else
                 {
                     //var scene = SceneManager.LoadSceneAsync((int)_sceneToLoad);
-                    _levelLoader.LoadNextLevel((int)_sceneToLoad);
+                    //_levelLoader.LoadNextLevel((int)_sceneToLoad);
+                    GameManager.Instance.levelLoader.LoadNextLevel((int)_sceneToLoad);
                     GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
                 }
                 break;

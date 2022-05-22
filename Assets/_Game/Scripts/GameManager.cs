@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviour
         playerControls.Enable();
     }
 
+    public LevelLoader levelLoader;
     public Transform player;
     public Transform playerPrefab;
+    public Cinemachine.CinemachineVirtualCamera mainVCam;
     public PlayerControls playerControls;
     public Transform mainCanvas;
     public Transform mainCanvasPrefab;
