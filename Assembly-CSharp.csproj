@@ -51,6 +51,7 @@
      <Compile Include="Assets\_Game\Scripts\Crafting\CraftingSystem.cs" />
      <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseMar3K.cs" />
      <Compile Include="Assets\_Game\Scripts\Door.cs" />
+     <Compile Include="Assets\_Game\Scripts\StartGame.cs" />
      <Compile Include="Assets\_Game\Scripts\LevelLoader.cs" />
      <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabButton.cs" />
      <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChangeLocation.cs" />

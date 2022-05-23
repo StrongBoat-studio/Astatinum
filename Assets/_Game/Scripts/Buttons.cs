@@ -14,7 +14,7 @@ public class Buttons : MonoBehaviour
 
     public void OnAutorClicked()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.AuthorsMenu, LoadSceneMode.Additive);
     }
 
     public void OnMenuBackClicked()
@@ -36,5 +36,25 @@ public class Buttons : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void OnSettingsClicked()
+    {
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.SettingsScene, LoadSceneMode.Additive);
+    }
+
+    public void OnXClicked()
+    {
+        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.SettingsScene);
+    }
+
+    public void OnXAClicked()
+    {
+        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.AuthorsMenu);
+    }
+
+    public void OnXOClicked()
+    {
+        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.OptionsMenu);
     }
 }

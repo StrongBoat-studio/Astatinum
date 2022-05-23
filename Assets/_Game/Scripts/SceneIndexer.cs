@@ -17,7 +17,8 @@ public class SceneIndexer : MonoBehaviour
         Junkyard = 7,
         AstaRoom = 8,
         Bathroom = 9,
-        PlayerObjects = 10
+        PlayerObjects = 10,
+        SettingsScene = 11 
     }
 
     public static SceneIndexer Instance { get; private set; }
