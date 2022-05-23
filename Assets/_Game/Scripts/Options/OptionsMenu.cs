@@ -9,7 +9,6 @@ using System;
 public class OptionsMenu : MonoBehaviour
 {
     [SerializeField] private SaveOptionsData _saveOptions;
-    [SerializeField] private LevelLoader _levelLoader;
 
     //Resolution
     [SerializeField] private TMP_Dropdown _resolutionsDropdown;
