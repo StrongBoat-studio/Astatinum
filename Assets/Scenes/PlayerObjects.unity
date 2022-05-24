@@ -736,7 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   domEzilaSpawn: {x: -46.59, y: 0.35, z: 5.92}
   tutorialSpawn: {x: -37, y: 0.35, z: 8.3}
-  locationOneSceneSpawn: {x: -14.31, y: 0.6, z: -2.21}
+  locationOneSceneSpawn: {x: -3.5, y: 0.7, z: 3.74}
   junkyardSpawn: {x: 0.94, y: 0.34, z: -5.29}
   astaroomSpawn: {x: -40, y: 0.35, z: 8}
   bathroomSpawn: {x: -40, y: 0.35, z: 8}
@@ -4093,7 +4093,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c56c05449cdf34d4eb9fad530853bc64, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
