@@ -185,6 +185,7 @@ public class DialogueManager : MonoBehaviour
             _currentStory.ChooseChoiceIndex(choiceIndex);
             HideChoices();
             ContinueStory();
+            ContinueStory();
         }
     }
 
