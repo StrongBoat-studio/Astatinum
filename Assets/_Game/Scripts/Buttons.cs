@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +7,14 @@ using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
 {
    public void OnStartClicked ()
-    {
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene);
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive);
-    }
+   {
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene, LoadSceneMode.Additive);
+   }
 
     public void OnAutorClicked()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.AuthorsMenu, LoadSceneMode.Additive);
     }
 
     public void OnMenuBackClicked()
@@ -35,5 +36,25 @@ public class Buttons : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void OnSettingsClicked()
+    {
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.SettingsScene, LoadSceneMode.Additive);
+    }
+
+    public void OnXClicked()
+    {
+        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.SettingsScene);
+    }
+
+    public void OnXAClicked()
+    {
+        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.AuthorsMenu);
+    }
+
+    public void OnXOClicked()
+    {
+        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.OptionsMenu);
     }
 }

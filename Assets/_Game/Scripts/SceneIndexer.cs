@@ -17,7 +17,8 @@ public class SceneIndexer : MonoBehaviour
         Junkyard = 7,
         AstaRoom = 8,
         Bathroom = 9,
-        PlayerObjects = 10
+        PlayerObjects = 10,
+        SettingsScene = 11 
     }
 
     public static SceneIndexer Instance { get; private set; }
@@ -29,8 +30,6 @@ public class SceneIndexer : MonoBehaviour
             Instance = this;
         }
         else Destroy(this);
-
-        //DontDestroyOnLoad(this);
     }
 
     public string GetSceneNameByType(SceneType type)
@@ -63,15 +62,15 @@ public class SceneIndexer : MonoBehaviour
     }
 
     //Location names
-    private string _tutorialSceneName = "Tutorial location";
+    private string _tutorialSceneName = "Warsztat";
     private string _locationOneSceneName = "Location one";
-    private string _mainMenuSceneName = "Main menu";
-    private string _authorsMenuSceneName = "Authors";
-    private string _optionsMenuSceneName = "Options menu";
+    private string _mainMenuSceneName = "Menu g³ówne";
+    private string _authorsMenuSceneName = "Autorzy";
+    private string _optionsMenuSceneName = "Opcje";
     private string _dialogueSceneName = "Dialogue scene";
     private string _domEzilaName = "Dom Ezila";
-    private string _jankyardName = "Jankyard";
-    private string _astaRoom = "Asta Room";
-    private string _bathroom = "Bathroom";
+    private string _jankyardName = "Z³omowisko";
+    private string _astaRoom = "Pokój Asty";
+    private string _bathroom = "£azienka";
 
 }

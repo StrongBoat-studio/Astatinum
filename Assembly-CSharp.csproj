@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,10 +53,14 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="G:\Visual Studio Community 2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\_Game\Scripts\Inventory\WorldItem.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\CraftingSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseMar3K.cs" />
     <Compile Include="Assets\_Game\Scripts\Door.cs" />
+    <Compile Include="Assets\_Game\Scripts\StartGame.cs" />
     <Compile Include="Assets\_Game\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabButton.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChangeLocation.cs" />
@@ -65,16 +69,21 @@
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInformation.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestEventGiver.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteChractersData.cs" />
     <Compile Include="Assets\_Game\Scripts\Animations.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTarger.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\_Game\Scripts\PlayerAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\RecipeScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\_Game\Scripts\Camera\CamZone.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestAction.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Note.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageItems.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\NoteAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Canvas\CanvasManager.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageCharacters.cs" />
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemAssets.cs" />
@@ -86,9 +95,11 @@
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\UI_Crafting.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Inventory.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestManager.cs" />
     <Compile Include="Assets\_Game\Scripts\CameraController.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindItemsData.cs" />
     <Compile Include="Assets\_Game\Scripts\GameManager.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteItemsData.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Journal.cs" />
@@ -105,11 +116,12 @@
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\IItemHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabGroup.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteHistoryData.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\WorldNote.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\WorldCrafting.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInforationData.cs" />
     <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveLoader.cs" />
-    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestData.cs" />
     <Compile Include="Assets\_Game\Scripts\Buttons.cs" />
     <Compile Include="Assets\_Game\Scripts\UI_ItemDrag.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_ItemSlot.cs" />
@@ -117,11 +129,6 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteHistoryData.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteItemsData.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageItems.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteChractersData.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageCharacters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -396,6 +403,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>G:\Unity\Editors\2020.3.21f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
@@ -796,6 +806,12 @@
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
@@ -816,6 +832,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{1C37BE00-2AA5-6138-9625-F3D612950366}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Ink-Libraries.csproj">
       <Project>{A09CE97E-4AA9-60E8-050D-08162ECEE859}</Project>
       <Name>Ink-Libraries</Name>

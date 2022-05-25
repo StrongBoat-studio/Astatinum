@@ -10,7 +10,7 @@ public class QuestActionChangeLocation : QuestAction
 
     public override void Do()
     {
-        UnityEngine.GameObject.Find("LevelLoader").GetComponent<LevelLoader>().LoadNextLevel((int)sceneToLoad);
-        Debug.Log("Do() - QuestActionChangeLocation");
+        //UnityEngine.GameObject.Find("LevelLoader").GetComponent<LevelLoader>().LoadNextLevel((int)sceneToLoad);
+        GameManager.Instance.levelLoader.LoadNextLevel((int)sceneToLoad);
     }
 }

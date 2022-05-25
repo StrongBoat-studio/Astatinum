@@ -5,7 +5,7 @@ using System;
 
 public class Quest
 {
-    public QuestScriptableObject questData;
+    public QuestData questData;
     private bool actionDone = false;
 
     public class QuestCompletedEventArgs

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,23 @@ using UnityEngine;
 //This script goes onto gameobject which is responsible for finishing the quest
 public class QuestTarger : Interactable
 {
-    [SerializeField] private QuestScriptableObject questToReceive;
+    [SerializeField] private QuestData _questToReceive;
+
+    private void Awake()
+    {
+        _canBeInteractedWith = false;
+        GameManager.Instance.player.GetComponent<Player>().questSystem.onQuestAdd += QuestSystem_OnQuestAdd;
+    }
+
+    private void QuestSystem_OnQuestAdd(object sender, QuestSystem.QuestChangeEventArgs e)
+    {
+        if(e.quest.questData == _questToReceive) _canBeInteractedWith = true;
+    }
 
     public override string GetInteractionDescription()
     {
-        return "Press F to complete";
+        string description = _interactionDescription.Replace("key", GameManager.Instance.playerControls.Interactions.Interact.controls[0].name.ToUpper()).Replace("quest", _questToReceive.questTitle);
+        return description;
     }
 
     public override void Interact()
@@ -19,15 +32,12 @@ public class QuestTarger : Interactable
         PlayerInteraction playerInteraction = GameManager.Instance.player.GetComponent<PlayerInteraction>();
         foreach (Quest quest in player.questSystem.activeQuests)
         {
-            if(quest.questData.questID == questToReceive.questID)
+            if(quest.questData.questID == _questToReceive.questID)
             {
                 if (quest.CompleteQuest())
                 {
                     playerInteraction.ForceRemoveInteraction(GetComponent<Interactable>());
-                    if (gameObject.GetComponent<SphereCollider>().isTrigger)
-                    {
-                        gameObject.GetComponent<SphereCollider>().enabled = false;
-                    }
+                    _canBeInteractedWith = false;
                     break;
                 }
             }

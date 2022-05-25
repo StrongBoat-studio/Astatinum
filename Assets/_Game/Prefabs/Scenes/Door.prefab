@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634daee49163fe74393d225d9cbd1da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionDescription: Press [key] to move to [location]
+  _interactionDescription: "Naci\u015Bniej [key] aby przej\u015B\u0107 do [location]"
   _sceneToLoad: 6
   _levelLoader: {fileID: 0}
   _spawnPositionOnNewScene: {x: 0, y: 0, z: 0}

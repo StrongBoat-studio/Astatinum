@@ -17,6 +17,7 @@ public class QuestSystem
         public Quest quest;
     }
     public event EventHandler<QuestChangeEventArgs> onQuestChange;
+    public event EventHandler<QuestChangeEventArgs> onQuestAdd;
 
     public QuestSystem()
     {
@@ -46,10 +47,10 @@ public class QuestSystem
             switch (q.questData.questType)
             {
                 //Fire UI update event when qeust completion data changed
-                case QuestScriptableObject.QuestType.FindItem:
+                case QuestData.QuestType.FindItem:
                     if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
                     break;
-                case QuestScriptableObject.QuestType.FindInformation:
+                case QuestData.QuestType.FindInformation:
                     if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
                     break;
             }
@@ -69,6 +70,7 @@ public class QuestSystem
         _activeQuests.Add(quest);
         quest.onQuestCompleted += Quest_OnQuestCompleted;
         onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = quest });
+        onQuestAdd?.Invoke(this, new QuestChangeEventArgs { quest = quest });
     }
 
     //This too

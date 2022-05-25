@@ -9,7 +9,6 @@ using System;
 public class OptionsMenu : MonoBehaviour
 {
     [SerializeField] private SaveOptionsData _saveOptions;
-    [SerializeField] private LevelLoader _levelLoader;
 
     //Resolution
     [SerializeField] private TMP_Dropdown _resolutionsDropdown;
@@ -66,6 +65,24 @@ public class OptionsMenu : MonoBehaviour
         _masterAudioSlider.value = _saveOptions.masterVolume;
         _musicAudioSlider.value = _saveOptions.musicVolume;
         _sfxAudioSlider.value = _saveOptions.sfxVolume;
+    }
+
+    //Lock player controls if options menu is enabled during game
+    private void OnEnable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.playerControls.Disable();
+        }
+    }
+
+    //Unlock player controls if options menu is disabled during game
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.playerControls.Enable();
+        }
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)

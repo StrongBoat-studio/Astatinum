@@ -25,17 +25,18 @@ public class WorldNote : Interactable
 
     public override void Interact()
     {
-        if (_isTaken)
+        /*if (_isTaken)
         {
             if (GetComponent<SphereCollider>().enabled)
                 GetComponent<SphereCollider>().enabled = false;
 
             return;
-        }
+        }*/
 
         if (GameManager.Instance.player.GetComponent<Player>().TakeWorldNote(_note))
         {
             _isTaken = true;
+            _canBeInteractedWith = false;
             GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
         }
     }
