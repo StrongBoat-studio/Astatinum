@@ -11,9 +11,12 @@ public class StartGame : MonoBehaviour
     {
         if (Keyboard.current.anyKey.wasPressedThisFrame)
         {
-            SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects);
-            SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene, LoadSceneMode.Additive);
+            //Allow to start game only when on MainMenu screen
+            if (SceneManager.sceneCount == 1 && SceneManager.GetSceneAt(0).buildIndex == (int)SceneIndexer.SceneType.MainMenu)
+            {
+                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects);
+                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene, LoadSceneMode.Additive);
+            }
         }
-
     }
 }

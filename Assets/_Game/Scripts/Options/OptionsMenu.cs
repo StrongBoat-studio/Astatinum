@@ -67,6 +67,24 @@ public class OptionsMenu : MonoBehaviour
         _sfxAudioSlider.value = _saveOptions.sfxVolume;
     }
 
+    //Lock player controls if options menu is enabled during game
+    private void OnEnable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.playerControls.Disable();
+        }
+    }
+
+    //Unlock player controls if options menu is disabled during game
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.playerControls.Enable();
+        }
+    }
+
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
         //Refresh options' values when scene is loaded

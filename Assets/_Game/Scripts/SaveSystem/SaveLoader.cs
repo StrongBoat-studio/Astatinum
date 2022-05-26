@@ -17,16 +17,19 @@ public class SaveLoader : MonoBehaviour
         {
             Screen.SetResolution(_saveOptions.resolution.width, _saveOptions.resolution.height, _saveOptions.isFullscreen);
             QualitySettings.SetQualityLevel(_saveOptions.qualityLevel);
-            FMOD.Studio.VCA _vcaMaster = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMasterName);
-            FMOD.Studio.VCA _vcaMusic = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMusicName);
-            FMOD.Studio.VCA _vcaSFX = FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaSFXName);
-            _vcaMaster.setVolume(_saveOptions.masterVolume);
-            _vcaMusic.setVolume(_saveOptions.musicVolume);
-            _vcaSFX.setVolume(_saveOptions.sfxVolume);
+            FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMasterName).setVolume(_saveOptions.masterVolume);
+            FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMusicName).setVolume(_saveOptions.musicVolume);
+            FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaSFXName).setVolume(_saveOptions.sfxVolume);
         }
         else
         {
-            Debug.LogError("No save file set!");
+            Debug.LogError("No save file set!"); 
+            Screen.SetResolution(1280, 720, false);
+            QualitySettings.SetQualityLevel(0);
+            FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMasterName).setVolume(_saveOptions.masterVolume);
+            FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaMusicName).setVolume(_saveOptions.musicVolume);
+            FMODUnity.RuntimeManager.GetVCA("vca:/" + _saveOptions.vcaSFXName).setVolume(_saveOptions.sfxVolume);
+
         }
     }
 }
