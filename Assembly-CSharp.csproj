@@ -66,6 +66,7 @@
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInformation.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestEventGiver.cs" />
+    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageQuests.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteChractersData.cs" />
     <Compile Include="Assets\_Game\Scripts\Animations.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTarger.cs" />
@@ -126,7 +127,6 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageQuests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
