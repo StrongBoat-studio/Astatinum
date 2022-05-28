@@ -81,6 +81,7 @@
     <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageItems.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\NoteAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Canvas\CanvasManager.cs" />
+    <Compile Include="Assets\_Game\Scripts\Cutscenes\CutsceneManager.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageCharacters.cs" />
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestSystem.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteItemsData.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
+    <Compile Include="Assets\_Game\Scripts\Cutscenes\CutsceneTextTyper.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Mar3K.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Item.cs" />
@@ -127,6 +129,7 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
+    <Compile Include="Assets\_Game\Scripts\Cutscenes\BathroomCutscene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

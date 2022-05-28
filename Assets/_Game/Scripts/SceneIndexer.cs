@@ -7,6 +7,7 @@ public class SceneIndexer : MonoBehaviour
     //Scenes with indexes from unity build window
     public enum SceneType
     {
+        None = -1,
         MainMenu = 0,
         AuthorsMenu = 2,
         OptionsMenu = 3,
@@ -18,7 +19,10 @@ public class SceneIndexer : MonoBehaviour
         AstaRoom = 8,
         Bathroom = 9,
         PlayerObjects = 10,
-        SettingsScene = 11 
+        SettingsScene = 11,
+        Cutscenes = 12,
+        SceneLoader = 13,
+        BathroomCutscene = 14,
     }
 
     public static SceneIndexer Instance { get; private set; }

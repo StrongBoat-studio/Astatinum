@@ -8,7 +8,6 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private Animator _transition;
     [SerializeField] private float _transitionTime;
-    //public AsyncOperation loadAsyncAction { get; private set; }
 
     public void LoadNextLevel(int index)
     {
@@ -26,9 +25,15 @@ public class LevelLoader : MonoBehaviour
         //AsyncOperations
         List<AsyncOperation> asyncOperations = new List<AsyncOperation>();
 
-        //Unload current level scene
-        asyncOperations.Add(SceneManager.UnloadSceneAsync(GameManager.Instance.currentLevelSceneIndex));
-
+        //Unload current level scene, if loaded
+        for(int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            if (SceneManager.GetSceneAt(i).buildIndex == GameManager.Instance.currentLevelSceneIndex)
+            {
+                asyncOperations.Add(SceneManager.UnloadSceneAsync(GameManager.Instance.currentLevelSceneIndex));
+            }
+        }
+        
         //Load new level scene
         asyncOperations.Add(SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive));
 
