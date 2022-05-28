@@ -22,6 +22,9 @@ public class QuestAssets : MonoBehaviour
     public List<QuestData> questFindInformation;
     public List<QuestFindInforationData> questFindInformationGoal;
 
+    public List<QuestData> questTalk;
+    public List<QuestTalkData> questTalkData;
+
     public Quest CreateQuest(QuestData.QuestType questType, int questID)
     {
         switch(questType)
@@ -41,6 +44,15 @@ public class QuestAssets : MonoBehaviour
                     if (quest.questID == questID)
                     {
                         return new QuestFindInformation(quest, questFindInformationGoal[questFindInformation.IndexOf(quest)]);
+                    }
+                }
+                return null;
+            case QuestData.QuestType.Talk:
+                foreach (QuestData quest in questTalk)
+                {
+                    if (quest.questID == questID)
+                    {
+                        return new QuestTalk(quest, questTalkData[questTalk.IndexOf(quest)]);
                     }
                 }
                 return null;
