@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Mar3K : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
     private Transform _player;
 
     private void Awake()
@@ -16,8 +17,6 @@ public class Mar3K : MonoBehaviour
 
         //Scene chanaged event
         SceneManager.sceneLoaded += OnSceneLoaded;
-
-        //DontDestroyOnLoad(this);
     }
 
     private void Start() 
@@ -33,6 +32,54 @@ public class Mar3K : MonoBehaviour
         
         //Move Mar3K towards player if distance between them is greater than 1 unit
         transform.position = Vector3.MoveTowards(_player.position, transform.position, 1f);
+
+        Vector2 vel = GetComponent<Rigidbody>().velocity;
+        Vector3 dir = (_player.position - transform.position).normalized;
+        Debug.Log(dir);
+
+        if (vel == Vector2.zero)
+        {
+            //Idle
+            if (_animator.GetBool("Walk") == true)
+            {
+                _animator.SetTrigger("Idle");
+            }
+            else if (_animator.GetBool("WalkFront") == true)
+            {
+                _animator.SetTrigger("IdleFront");
+            }
+            else if(_animator.GetBool("WalkBack") == true)
+            {
+                _animator.SetTrigger("IdleBack");
+            }
+        }
+        else
+        {
+            //Horizontal movement
+            if (dir.x > .2f)
+            {
+                //Right
+                _animator.SetTrigger("Walk");
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else if (dir.x < -.2f)
+            {
+                //Left
+                _animator.SetTrigger("Walk");
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            //Vertical movement
+            else if (dir.z > 0)
+            {
+                //Up
+                _animator.SetTrigger("WalkBack");
+            }
+            else if(dir.z < 0)
+            {
+                //Down
+                _animator.SetTrigger("WalkFront");
+            }
+        }
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)

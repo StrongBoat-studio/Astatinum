@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         _questSystem.SetInventoryEvent(_inventory);
 
         //Scene change event
+        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData[0] });
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);

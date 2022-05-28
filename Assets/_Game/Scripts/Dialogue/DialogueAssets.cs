@@ -13,8 +13,6 @@ public class DialogueAssets : MonoBehaviour
             Instance = this;
         }
         else Destroy(this);
-
-        //DontDestroyOnLoad(this);
     }
 
     [Header("Tutorial/Warsztat")]

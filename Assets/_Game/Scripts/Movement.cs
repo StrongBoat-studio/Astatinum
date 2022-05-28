@@ -42,19 +42,17 @@ public class Movement : MonoBehaviour
         if (move2D == Vector2.zero)
         {
             //Idle
-            if(_animator.GetBool("Walk") == true)
+            if (_animator.GetBool("Walk") == true)
             {
-                _animator.SetBool("Walk", false);
-                _animator.SetBool("WalkFront", false);
-                _animator.SetBool("IdleFront", false);
-                _animator.SetBool("Idle", true);
+                _animator.SetTrigger("Idle");
             }
-            else if(_animator.GetBool("WalkFront") == true)
+            else if (_animator.GetBool("WalkFront") == true)
             {
-                _animator.SetBool("Walk", false);
-                _animator.SetBool("WalkFront", false);
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("IdleFront", true);
+                _animator.SetTrigger("IdleFront");
+            }
+            else if (_animator.GetBool("WalkBack") == true)
+            {
+                _animator.SetTrigger("IdleBack");
             }
         }
         else
@@ -63,29 +61,24 @@ public class Movement : MonoBehaviour
             if(move2D.x > 0)
             {
                 //Right
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("IdleFront", false);
-                _animator.SetBool("WalkFront", false);
-                _animator.SetBool("Walk", true);
+                _animator.SetTrigger("Walk");
                 transform.localScale = new Vector3(1f, 1f, 1f);
             }
             else if(move2D.x < 0)
             {
                 //Left
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("IdleFront", false);
-                _animator.SetBool("WalkFront", false);
-                _animator.SetBool("Walk", true);
+                _animator.SetTrigger("Walk");
                 transform.localScale = new Vector3(-1f, 1f, 1f);
             }
             //Vertical movement
-            else if (move2D.y > 0 || move2D.y < 0)
+            else if (move2D.y > 0)
             {
                 //Up & Down
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("IdleFront", false);
-                _animator.SetBool("Walk", false);
-                _animator.SetBool("WalkFront", true);
+                _animator.SetTrigger("WalkBack");
+            }
+            else if(move2D.y < 0)
+            {
+                _animator.SetTrigger("WalkFront");
             }
         }
     }

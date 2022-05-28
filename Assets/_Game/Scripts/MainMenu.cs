@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -26,32 +27,55 @@ public class MainMenu : MonoBehaviour
         if (_optionsOpen)
         {
             _optionsOpen = false;
-            _opts[0].DOLocalMove(new Vector3(436, 0, 0), .5f).SetEase(Ease.InOutSine).SetDelay(1f);
+            _opts[2].DOLocalMove(new Vector3(436, 0, 0), .5f).SetEase(Ease.InOutSine).SetDelay(1f);
 
             _opts[1].DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InOutSine).OnComplete(() =>
             {
                 _opts[1].DOLocalMove(new Vector3(436, 0, 0), .5f).SetEase(Ease.InOutSine);
             });
 
-            _opts[2].DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InOutSine).OnComplete(() =>
+            _opts[0].DOLocalMove(Vector3.zero, 1f).SetEase(Ease.InOutSine).OnComplete(() =>
             {
-                _opts[2].DOLocalMove(new Vector3(436, 0, 0), .5f).SetEase(Ease.InOutSine);
+                _opts[0].DOLocalMove(new Vector3(436, 0, 0), .5f).SetEase(Ease.InOutSine);
             });
         }
         else
         {
             _optionsOpen = true;
-            _opts[0].DOLocalMove(Vector3.zero, .5f).SetEase(Ease.InOutSine);
+            _opts[2].DOLocalMove(Vector3.zero, .5f).SetEase(Ease.InOutSine);
 
             _opts[1].DOLocalMove(Vector3.zero, .5f).SetEase(Ease.InOutSine).OnComplete(() =>
             {
                 _opts[1].DOLocalMove(new Vector3(0, 64, 0), .5f).SetEase(Ease.InOutSine);
             });
 
-            _opts[2].DOLocalMove(Vector3.zero, .5f).SetEase(Ease.InOutSine).OnComplete(() =>
+            _opts[0].DOLocalMove(Vector3.zero, .5f).SetEase(Ease.InOutSine).OnComplete(() =>
             {
-                _opts[2].DOLocalMove(new Vector3(0, 128, 0), .5f).SetEase(Ease.InOutSine);
+                _opts[0].DOLocalMove(new Vector3(0, 128, 0), .5f).SetEase(Ease.InOutSine);
             });
         }
+    }
+
+    public void OpenOptions()
+    {
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.OptionsMenu, LoadSceneMode.Additive);
+        _optionsOpen = false;
+        _opts[0].localPosition = new Vector3(436, 0, 0);
+        _opts[1].localPosition = new Vector3(436, 0, 0);
+        _opts[2].localPosition = new Vector3(436, 0, 0);
+    }
+
+    public void OpenCredits()
+    {
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.AuthorsMenu, LoadSceneMode.Additive);
+        _optionsOpen = false;
+        _opts[0].localPosition = new Vector3(436, 0, 0);
+        _opts[1].localPosition = new Vector3(436, 0, 0);
+        _opts[2].localPosition = new Vector3(436, 0, 0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
