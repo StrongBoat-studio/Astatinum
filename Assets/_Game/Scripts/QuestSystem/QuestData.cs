@@ -12,7 +12,8 @@ public class QuestData : ScriptableObject
         Puzzle,
         Craft,
         Creep,
-        Trade
+        Trade,
+        Talk
     }
 
     public int questID;
@@ -21,4 +22,5 @@ public class QuestData : ScriptableObject
     public string questDescription;
     public bool autoComplete;
     public QuestAction onCompletedAction;
+    public bool highlightQuest = false;
 }

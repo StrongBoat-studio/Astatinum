@@ -82,4 +82,22 @@ public class UI_JournalPageItems : MonoBehaviour
         _pageRight.Find("Content").GetComponent<TextMeshProUGUI>().text = content;
         _pageRight.Find("Image").GetComponent<Image>().sprite = sprite;
     }
+
+    public void NextPage()
+    {
+        if (_page < _notes.Count / 2)
+        {
+            _page++;
+            Refresh();
+        }
+    }
+
+    public void PrevPage()
+    {
+        if (_page > 0)
+        {
+            _page--;
+            Refresh();
+        }
+    }
 }

@@ -76,4 +76,22 @@ public class UI_JournalPageQuests : MonoBehaviour
             _tasksParent.GetChild(i).GetComponent<TextMeshProUGUI>().text = tasks[i];
         }
     }
+
+    public void NextPage()
+    {
+        if (_page < _quests.Count / 2)
+        {
+            _page++;
+            Refresh();
+        }
+    }
+
+    public void PrevPage()
+    {
+        if (_page > 0)
+        {
+            _page--;
+            Refresh();
+        }
+    }
 }
