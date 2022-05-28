@@ -43,12 +43,21 @@ public class Player : MonoBehaviour
 
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+    }
+
+    private void OnSceneUnloaded(Scene arg0)
+    {
+        if(arg0.buildIndex == (int)SceneIndexer.SceneType.BathroomCutscene)
+        {
+            questSystem.AddQuest(QuestAssets.Instance.CreateQuest(QuestData.QuestType.Talk, 400));
+        }
     }
 
     private void Update()

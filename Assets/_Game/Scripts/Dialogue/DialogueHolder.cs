@@ -47,4 +47,9 @@ public class DialogueHolder : Interactable
                 return true;
         }
     }
+
+    public TextAsset GetDialogue()
+    {
+        return _dialogue;
+    }
 }

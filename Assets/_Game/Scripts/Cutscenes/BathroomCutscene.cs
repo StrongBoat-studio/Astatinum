@@ -9,7 +9,7 @@ public class BathroomCutscene : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive);
 
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {

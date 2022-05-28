@@ -9,22 +9,59 @@ public class UI_QuestSystem : MonoBehaviour
 {
     private QuestSystem _questSystem;
     [SerializeField] private GameObject _questPrefab;
+    [SerializeField] private Transform _questTabHeader;
     [SerializeField] private Transform _questTabBody;
     [SerializeField] private Transform _questTaskPrefab;
+
+    private Quest highlightedQuest = null;
 
     public void SetQuestSystem(QuestSystem questSystem)
     {
         _questSystem = questSystem;
-        _questSystem.onQuestChange += QuestSystem_OnQuestChange;
-        RefreshQuestTab();
+        _questSystem.onQuestAdd += QuestSystem_OnQuestAdd;
+        _questSystem.onQuestRemove += QuestSystem_OnQuestRemove;
+        //RefreshQuestTab();
     }
 
-    private void QuestSystem_OnQuestChange(object sender, QuestSystem.QuestChangeEventArgs e)
+    private void QuestSystem_OnQuestAdd(object sender, QuestSystem.QuestChangeEventArgs e)
     {
-        RefreshQuestTab();
+        if (e.quest.questData.highlightQuest)
+        {
+            DisplayQuest(e.quest);
+        }
     }
 
-    private void RefreshQuestTab()
+    private void QuestSystem_OnQuestRemove(object sender, QuestSystem.QuestChangeEventArgs e)
+    {
+        if (e.quest.questData.highlightQuest)
+        {
+            if (e.quest == highlightedQuest)
+                HideQuest();
+        }
+    }
+
+    private void DisplayQuest(Quest quest)
+    {
+        highlightedQuest = quest;
+
+        _questTabHeader.gameObject.SetActive(true);
+        _questTabBody.gameObject.SetActive(true);
+
+        _questTabHeader.GetComponentInChildren<TextMeshProUGUI>().text = quest.questData.questTitle;
+        _questTabBody.GetComponentInChildren<TextMeshProUGUI>().text = quest.questData.questDescription;
+    }
+
+    private void HideQuest()
+    {
+        _questTabHeader.gameObject.SetActive(false);
+        _questTabBody.gameObject.SetActive(false);
+
+        _questTabHeader.GetComponentInChildren<TextMeshProUGUI>().text = "";
+        _questTabBody.GetComponentInChildren<TextMeshProUGUI>().text = "";
+    }
+
+
+    /*private void RefreshQuestTab()
     {
         if(_questTabBody.childCount > 0)
             foreach (Transform child in _questTabBody)
@@ -69,5 +106,5 @@ public class UI_QuestSystem : MonoBehaviour
 
             questIndex++;
         }
-    }
+    }*/
 }

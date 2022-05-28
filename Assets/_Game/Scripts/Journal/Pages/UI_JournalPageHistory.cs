@@ -20,7 +20,7 @@ public class UI_JournalPageHistory : MonoBehaviour
             _page--;
             Refresh();
         }
-        else if(Input.GetKeyDown(KeyCode.M) && _page < _notes.Count / 2)
+        else if (Input.GetKeyDown(KeyCode.M) && _page < _notes.Count / 2)
         {
             _page++;
             Refresh();
@@ -43,7 +43,7 @@ public class UI_JournalPageHistory : MonoBehaviour
         }
         else
         {
-            SetLeft("","");
+            SetLeft("", "");
         }
 
         if (_page * 2 + 1 < _notes.Count)
@@ -66,5 +66,23 @@ public class UI_JournalPageHistory : MonoBehaviour
     {
         _pageRight.Find("Title").GetComponent<TextMeshProUGUI>().text = title;
         _pageRight.Find("Content").GetComponent<TextMeshProUGUI>().text = content;
+    }
+
+    public void NextPage()
+    {
+        if (_page < _notes.Count / 2)
+        {
+            _page++;
+            Refresh();
+        }
+    }
+
+    public void PrevPage()
+    {
+        if (_page > 0)
+        {
+            _page--;
+            Refresh();
+        }
     }
 }

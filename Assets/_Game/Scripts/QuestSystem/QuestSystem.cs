@@ -18,6 +18,7 @@ public class QuestSystem
     }
     public event EventHandler<QuestChangeEventArgs> onQuestChange;
     public event EventHandler<QuestChangeEventArgs> onQuestAdd;
+    public event EventHandler<QuestChangeEventArgs> onQuestRemove;
 
     public QuestSystem()
     {
@@ -53,6 +54,9 @@ public class QuestSystem
                 case QuestData.QuestType.FindInformation:
                     if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
                     break;
+                case QuestData.QuestType.Talk:
+                    if(q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
+                    break;
             }
         }
     }
@@ -78,5 +82,6 @@ public class QuestSystem
     {
         _activeQuests.Remove(quest);
         onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = quest });
+        onQuestRemove?.Invoke(this, new QuestChangeEventArgs { quest = quest });
     }
 }

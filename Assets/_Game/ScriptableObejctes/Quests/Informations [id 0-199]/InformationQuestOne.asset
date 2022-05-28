@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51eb6743ae9a72e4cabcf25cc16b63b8, type: 3}
-  m_Name: QuestTwo
+  m_Name: InformationQuestOne
   m_EditorClassIdentifier: 
-  questID: 1
-  questType: 1
-  questTitle: Quest Two
-  questDescription: Find 1xItem3 and 2xItem1
+  questID: 0
+  questType: 0
+  questTitle: Test
+  questDescription: :)
+  autoComplete: 0
+  onCompletedAction: {fileID: 0}

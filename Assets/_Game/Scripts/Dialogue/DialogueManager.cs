@@ -236,6 +236,18 @@ public class DialogueManager : MonoBehaviour
                             break;
                     }
                     break;
+                case "quest":
+                    string questID = param.Split('=')[0];
+                    string questState = param.Split('=')[1];
+                    foreach(Quest q in GameManager.Instance.player.GetComponent<Player>().questSystem.activeQuests)
+                    {
+                        if(q.questData.questID == int.Parse(questID) && questState == "complete")
+                        {
+                            q.CompleteQuest();
+                            break;
+                        }
+                    }
+                    break;
                 default:
                     break;
             }
