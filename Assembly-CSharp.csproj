@@ -62,6 +62,7 @@
     <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabButton.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChangeLocation.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestGiver.cs" />
+    <Compile Include="Assets\_Game\Scripts\Cutscenes\BathroomCutscene.cs" />
     <Compile Include="Assets\_Game\Scripts\Movement.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInformation.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
@@ -129,7 +130,6 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\Cutscenes\BathroomCutscene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
