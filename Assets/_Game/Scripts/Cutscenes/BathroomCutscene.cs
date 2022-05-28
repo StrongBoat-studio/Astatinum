@@ -9,23 +9,34 @@ public class BathroomCutscene : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive);
-
-        for (int i = 0; i < SceneManager.sceneCount; i++)
+        Debug.Log("Load Player Objects");
+        //GameManager.Instance.mainCanvas.Find("Debug").GetComponent<TMPro.TextMeshProUGUI>().text += "\nLoad Player Objects";
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive).completed += delegate
         {
-            if(SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.SceneLoader)
+            for (int i = 0; i < SceneManager.sceneCount; i++)
             {
-                SceneManager
-                    .GetSceneAt(i)
-                    .GetRootGameObjects()[0]
-                    .GetComponent<LevelLoader>()
-                    .LoadNextLevel((int)_sceneType);
+                if (SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.SceneLoader)
+                {
+                    Debug.Log("Load Bathroom");
+                    GameManager.Instance.currentLevelSceneIndex = (int)SceneIndexer.SceneType.Bathroom;
+                    //GameManager.Instance.mainCanvas.Find("Debug").GetComponent<TMPro.TextMeshProUGUI>().text += "\n" + _sceneType.ToString();
+                    SceneManager.LoadSceneAsync((int)_sceneType, LoadSceneMode.Additive).completed += delegate
+                    {
+                        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.BathroomCutscene);
+                    };
+                    /*SceneManager
+                        .GetSceneAt(i)
+                        .GetRootGameObjects()[0]
+                        .GetComponent<LevelLoader>()
+                        .LoadNextLevel((int)_sceneType);*/
+                }
             }
-        }  
+        };
     }
 
     public void UnloadBathroomScene()
     {
-        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.BathroomCutscene);
+        //GameManager.Instance.mainCanvas.Find("Debug").GetComponent<TMPro.TextMeshProUGUI>().text += "\nUnloadScene";
+        //SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.BathroomCutscene);
     }
 }
