@@ -111,7 +111,9 @@
     <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteData.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageHistory.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\Quest.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestTalk.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemData.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestTalkData.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\UI_QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
@@ -130,8 +132,6 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestTalk.cs" />
-    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestTalkData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
