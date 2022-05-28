@@ -109,6 +109,8 @@ public class Player : MonoBehaviour
 
     public void UnlockJournal()
     {
+        if (_journal != null) return;
+
         _journal = new Journal();
         _uiJournal.SetJournal(_journal);
         GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;
