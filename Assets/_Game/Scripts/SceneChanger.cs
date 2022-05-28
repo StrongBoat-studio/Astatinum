@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : Interactable
 {
     [SerializeField] private SceneIndexer.SceneType _sceneToLoad;
-    //[SerializeField] private LevelLoader _levelLoader;
     [SerializeField] private Vector3 _spawnPositionOnNewScene;
     [SerializeField] private string _interactCondition;
     [SerializeField] private string _interactionDescriptionFail;
@@ -28,14 +27,7 @@ public class SceneChanger : Interactable
                         Debug.LogWarning("Can't move to the same location!");
                     else
                     {
-                        /*SceneManager.GetSceneByBuildIndex((int)SceneIndexer.SceneType.SceneLoader)
-                            .GetRootGameObjects()[0]
-                            .GetComponent<LevelLoader>()
-                            .LoadNextLevel((int)_sceneToLoad);*/
-                        SceneManager.LoadSceneAsync((int)_sceneToLoad, LoadSceneMode.Additive);
-                        SceneManager.UnloadSceneAsync(GameManager.Instance.currentLevelSceneIndex);
-                        GameManager.Instance.currentLevelSceneIndex = (int)_sceneToLoad;
-                        GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
+                        LevelLoader.Instance.LoadLevelTransition(_sceneToLoad);
                     }
                     break;
                 default:
