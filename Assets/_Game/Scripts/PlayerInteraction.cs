@@ -25,22 +25,40 @@ public class PlayerInteraction : MonoBehaviour
         GameManager.Instance.playerControls.Interactions.Interact.started += On_InteractStarted;
         GameManager.Instance.playerControls.Interactions.ChooseInteraction.started += On_ChooseInteractionStarted;
 
-        RefreshUI(null);
+        RefreshUI();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        RefreshUI(other);
+        if (other.GetComponent<Interactable>() == null) return;
+
+        if (!_interactables.Contains(other.GetComponent<Interactable>()))
+        {
+            _interactables.Add(other.GetComponent<Interactable>());
+        }
+
+        RefreshUI();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        RefreshUI(other);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        RefreshUI(other);
+        if (other.GetComponent<Interactable>() == null) return;
+
+        if(_interactables.Contains(other.GetComponent<Interactable>()))
+        {
+            _interactables.Remove(other.GetComponent<Interactable>());
+
+            if(_currentInteraction >= _interactables.Count)
+            {
+                _currentInteraction = _interactables.Count - 1;
+            }
+        }
+
+        RefreshUI();
     }
 
     private void OnDestroy()
@@ -52,32 +70,16 @@ public class PlayerInteraction : MonoBehaviour
         GameManager.Instance.playerControls.Interactions.Interact.started -= On_InteractStarted;
         GameManager.Instance.playerControls.Interactions.ChooseInteraction.started -= On_ChooseInteractionStarted;
 
-        RefreshUI(null);
+        RefreshUI();
     }
 
-    private void RefreshUI(Collider other)
+    private void RefreshUI()
     {
-        if (other != null)
-        {
-            _interactables.Clear();
-            if (other.GetComponent<Interactable>() != null)
-            {
-                Interactable[] allInteractables = other.GetComponents<Interactable>();
-                foreach (Interactable interactable in allInteractables)
-                {
-                    foreach (Interactable i in _interactables)
-                        if (_interactables.Contains(i)) continue;
-
-                    if (interactable.GetCanBeInteractedWith())
-                        _interactables.Add(interactable);
-                }
-            }
-        }
-
         //If there are no interaction distable whole UI
         if (_interactables.Count == 0)
         {
-            GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(false);  
+            GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(false);
+            _currentInteraction = 0;
         }
         else
         {
@@ -125,7 +127,7 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteraction--;
         }
 
-        RefreshUI(null);
+        RefreshUI();
     }
 
     public void ForceRemoveInteraction(Interactable interaction)
@@ -133,7 +135,7 @@ public class PlayerInteraction : MonoBehaviour
         //Fix pointer after remove
         _interactables.Remove(interaction);
         _currentInteraction = 0;
-        RefreshUI(null);
+        RefreshUI();
     }
 
     public void ForceRemoveAllInteractions()
@@ -141,6 +143,6 @@ public class PlayerInteraction : MonoBehaviour
         //Fix pointer after remove
         _interactables.Clear();
         _currentInteraction = 0;
-        RefreshUI(null);
+        RefreshUI();
     }
 }

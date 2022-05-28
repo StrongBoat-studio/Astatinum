@@ -14,8 +14,8 @@ public class StartGame : MonoBehaviour
             //Allow to start game only when on MainMenu screen
             if (SceneManager.sceneCount == 1 && SceneManager.GetSceneAt(0).buildIndex == (int)SceneIndexer.SceneType.MainMenu)
             {
-                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects);
-                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene, LoadSceneMode.Additive);
+                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.SceneLoader);
+                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.Cutscenes, LoadSceneMode.Additive);
             }
         }
     }

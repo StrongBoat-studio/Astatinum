@@ -9,7 +9,9 @@ public class Buttons : MonoBehaviour
    public void OnStartClicked ()
    {
         SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects);
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.Cutscenes, LoadSceneMode.Additive);
+        //SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects);
+        //SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene, LoadSceneMode.Additive);
    }
 
     public void OnAutorClicked()

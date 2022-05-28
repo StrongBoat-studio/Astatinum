@@ -24,9 +24,10 @@ public class SceneChanger : Interactable
                     Debug.LogWarning("Can't move to the same location!");
                 else
                 {
-                    //var scene = SceneManager.LoadSceneAsync((int)_sceneToLoad);
-                    //_levelLoader.LoadNextLevel((int)_sceneToLoad);
-                    GameManager.Instance.levelLoader.LoadNextLevel((int)_sceneToLoad);
+                    SceneManager.GetSceneByBuildIndex((int)SceneIndexer.SceneType.SceneLoader)
+                        .GetRootGameObjects()[0]
+                        .GetComponent<LevelLoader>()
+                        .LoadNextLevel((int)_sceneToLoad);
                     GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveInteraction(GetComponent<Interactable>());
                 }
                 break;
