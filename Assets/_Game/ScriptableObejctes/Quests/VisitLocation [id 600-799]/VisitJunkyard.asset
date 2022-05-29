@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51eb6743ae9a72e4cabcf25cc16b63b8, type: 3}
+  m_Name: VisitJunkyard
+  m_EditorClassIdentifier: 
+  questID: 600
+  questType: 7
+  questTitle: "M\xF3j pierwszy robot"
+  questDescription: "Odwied\u017A z\u0142omowisko"
+  autoComplete: 1
+  onCompletedActions:
+  - {fileID: 11400000, guid: 6d2ca27652cc8b64183e239ed4c3f6d8, type: 2}
+  highlightQuest: 0

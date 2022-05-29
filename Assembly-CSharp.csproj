@@ -62,6 +62,7 @@
     <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabButton.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChangeLocation.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestGiver.cs" />
+    <Compile Include="Assets\_Game\Scripts\Cutscenes\BathroomCutscene.cs" />
     <Compile Include="Assets\_Game\Scripts\Movement.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInformation.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteChractersData.cs" />
     <Compile Include="Assets\_Game\Scripts\Animations.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTarger.cs" />
-    <Compile Include="Assets\_Game\Scripts\SceneChanger.cs" />
+    <Compile Include="Assets\_Game\Scripts\SceneChangers\SceneChanger.cs" />
     <Compile Include="Assets\_Game\Scripts\PlayerAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\RecipeScriptableObject.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
+    <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUsePapers.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Note.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindItems.cs" />
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueManager.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Assets\_Game\Scripts\Crafting\UI_Crafting.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestManager.cs" />
+    <Compile Include="Assets\_Game\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\_Game\Scripts\CameraController.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindItemsData.cs" />
     <Compile Include="Assets\_Game\Scripts\GameManager.cs" />
@@ -110,7 +113,9 @@
     <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteData.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageHistory.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\Quest.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestTalk.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemData.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestTalkData.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\UI_QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestAssets.cs" />
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
@@ -129,51 +134,97 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\Cutscenes\BathroomCutscene.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestGoToLocation.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestGoToLocationData.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChainQuest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Mixer.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{d7b20025-d148-4564-97a6-3818a0f2b487}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{ed0f3ae8-9731-47d1-938d-5f30629cb00f}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{5df8cac8-72a1-4568-8632-7efcd32a6a94}.xml" />
     <None Include="Assets\_Game\UPR\Shaders\SurfaceInput.hlsl" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{c7bd76ff-a076-44d4-9b26-d9795b097cc0}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{1af375f3-d491-4845-bec6-f5f7710ea919}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{a568dd52-0e4f-40fb-9b06-bc49e483959b}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{8306b502-099c-40d7-87fc-4c1045989d6b}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{64873cd2-2398-4707-a7f5-dbe9d3905a60}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{7455ee2b-7243-4459-9e27-d71ec58c527a}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{222c6898-57d5-4746-8218-95ad5a47ec7a}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{38214267-9b66-4841-ba0f-fff8b40b31c3}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{70809160-90dd-4460-8b28-464e41413944}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Workspace.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{61bd5460-331f-492e-acfe-5343785b32c2}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{e0c3f5f7-4c3c-4c65-8f3f-39ed097949cd}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Bank\{33451697-9d20-49d2-b8ce-3f6201867329}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\BankFolder\{f867c027-8fc0-4889-bd55-a1129e21fed7}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{4a77915c-7404-42af-92f2-e50da807ac25}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\EncodingSetting\{fffdea00-2f3e-465b-8d44-2daf300ebb90}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{6dec34f8-c3bf-4bb7-b798-303a3af6f85b}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{1672ce77-2151-46fa-b112-495808afb4bc}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{cadd2cfc-f5c0-4de2-b37f-828cf08a6c52}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{30b6c5cd-496e-4550-b131-334acb59c22d}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{583fdbfc-8ceb-4050-9893-9a508fcf2f1a}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\SnapshotGroup\{b7ff5b67-a48b-4dc5-8108-1e17aa830f57}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\_Game\UPR\Shaders\UnlitSprite.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{14c0e430-9319-498f-8447-be471bf9c54f}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{37de7306-31dc-4118-a194-c5ff238f543b}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{01d02bb0-de39-4343-9aa4-e17123fdaf00}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Group\{64a1ad50-c93a-4f9e-a759-4c452c262b12}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{2be7e92f-7558-47f2-bbe5-f8cc70284b5c}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Master.xml" />
     <None Include="Assets\_Game\UPR\Shaders\UnlitInput.hlsl" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{c643ee79-2e3f-4349-a58a-1f3b163782fb}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Group\{5c7ada20-c53c-452f-aedf-1c60746c0417}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{e1672991-b950-469e-b21e-a3e1e0e5c1a1}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{74041f40-bbb4-4515-94c0-f2a2a226421a}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{f5fc34a1-9bd9-4cb6-96ea-a12e3c0b23cc}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\SandboxFolder\{d059454e-3c4e-44e9-b105-a1f9d9bf95d4}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{7d679648-70e1-4bd5-bbda-05759b06778e}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\_Game\UPR\Shaders\DepthOnlyPass.hlsl" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{13e8f968-7cb0-4297-b932-a02b1124419f}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{7c83e6b1-8f0f-4217-b476-7261913443c7}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{249190e5-a625-4610-9348-4830db0b68c4}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Group\{651b1fc0-3ad3-4374-af98-192cc7df0cfb}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{202edb9e-c967-40d6-99e7-1ac02c5047dd}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{0568f026-bc69-4ff3-a0a5-9003dbe97ea7}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{d21c1045-8fa0-48bc-b8d3-1dbef63a30ab}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{3844af5b-3048-4a2f-8e7a-05c53188cdda}.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Tags.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{bcfff4e6-826b-414d-a6ef-ff6dec856984}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{c28a0885-437c-40ff-8cf0-a311156cea8e}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{d7d0cae9-0f87-4812-8446-d7ecea412d28}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{7c40f23a-af35-4f64-be7d-a8fc16927068}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{2740bfbb-fbc5-4c54-8c65-12406032d684}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Platform\{3fade4bd-3906-452c-b384-1526fbc3b3a3}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{34d8b999-ab64-46c0-87dd-736a57cd59d8}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{eb1d0ae1-6d05-4eb0-9d5c-8678ecc735a1}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\AudioFile\{0c468d11-138c-4021-90d5-ade3c181eddf}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\EventFolder\{7f12f95a-54f2-4d82-9bc6-a63470f73915}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Return\{a20c9804-940e-4a1b-b733-a3760b6aac12}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\ParameterPresetFolder\{58e44dad-76da-4d91-aec8-c61c62f4f5ee}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{4c5b0f44-057e-4ed3-b8a5-c206a7f02e11}.xml" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Asset\{bd1ba5db-768e-4dc4-a698-e4a5484bbf8a}.xml" />
+    <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{1d3235a3-3a58-44d3-96be-8e3af45fbab9}.xml" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\ProfilerFolder\{90f6bd68-261a-4dd9-94b3-4d96a2ad3548}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\VCA\{f1e3b495-6aad-49f0-82f1-ffda81044384}.xml" />
@@ -758,6 +809,9 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>

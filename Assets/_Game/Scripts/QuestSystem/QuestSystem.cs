@@ -18,6 +18,7 @@ public class QuestSystem
     }
     public event EventHandler<QuestChangeEventArgs> onQuestChange;
     public event EventHandler<QuestChangeEventArgs> onQuestAdd;
+    public event EventHandler<QuestChangeEventArgs> onQuestRemove;
 
     public QuestSystem()
     {
@@ -42,7 +43,10 @@ public class QuestSystem
 
     private void QuestChangedEvent(object sender, EventArgs e)
     {
-        foreach(Quest q in _activeQuests)
+        List<Quest> aq = new List<Quest>();
+        aq.AddRange(_activeQuests);
+
+        foreach (Quest q in aq)
         {
             switch (q.questData.questType)
             {
@@ -52,6 +56,12 @@ public class QuestSystem
                     break;
                 case QuestData.QuestType.FindInformation:
                     if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
+                    break;
+                case QuestData.QuestType.Talk:
+                    if(q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
+                    break;
+                case QuestData.QuestType.VisitLocation:
+                    if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q }); 
                     break;
             }
         }
@@ -66,6 +76,7 @@ public class QuestSystem
     //Also self-explanatory :D
     public void AddQuest(Quest quest)
     {
+        AudioManager.Instance.PlayGameQuestBegin();
         Debug.Log("Adding quest: " + quest.questData.questTitle);
         _activeQuests.Add(quest);
         quest.onQuestCompleted += Quest_OnQuestCompleted;
@@ -78,5 +89,6 @@ public class QuestSystem
     {
         _activeQuests.Remove(quest);
         onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = quest });
+        onQuestRemove?.Invoke(this, new QuestChangeEventArgs { quest = quest });
     }
 }

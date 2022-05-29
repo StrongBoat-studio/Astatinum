@@ -1,1 +1,1 @@
-Otwierasz szufladę #event:unlockdialoge=tutorial/workshop/drawer
+Otwierasz szufladę #event:giveitem=Papers

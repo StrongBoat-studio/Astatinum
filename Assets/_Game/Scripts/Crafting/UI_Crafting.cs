@@ -148,6 +148,7 @@ public class UI_Crafting : MonoBehaviour, IItemHolder
                 if(GameManager.Instance.player.GetComponent<Player>().inventory.AddItem(_craftingSystem.itemOutput))
                 {
                     _craftingSystem.ConsumeCraftingItems();
+                    AudioManager.Instance.PlayGameCraftingDone();
                 }
             });
         }

@@ -43,28 +43,29 @@ public class Player : MonoBehaviour
 
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
+        Debug.Log("Player OnSceneLoaded - set pos for: " + ((SceneIndexer.SceneType)arg0.buildIndex).ToString() + " with vals: " + PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex));
+        //GameManager.Instance.mainCanvas.Find("Debug").GetComponent<TMPro.TextMeshProUGUI>().text += "\nPlayer OnSceneLoaded - set pos";
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+    }
+
+    private void OnSceneUnloaded(Scene arg0)
+    {
+        Debug.Log("Player OnSceneUnloaded");
+        if (arg0.buildIndex == (int)SceneIndexer.SceneType.BathroomCutscene)
+        {
+            questSystem.AddQuest(QuestAssets.Instance.CreateQuest(QuestData.QuestType.Talk, 400));
+        }
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[0] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[1] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[2] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[3] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[4] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[5] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[6] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[7] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[8] });
-        }
+        
     }
 
     private void On_OpenJournal(InputAction.CallbackContext obj)
@@ -96,6 +97,8 @@ public class Player : MonoBehaviour
 
     public void UnlockJournal()
     {
+        if (_journal != null) return;
+
         _journal = new Journal();
         _uiJournal.SetJournal(_journal);
         GameManager.Instance.playerControls.Journal.OpenJournal.performed += On_OpenJournal;

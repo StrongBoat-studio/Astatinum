@@ -67,4 +67,22 @@ public class UI_JournalPageCharacters : MonoBehaviour
         _pageRight.Find("Image").GetComponent<Image>().sprite = sprite;
 
     }
+
+    public void NextPage()
+    {
+        if (_page < _notes.Count)
+        {
+            _page++;
+            Refresh();
+        }
+    }
+
+    public void PrevPage()
+    {
+        if (_page > 0)
+        {
+            _page--;
+            Refresh();
+        }
+    }
 }

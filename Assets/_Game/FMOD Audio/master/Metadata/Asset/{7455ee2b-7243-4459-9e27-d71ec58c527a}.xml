@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{7455ee2b-7243-4459-9e27-d71ec58c527a}">
+		<property name="assetPath">
+			<value>crafting/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c7ad67c-3c2d-4c4a-b2cc-af3d3f145f8a}</destination>
+		</relationship>
+	</object>
+</objects>

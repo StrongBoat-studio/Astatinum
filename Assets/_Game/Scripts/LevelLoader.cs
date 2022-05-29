@@ -6,56 +6,101 @@ using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
+    public static LevelLoader Instance { get; private set; }
+
     [SerializeField] private Animator _transition;
     [SerializeField] private float _transitionTime;
 
-    public void LoadNextLevel(int index)
+    public void Awake()
     {
-        StartCoroutine(LoadLevel(index));
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else Destroy(this);
     }
 
-    private IEnumerator LoadLevel(int index)
+    /// <summary>
+    /// Load level with crossfade transition, use only when PlayerObjects scene is LOADED
+    /// </summary>
+    /// <param name="sceneType">Scene to load</param>
+    /// <returns></returns>
+    public void LoadLevelTransition(SceneIndexer.SceneType sceneType)
     {
-        //Play animation
-        _transition.SetTrigger("Start");
+        StartCoroutine(LoadLevelTransitionCR(sceneType));
+    }
 
-        //Wait for the animation to finish
-        yield return new WaitForSeconds(_transitionTime);
+    /// <summary>
+    /// Load scene with corssfade transition, use only when PlayerObjects scene is UNLOADED
+    /// </summary>
+    /// <param name="loadScene"></param>
+    /// <param name="unloadScene"></param>
+    public void LoadSceneTransition(SceneIndexer.SceneType loadScene, SceneIndexer.SceneType unloadScene)
+    {
+        StartCoroutine(LoadSceneTransitionCR(loadScene, unloadScene));
+    }
 
-        //AsyncOperations
-        List<AsyncOperation> asyncOperations = new List<AsyncOperation>();
-
-        //Unload current level scene, if loaded
-        for(int i = 0; i < SceneManager.sceneCount; i++)
+    private IEnumerator LoadLevelTransitionCR(SceneIndexer.SceneType sceneType)
+    {
+        if (SceneManager.GetSceneByBuildIndex((int)SceneIndexer.SceneType.PlayerObjects) != null)
         {
-            if (SceneManager.GetSceneAt(i).buildIndex == GameManager.Instance.currentLevelSceneIndex)
+            //Start transition and wait
+            _transition.SetTrigger("Start");
+            yield return new WaitForSeconds(_transitionTime);
+
+            //Add all operations to list
+            List<AsyncOperation> asyncOperations = new List<AsyncOperation>();
+            asyncOperations.Add(SceneManager.UnloadSceneAsync(GameManager.Instance.currentLevelSceneIndex));
+            asyncOperations.Add(SceneManager.LoadSceneAsync((int)sceneType, LoadSceneMode.Additive));
+
+            //Change currentLevelSceneIndex and remove interactions
+            GameManager.Instance.currentLevelSceneIndex = (int)sceneType;
+            GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteractions();
+
+            //Wait for all operations to finish
+            for (int i = 0; i < asyncOperations.Count; i++)
             {
-                asyncOperations.Add(SceneManager.UnloadSceneAsync(GameManager.Instance.currentLevelSceneIndex));
+                while (!asyncOperations[0].isDone)
+                {
+                    yield return null;
+                }
             }
+
+            //Finish transition and wait 
+            _transition.SetTrigger("End");
+            yield return new WaitForSeconds(_transitionTime);
+
         }
-        
-        //Load new level scene
-        asyncOperations.Add(SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive));
+        else yield return null;
+    }
 
-        //Update current level index
-        GameManager.Instance.currentLevelSceneIndex = index;
-
-        //Force remove interactions
-        GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteractions();
-
-        //Wait for level to load
-        for (int i = 0; i < asyncOperations.Count; i++)
+    private IEnumerator LoadSceneTransitionCR(SceneIndexer.SceneType loadScene, SceneIndexer.SceneType unloadScene)
+    {
+        if (SceneManager.GetSceneByBuildIndex((int)SceneIndexer.SceneType.PlayerObjects) == null)
         {
-            while(!asyncOperations[0].isDone)
+            //Start transition and wait
+            _transition.SetTrigger("Start");
+            yield return new WaitForSeconds(_transitionTime);
+
+            //Add all operations to list
+            List<AsyncOperation> asyncOperations = new List<AsyncOperation>();
+            asyncOperations.Add(SceneManager.UnloadSceneAsync((int)unloadScene));
+            asyncOperations.Add(SceneManager.LoadSceneAsync((int)loadScene, LoadSceneMode.Additive));
+
+            //Wait for all operations to finish
+            for (int i = 0; i < asyncOperations.Count; i++)
             {
-                yield return null;
+                while (!asyncOperations[0].isDone)
+                {
+                    yield return null;
+                }
             }
+
+            //Finish transition and wait 
+            _transition.SetTrigger("End");
+            yield return new WaitForSeconds(_transitionTime);
+
         }
-
-        //Play animation
-        _transition.SetTrigger("End");
-
-        //Wait for the animation to finish
-        yield return new WaitForSeconds(_transitionTime);
+        else yield return null;
     }
 }
