@@ -291,13 +291,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sentences:
-  - Witaj...
-  - "Przed tob\u0105 bardzo fajna cutscenka"
-  - Zajebista, co nie?
-  - Koniec :D
+  - ":O Robot se powsta\u0142"
+  - "No ja nie wierz\u0119"
+  - "Jeste\u015B geniuszem!"
+  - A no i ten...
+  - "3 lata p\xF3\u017Aniej..."
+  - :D
   _typeSpeed: 0.05
   _sentenceDelay: 1
-  _nextScene: 1
+  _loadNext: 16
+  _unloadThis: 17
 --- !u!1 &988450213
 GameObject:
   m_ObjectHideFlags: 0

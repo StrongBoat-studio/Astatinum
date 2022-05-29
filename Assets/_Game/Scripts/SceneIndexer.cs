@@ -20,11 +20,12 @@ public class SceneIndexer : MonoBehaviour
         Bathroom = 9,
         PlayerObjects = 10,
         SettingsScene = 11,
-        Cutscenes = 12,
+        GameStartCutscene = 12,
         SceneLoader = 13,
         BathroomCutscene = 14,
         RoadScene = 15,
         TutorialScene2 = 16,
+        Mar3KCutscene = 17
     }
 
     public static SceneIndexer Instance { get; private set; }

@@ -15,7 +15,7 @@ public class StartGame : MonoBehaviour
             if (SceneManager.GetSceneByBuildIndex((int)SceneIndexer.SceneType.MainMenu) != null)
             {
                 SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.SceneLoader);
-                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.Cutscenes, LoadSceneMode.Additive);
+                SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.GameStartCutscene, LoadSceneMode.Additive);
             }
         }
     }
