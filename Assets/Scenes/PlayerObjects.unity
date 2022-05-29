@@ -2366,21 +2366,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questFindItems:
-  - {fileID: 11400000, guid: d91edf1776fbbee4dab2f654c913c7cc, type: 2}
-  - {fileID: 11400000, guid: 37d6d16163d927849b09ded41fe86b4b, type: 2}
   - {fileID: 11400000, guid: f89fbd40f244d8241a63e1ae41567f8e, type: 2}
+  - {fileID: 11400000, guid: 2265dc7fa6e423a448d96ca39a7e9811, type: 2}
+  - {fileID: 11400000, guid: 23b38fcaa6884544cabe36283307b487, type: 2}
   questFindItemGoal:
-  - {fileID: 11400000, guid: fa0f78e46dd6d934f9e29e5e02614703, type: 2}
-  - {fileID: 11400000, guid: d9eeb2015bf19c74c851acb7bcbf2338, type: 2}
   - {fileID: 11400000, guid: df2f4f9ef1ac0be45b6feee358d127d7, type: 2}
+  - {fileID: 11400000, guid: 56a2bc2fe0e22b045980420bcec81353, type: 2}
+  - {fileID: 11400000, guid: 066751422c1e332469e037d4a3f67049, type: 2}
   questFindInformation:
   - {fileID: 11400000, guid: 8b6a63df15988784d88bcd0595ecd94a, type: 2}
   questFindInformationGoal:
   - {fileID: 11400000, guid: a992dd6bd1f20f643a93a7ec259ff9b6, type: 2}
   questTalk:
   - {fileID: 11400000, guid: 39b0d770d9ad8474398b86e20d9a821b, type: 2}
+  - {fileID: 11400000, guid: d937afa16bb9f7b4a85f9f64f701f531, type: 2}
   questTalkData:
   - {fileID: 11400000, guid: 2081f4ae82da23643981374b92b4066f, type: 2}
+  - {fileID: 11400000, guid: 5ffd4bf7b021fff429851c6559b9eda6, type: 2}
+  questGoToLocation:
+  - {fileID: 11400000, guid: 7f4e0cf6240fea14f904a2a43131b000, type: 2}
+  - {fileID: 11400000, guid: 606085aea04e9a6429ce37bf7fa523a7, type: 2}
+  questGoToLocationData:
+  - {fileID: 11400000, guid: cef554c10d7da7740ab8b88370b4c45c, type: 2}
+  - {fileID: 11400000, guid: 06ba271897422094eaff706bcb185c94, type: 2}
 --- !u!114 &899450796
 MonoBehaviour:
   m_ObjectHideFlags: 0

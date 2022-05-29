@@ -26,13 +26,22 @@ public class Quest
     protected void QuestCanBeCompleted() 
     { 
         _canBeCompleted = true;
-        if (questData.onCompletedAction != null)
+        if (questData.onCompletedActions != null)
         {
             if (!actionDone)
             {
-                questData.onCompletedAction.Do();
+                foreach (QuestAction qa in questData.onCompletedActions)
+                {
+                    Debug.Log("QuestActions");
+                    qa.Do();
+                }
                 actionDone = true;
             }
+        }
+
+        if(questData.autoComplete)
+        {
+            CompleteQuest();
         }
     }
 

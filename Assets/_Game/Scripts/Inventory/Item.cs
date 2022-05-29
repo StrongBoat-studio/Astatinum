@@ -11,7 +11,7 @@ public class Item
     {
         Item1,
         Item2,
-        Item3,
+        GlassOfWater,
         Papers,
         Key,
         Mar3K_head,

@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb484315a55cd464c924ad9626e5fcf1, type: 3}
-  m_Name: Options
+  m_Script: {fileID: 11500000, guid: 51eb6743ae9a72e4cabcf25cc16b63b8, type: 3}
+  m_Name: CraftMar3K
   m_EditorClassIdentifier: 
-  isFullscreen: 0
-  qualityLevel: 0
-  masterVolume: 1
-  vcaMasterName: Master
-  musicVolume: 1
-  vcaMusicName: Music
-  sfxVolume: 1
-  vcaSFXName: SFX
+  questID: 201
+  questType: 1
+  questTitle: "M\xF3j pierwszy robot"
+  questDescription: "Stw\xF3rz robota w warsztacie"
+  autoComplete: 1
+  onCompletedActions: []
+  highlightQuest: 0

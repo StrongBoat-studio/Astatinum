@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f1735131285ba4c85e6d8eef072159, type: 3}
-  m_Name: Item3
+  m_Script: {fileID: 11500000, guid: 51eb6743ae9a72e4cabcf25cc16b63b8, type: 3}
+  m_Name: TalkToTrader
   m_EditorClassIdentifier: 
-  itemType: 2
-  itemName: Item3
-  itemSprite: {fileID: 21300000, guid: e32bcfbb720d7f54bb749d6d4417b932, type: 3}
+  questID: 401
+  questType: 6
+  questTitle: "Przesy\u0142ka specjalna"
+  questDescription: Porozmawiaj z handlarzem
+  autoComplete: 0
+  onCompletedAction: {fileID: 0}
+  highlightQuest: 0

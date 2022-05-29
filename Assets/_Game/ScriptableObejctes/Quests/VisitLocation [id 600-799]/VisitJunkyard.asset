@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51eb6743ae9a72e4cabcf25cc16b63b8, type: 3}
-  m_Name: FindMar3KItems
+  m_Name: VisitJunkyard
   m_EditorClassIdentifier: 
-  questID: 200
-  questType: 1
+  questID: 600
+  questType: 7
   questTitle: "M\xF3j pierwszy robot"
-  questDescription: "Zbierz cz\u0119\u015Bci robota"
+  questDescription: "Odwied\u017A z\u0142omowisko"
   autoComplete: 1
   onCompletedActions:
-  - {fileID: 11400000, guid: f39dfe8b6fa362b40acc62e8bb43b24c, type: 2}
-  - {fileID: 11400000, guid: 74d133eda699a68479a9993d1d7f5ec2, type: 2}
+  - {fileID: 11400000, guid: 6d2ca27652cc8b64183e239ed4c3f6d8, type: 2}
   highlightQuest: 0

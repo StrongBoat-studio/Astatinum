@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
         _questSystem.SetInventoryEvent(_inventory);
 
         //Scene change event
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData[0] });
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
@@ -66,18 +65,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[0] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[1] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[2] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[3] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[4] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[5] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[6] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[7] });
-            _journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes[8] });
-        }
+        
     }
 
     private void On_OpenJournal(InputAction.CallbackContext obj)
