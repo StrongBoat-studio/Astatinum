@@ -2337,10 +2337,11 @@ MonoBehaviour:
   domEzilaSpawn: {x: -46.59, y: 0.35, z: 5.92}
   tutorialSpawn: {x: -37, y: 0.35, z: 8.3}
   locationOneSceneSpawn: {x: -3.5, y: 0.7, z: 3.74}
-  junkyardSpawn: {x: 0.94, y: 0.34, z: -5.29}
+  junkyardSpawn: {x: 10.49, y: 0.38, z: -6.22}
   astaroomSpawn: {x: -40, y: 0.35, z: 8}
   bathroomSpawn: {x: -40, y: 0.35, z: 8}
   roadSceneSpawn: {x: -14.5, y: 0.37, z: -11}
+  tutorialScene2Spawn: {x: -37, y: 0.35, z: 8.3}
 --- !u!114 &899450794
 MonoBehaviour:
   m_ObjectHideFlags: 0
