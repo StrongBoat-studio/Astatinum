@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e129f8b30d375814baec7408212df4ec, type: 3}
   m_Name: EzilNote
   m_EditorClassIdentifier: 
-  noteID: 201
-  title: Wide Ezil
-  text: Wide boi Ezil
+  noteID: 501
+  title: Ezil
+  text: "Niegdy\u015B znany i szanowany konstruktor, kt\xF3ry przyczyni\u0142 si\u0119
+    do modernizacji miast Orbity. Spe\u0142nia\u0142 si\u0119 w zawodzie kosztem
+    zdrowia. Po latach pracy w z\u0142ych warunkach jego organy zacz\u0119\u0142y
+    odmawia\u0107 pos\u0142usze\u0144stwa. Od tego czasu regularnie przyjmuje dawki
+    astatinum, by zachowa\u0107 zdrowie. \u017Bycie Ezila obr\xF3ci\u0142o si\u0119
+    do g\xF3ry nogami, gdy znalaz\u0142 niemowl\u0119 pod drzwiami swojego domu.
+    Asta sta\u0142a si\u0119 najwa\u017Cniejsz\u0105 osob\u0105 w jego \u017Cyciu
+    i to jej po\u015Bwi\u0119ci\u0142 ca\u0142y sw\xF3j czas."
   type: 2
-  sprite: {fileID: 21300000, guid: de7e265944fe291439d9d7b82d9af48c, type: 3}
+  sprite: {fileID: 21300000, guid: c47f39c10d9747c4a90fae88206a490a, type: 3}

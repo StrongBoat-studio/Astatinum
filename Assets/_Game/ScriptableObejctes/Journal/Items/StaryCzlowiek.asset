@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f988de613f163448873c1d308cf5d2, type: 3}
+  m_Name: StaryCzlowiek
+  m_EditorClassIdentifier: 
+  noteID: 1000
+  title: "\u201EStary cz\u0142owiek i morze\u201D Ernest Hemingway"
+  text: "To ksi\u0105\u017Cka, po kt\xF3r\u0105 Ezil si\u0119ga bardzo cz\u0119sto.
+    Jest jego ulubion\u0105 opowie\u015Bci\u0105 z czas\xF3w szkolnych."
+  type: 1
+  item: {fileID: 0}
