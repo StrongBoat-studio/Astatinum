@@ -70,6 +70,7 @@ public class QuestSystem
     //Also self-explanatory :D
     public void AddQuest(Quest quest)
     {
+        AudioManager.Instance.PlayGameQuestBegin();
         Debug.Log("Adding quest: " + quest.questData.questTitle);
         _activeQuests.Add(quest);
         quest.onQuestCompleted += Quest_OnQuestCompleted;

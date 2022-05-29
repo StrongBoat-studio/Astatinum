@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BathroomCutscene.unity
     guid: 0ed37dbb5be845d4c9f617e3a1b3e0a8
+  - enabled: 1
+    path: Assets/Scenes/Road.unity
+    guid: 68a4a0ef9634edc4a9446d1cc3783832
   m_configObjects: {}
