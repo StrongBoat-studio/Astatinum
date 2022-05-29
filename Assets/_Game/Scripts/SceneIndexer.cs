@@ -24,6 +24,7 @@ public class SceneIndexer : MonoBehaviour
         SceneLoader = 13,
         BathroomCutscene = 14,
         RoadScene = 15,
+        TutorialScene2 = 16,
     }
 
     public static SceneIndexer Instance { get; private set; }
@@ -63,6 +64,8 @@ public class SceneIndexer : MonoBehaviour
                 return _bathroom;
             case SceneType.RoadScene:
                 return _roadScene;
+            case SceneType.TutorialScene2:
+                return _tutorialScene2;
             default:
                 return "Invalid scene";
         }
@@ -80,5 +83,6 @@ public class SceneIndexer : MonoBehaviour
     private string _astaRoom = "Pokój Asty";
     private string _bathroom = "£azienka";
     private string _roadScene = "Droga";
+    private string _tutorialScene2 = "Droga";
 
 }
