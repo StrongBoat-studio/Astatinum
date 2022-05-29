@@ -12,6 +12,38 @@ public class UI_Journal : MonoBehaviour
     [SerializeField] private Transform _tabs;
     [SerializeField] private Transform _pages;
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _pages.GetChild(0).gameObject.SetActive(true);
+            _pages.GetChild(1).gameObject.SetActive(false);
+            _pages.GetChild(2).gameObject.SetActive(false);
+            _pages.GetChild(3).gameObject.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            _pages.GetChild(0).gameObject.SetActive(false);
+            _pages.GetChild(1).gameObject.SetActive(true);
+            _pages.GetChild(2).gameObject.SetActive(false);
+            _pages.GetChild(3).gameObject.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _pages.GetChild(0).gameObject.SetActive(false);
+            _pages.GetChild(1).gameObject.SetActive(false);
+            _pages.GetChild(2).gameObject.SetActive(true);
+            _pages.GetChild(3).gameObject.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            _pages.GetChild(0).gameObject.SetActive(false);
+            _pages.GetChild(1).gameObject.SetActive(false);
+            _pages.GetChild(2).gameObject.SetActive(false);
+            _pages.GetChild(3).gameObject.SetActive(true);
+        }
+    }
+
     public void SetJournal (Journal journal)
     {
         this.journal = journal;
@@ -29,12 +61,8 @@ public class UI_Journal : MonoBehaviour
         RefreshJournal();
     }
 
-    private void RefreshJournal()
-    {
-        foreach(Transform jpage in _pages)
-        {
-            if (jpage.GetChild(0).GetComponent<UI_JournalPageHistory>() != null)
-                jpage.GetChild(0).GetComponent<UI_JournalPageHistory>().Refresh();
-        }
+    private void RefreshJournal() 
+    { 
+        
     }
 }
