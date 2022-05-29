@@ -31,6 +31,8 @@ public class PlayerAssets : MonoBehaviour
                 return astaroomSpawn;
             case (int)SceneIndexer.SceneType.Bathroom:
                 return bathroomSpawn;
+            case (int)SceneIndexer.SceneType.RoadScene:
+                return roadSceneSpawn;
             default:
                 return new Vector3(0f, 2f, 0f);
         }
@@ -42,4 +44,5 @@ public class PlayerAssets : MonoBehaviour
     public Vector3 junkyardSpawn;
     public Vector3 astaroomSpawn;
     public Vector3 bathroomSpawn;
+    public Vector3 roadSceneSpawn;
 }

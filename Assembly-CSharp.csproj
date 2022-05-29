@@ -749,6 +749,9 @@
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>C:/Users/Żaneta/Desktop/Astatinum_2/Astatinum/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>C:/Users/Żaneta/Desktop/Astatinum_2/Astatinum/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Shaders">
  <HintPath>C:/Users/Żaneta/Desktop/Astatinum_2/Astatinum/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
  </Reference>

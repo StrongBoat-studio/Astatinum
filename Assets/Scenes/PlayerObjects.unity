@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1160,6 +1160,7 @@ MonoBehaviour:
   junkyardSpawn: {x: 0.94, y: 0.34, z: -5.29}
   astaroomSpawn: {x: -40, y: 0.35, z: 8}
   bathroomSpawn: {x: -40, y: 0.35, z: 8}
+  roadSceneSpawn: {x: -14.5, y: 0.37, z: -11}
 --- !u!114 &899450794
 MonoBehaviour:
   m_ObjectHideFlags: 0
