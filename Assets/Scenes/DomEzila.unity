@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -755,10 +755,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.x
+      value: 2.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Center.y
+      value: -0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3572103767856493812, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3fce7e4ca4e656f48b63f3acacd3e6d4, type: 3}
+      objectReference: {fileID: 21300000, guid: 2ec65e97923a99c418e6b92e87edadfa, type: 3}
     - target: {fileID: 3572103767856493814, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -997,7 +1013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
-      value: "[key] Id\u017A do [location]"
+      value: "[key] Id\u017A do warsztatu"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactionDescriptionFail
+      value: "Znajd\u017A dzienniczek "
       objectReference: {fileID: 0}
     - target: {fileID: 4386533560393438044, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_RootOrder
@@ -1156,7 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionDescription: '[key] Rozmawiaj'
+  _interactionDescription: "[key] Sp\xF3jrz"
   _canBeInteractedWith: 1
   _name: Table
   _dialogue: {fileID: 4900000, guid: 45ffa69a1e70c0446860a1484eda1ecc, type: 3}
@@ -1853,7 +1873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionDescription: '[key] Rozmawiaj'
+  _interactionDescription: "[key] Sp\xF3jrz"
   _canBeInteractedWith: 1
   _name: Fridge
   _dialogue: {fileID: 4900000, guid: cdcc79a64c9e0874a965a44f1979b3b4, type: 3}
@@ -2031,7 +2051,7 @@ PrefabInstance:
     - target: {fileID: 2284705519289025435, guid: 38f56d4da861f11439c140fc8abfe6f3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3fce7e4ca4e656f48b63f3acacd3e6d4, type: 3}
+      objectReference: {fileID: 21300000, guid: 2ec65e97923a99c418e6b92e87edadfa, type: 3}
     - target: {fileID: 2284705519289025435, guid: 38f56d4da861f11439c140fc8abfe6f3, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2152,7 +2172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
-      value: "[key] Id\u017A do [location]"
+      value: "[key] Id\u017A do \u0142azienki"
       objectReference: {fileID: 0}
     - target: {fileID: 4386533560393438044, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_RootOrder
@@ -2180,10 +2200,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Center.y
+      value: -0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 3572103767856493812, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3fce7e4ca4e656f48b63f3acacd3e6d4, type: 3}
+      objectReference: {fileID: 21300000, guid: 2ec65e97923a99c418e6b92e87edadfa, type: 3}
     - target: {fileID: 3572103767856493814, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2420,10 +2456,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_back (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Size.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572103767856493811, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
+      propertyPath: m_Center.y
+      value: -0.68
+      objectReference: {fileID: 0}
     - target: {fileID: 3572103767856493812, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3fce7e4ca4e656f48b63f3acacd3e6d4, type: 3}
+      objectReference: {fileID: 21300000, guid: 2ec65e97923a99c418e6b92e87edadfa, type: 3}
     - target: {fileID: 3572103767856493814, guid: c1e19cdd3296c7345ac8cccee562cf97, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3271,7 +3323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
-      value: "[key] Id\u017A do [location]"
+      value: "[key] Id\u017A na podw\xF3rko"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactionDescriptionFail
+      value: "Znajd\u017A dzienniczek "
       objectReference: {fileID: 0}
     - target: {fileID: 4386533560393438044, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_RootOrder
@@ -19591,7 +19647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879865660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.3, y: 2.04, z: 8.58}
+  m_LocalPosition: {x: -43.3, y: 2.11, z: 8.58}
   m_LocalScale: {x: 0.2, y: 4, z: 3}
   m_Children: []
   m_Father: {fileID: 1479676295}
@@ -19889,7 +19945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159390, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159390, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19937,7 +19993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
-      value: "[key] Id\u017A do [location]"
+      value: "[key] Id\u017A do pokoju"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
@@ -20505,7 +20561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionDescription: '[key] Rozmawiaj '
+  _interactionDescription: "[key] Sp\xF3jrz"
   _canBeInteractedWith: 1
   _name: Piec
   _dialogue: {fileID: 4900000, guid: 87cb75fd17e25cc4d9da1cc0172ad9c3, type: 3}
@@ -20642,7 +20698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 316399048391762438, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
       propertyPath: _interactionDescription
-      value: '[key] Rozmawiaj'
+      value: "[key] Sp\xF3jrz"
       objectReference: {fileID: 0}
     - target: {fileID: 530877687887433920, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
       propertyPath: m_Enabled
@@ -20763,7 +20819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5404736397238735136, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
       propertyPath: _interactionDescription
-      value: '[key] Rozmawiaj'
+      value: "[key] Sp\xF3jrz"
       objectReference: {fileID: 0}
     - target: {fileID: 5404736397238735137, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
       propertyPath: m_Radius

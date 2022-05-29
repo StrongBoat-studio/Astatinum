@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemName: Stare gazety
-  itemSprite: {fileID: 21300000, guid: 4b362d4ba37103a458c3ce496d345e21, type: 3}
+  itemSprite: {fileID: 21300000, guid: 086f109d42653904cad4930fad2f4f8b, type: 3}
   itemUseAction: {fileID: 11400000, guid: 13d284c875acfa04cbd51a487b15a4c4, type: 2}

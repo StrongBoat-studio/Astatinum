@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         _uiQuestSystem.SetQuestSystem(_questSystem);
         _questSystem.SetPlayer(this);
         _questSystem.SetInventoryEvent(_inventory);
+        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Papers") });
 
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;
