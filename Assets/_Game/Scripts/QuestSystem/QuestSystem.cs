@@ -43,7 +43,10 @@ public class QuestSystem
 
     private void QuestChangedEvent(object sender, EventArgs e)
     {
-        foreach(Quest q in _activeQuests)
+        List<Quest> aq = new List<Quest>();
+        aq.AddRange(_activeQuests);
+
+        foreach (Quest q in aq)
         {
             switch (q.questData.questType)
             {
@@ -56,6 +59,9 @@ public class QuestSystem
                     break;
                 case QuestData.QuestType.Talk:
                     if(q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q });
+                    break;
+                case QuestData.QuestType.VisitLocation:
+                    if (q.UpdateQuest()) onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = q }); 
                     break;
             }
         }

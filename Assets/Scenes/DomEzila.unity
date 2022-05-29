@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ezil
       objectReference: {fileID: 0}
+    - target: {fileID: 3130274046213392120, guid: 252cf194b245c2c4f89b68b6abea377f, type: 3}
+      propertyPath: quest
+      value: 
+      objectReference: {fileID: 11400000, guid: 606085aea04e9a6429ce37bf7fa523a7, type: 2}
     - target: {fileID: 3130274046213392122, guid: 252cf194b245c2c4f89b68b6abea377f, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(menuName = "Quest System/Quest Actions")]
+[CreateAssetMenu(menuName = "Quest System/Quest Actions/Change location")]
 public class QuestActionChangeLocation : QuestAction
 {
     public SceneIndexer.SceneType sceneToLoad;
