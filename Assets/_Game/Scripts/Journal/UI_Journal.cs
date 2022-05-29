@@ -14,34 +14,17 @@ public class UI_Journal : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            _pages.GetChild(0).gameObject.SetActive(true);
-            _pages.GetChild(1).gameObject.SetActive(false);
-            _pages.GetChild(2).gameObject.SetActive(false);
-            _pages.GetChild(3).gameObject.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            _pages.GetChild(0).gameObject.SetActive(false);
-            _pages.GetChild(1).gameObject.SetActive(true);
-            _pages.GetChild(2).gameObject.SetActive(false);
-            _pages.GetChild(3).gameObject.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            _pages.GetChild(0).gameObject.SetActive(false);
-            _pages.GetChild(1).gameObject.SetActive(false);
-            _pages.GetChild(2).gameObject.SetActive(true);
-            _pages.GetChild(3).gameObject.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            _pages.GetChild(0).gameObject.SetActive(false);
-            _pages.GetChild(1).gameObject.SetActive(false);
-            _pages.GetChild(2).gameObject.SetActive(false);
-            _pages.GetChild(3).gameObject.SetActive(true);
-        }
+        
+    }
+
+    private void OnEnable()
+    {
+        AudioManager.Instance.PlayGameJournalOpen1();
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.Instance.PlayGameJournalOpen2();
     }
 
     public void SetJournal (Journal journal)

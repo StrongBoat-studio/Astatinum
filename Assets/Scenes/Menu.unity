@@ -389,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &299176988
 MonoBehaviour:
@@ -1402,7 +1402,7 @@ RectTransform:
   - {fileID: 1098369315}
   - {fileID: 1133477200}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1582,6 +1582,168 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764627122}
   m_CullTransparentMesh: 1
+--- !u!1 &1797598165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797598167}
+  - component: {fileID: 1797598166}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1797598166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797598165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183ade613aee10a428676ef0d15ec3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicAmbience1:
+    Guid:
+      Data1: 941703783
+      Data2: 1212259174
+      Data3: -117502022
+      Data4: -1020195916
+    Path: event:/Ambience1
+  _musicAmbience2:
+    Guid:
+      Data1: 489829795
+      Data2: 1154693720
+      Data3: 982433430
+      Data4: -1178968076
+    Path: event:/Ambience2
+  _uiButtonHover:
+    Guid:
+      Data1: 30419888
+      Data2: 1128521273
+      Data3: 1910613146
+      Data4: 11533603
+    Path: event:/hover
+  _uiButtonClick:
+    Guid:
+      Data1: 1281036100
+      Data2: 1322452350
+      Data3: 113419704
+      Data4: 288288935
+    Path: event:/pressed
+  _gameCollect1:
+    Guid:
+      Data1: 2103940680
+      Data2: 1272279265
+      Data3: 1963317947
+      Data4: -1904802149
+    Path: event:/collect1
+  _gameCollect2:
+    Guid:
+      Data1: 944025435
+      Data2: 1244606536
+      Data3: -989496690
+      Data4: -624064463
+    Path: event:/collect2
+  _gameCollect3:
+    Guid:
+      Data1: 376622711
+      Data2: 1190797649
+      Data3: 1481183921
+      Data4: -1129009400
+    Path: event:/collect3
+  _gameCollect4:
+    Guid:
+      Data1: 886618521
+      Data2: 1187031908
+      Data3: 1785978247
+      Data4: -665203369
+    Path: event:/collect4
+  _gameCraftingOpen:
+    Guid:
+      Data1: -513332847
+      Data2: 1184807248
+      Data3: -509403470
+      Data4: -1581128224
+    Path: event:/crafting_open
+  _gameCraftingDone:
+    Guid:
+      Data1: 937325318
+      Data2: 1092104668
+      Data3: -3828575
+      Data4: 995397411
+    Path: event:/crafting_done
+  _gameDoor1:
+    Guid:
+      Data1: 90763302
+      Data2: 1341373545
+      Data3: 59811232
+      Data4: -1484854821
+    Path: event:/door1
+  _gameDoor2:
+    Guid:
+      Data1: -350418207
+      Data2: 1320185093
+      Data3: 2022071453
+      Data4: -1590310932
+    Path: event:/door2
+  _gameJournalOpen1:
+    Guid:
+      Data1: -1124076314
+      Data2: 1095598699
+      Data3: 1845489574
+      Data4: -2073459220
+    Path: event:/eventlog_open1
+  _gameJournalOpen2:
+    Guid:
+      Data1: 1249349980
+      Data2: 1118794756
+      Data3: 233173650
+      Data4: 632031144
+    Path: event:/eventlog_open2
+  _gameMar3KHappy:
+    Guid:
+      Data1: -891474692
+      Data2: 1306719680
+      Data3: -1937604685
+      Data4: 1382845168
+    Path: event:/mar3k-happy
+  _gameMar3KStartup:
+    Guid:
+      Data1: -2096712446
+      Data2: 1087834524
+      Data3: 273480839
+      Data4: 1805490245
+    Path: event:/mar3k-startup
+  _gameQuestBegin:
+    Guid:
+      Data1: 334035304
+      Data2: 1117224112
+      Data3: 731919033
+      Data4: -1623120879
+    Path: event:/quest_begin
+--- !u!4 &1797598167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797598165}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 474.58356, y: 265.40326, z: -66.790184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1830694874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,5 +2075,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

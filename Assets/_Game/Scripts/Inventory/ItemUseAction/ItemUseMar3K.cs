@@ -12,6 +12,7 @@ public class ItemUseMar3K : ItemUseAction
         if(GameManager.Instance.player.GetComponent<Player>().inventory.RemoveItem(item))
         {
             Instantiate(mar3kPrefab, GameManager.Instance.player.position, Quaternion.identity);
+            AudioManager.Instance.PlayGameMar3KStartup();
         }
     }
 }

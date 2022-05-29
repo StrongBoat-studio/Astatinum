@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.SceneLoader, LoadSceneMode.Additive);
         _startText.DOMove(_startText.position + _startTextMove, _startTextMoveTime).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
     }
 
@@ -58,6 +59,7 @@ public class MainMenu : MonoBehaviour
 
     public void OpenOptions()
     {
+        AudioManager.Instance.PlayUIButtonClick();
         SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.OptionsMenu, LoadSceneMode.Additive);
         _optionsOpen = false;
         _opts[0].localPosition = new Vector3(436, 0, 0);
@@ -67,6 +69,7 @@ public class MainMenu : MonoBehaviour
 
     public void OpenCredits()
     {
+        AudioManager.Instance.PlayUIButtonClick();
         SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.AuthorsMenu, LoadSceneMode.Additive);
         _optionsOpen = false;
         _opts[0].localPosition = new Vector3(436, 0, 0);
@@ -76,6 +79,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        AudioManager.Instance.PlayUIButtonClick();
         Application.Quit();
     }
 }
