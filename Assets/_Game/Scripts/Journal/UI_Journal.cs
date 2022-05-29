@@ -12,6 +12,21 @@ public class UI_Journal : MonoBehaviour
     [SerializeField] private Transform _tabs;
     [SerializeField] private Transform _pages;
 
+    private void Update()
+    {
+        
+    }
+
+    private void OnEnable()
+    {
+        AudioManager.Instance.PlayGameJournalOpen1();
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.Instance.PlayGameJournalOpen2();
+    }
+
     public void SetJournal (Journal journal)
     {
         this.journal = journal;
@@ -29,12 +44,8 @@ public class UI_Journal : MonoBehaviour
         RefreshJournal();
     }
 
-    private void RefreshJournal()
-    {
-        foreach(Transform jpage in _pages)
-        {
-            if (jpage.GetChild(0).GetComponent<UI_JournalPageHistory>() != null)
-                jpage.GetChild(0).GetComponent<UI_JournalPageHistory>().Refresh();
-        }
+    private void RefreshJournal() 
+    { 
+        
     }
 }

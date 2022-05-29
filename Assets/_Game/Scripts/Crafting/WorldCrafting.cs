@@ -30,6 +30,7 @@ public class WorldCrafting : Interactable
 
     public override void Interact()
     {
+        AudioManager.Instance.PlayGameCraftingOpen();
         craftingUI.gameObject.SetActive(!craftingUI.gameObject.activeSelf);
         _craftingSystem.SetRecipes(GameManager.Instance.player.GetComponent<Player>().craftingRecipes);
     }
