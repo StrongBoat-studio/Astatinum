@@ -65,6 +65,7 @@
     <Compile Include="Assets\_Game\Scripts\Cutscenes\BathroomCutscene.cs" />
     <Compile Include="Assets\_Game\Scripts\Movement.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInformation.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestGoToLocation.cs" />
     <Compile Include="Assets\_Game\Scripts\SceneIndexer.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestEventGiver.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Pages\UI_JournalPageQuests.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\IItemHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabGroup.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestGoToLocationData.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteHistoryData.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\WorldNote.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\WorldCrafting.cs" />
@@ -128,15 +130,14 @@
     <Compile Include="Assets\_Game\Scripts\SaveSystem\SaveLoader.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestData.cs" />
     <Compile Include="Assets\_Game\Scripts\Buttons.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChainQuest.cs" />
     <Compile Include="Assets\_Game\Scripts\UI_ItemDrag.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_ItemSlot.cs" />
     <Compile Include="Assets\_Game\Scripts\Options\OptionsMenu.cs" />
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestGoToLocation.cs" />
-    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestGoToLocationData.cs" />
-    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChainQuest.cs" />
+    <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionStartCutscene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

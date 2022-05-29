@@ -17,5 +17,6 @@ MonoBehaviour:
   questTitle: "M\xF3j pierwszy robot"
   questDescription: "Stw\xF3rz robota w warsztacie"
   autoComplete: 1
-  onCompletedActions: []
+  onCompletedActions:
+  - {fileID: 11400000, guid: 8650ae8f9d32d494393c3565767b6fbd, type: 2}
   highlightQuest: 0

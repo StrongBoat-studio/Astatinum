@@ -49,14 +49,11 @@ public class Player : MonoBehaviour
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        Debug.Log("Player OnSceneLoaded - set pos for: " + ((SceneIndexer.SceneType)arg0.buildIndex).ToString() + " with vals: " + PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex));
-        //GameManager.Instance.mainCanvas.Find("Debug").GetComponent<TMPro.TextMeshProUGUI>().text += "\nPlayer OnSceneLoaded - set pos";
         transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void OnSceneUnloaded(Scene arg0)
     {
-        Debug.Log("Player OnSceneUnloaded");
         if (arg0.buildIndex == (int)SceneIndexer.SceneType.BathroomCutscene)
         {
             questSystem.AddQuest(QuestAssets.Instance.CreateQuest(QuestData.QuestType.Talk, 400));

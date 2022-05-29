@@ -60,7 +60,7 @@ public class LevelLoader : MonoBehaviour
             //Wait for all operations to finish
             for (int i = 0; i < asyncOperations.Count; i++)
             {
-                while (!asyncOperations[0].isDone)
+                while (!asyncOperations[i].isDone)
                 {
                     yield return null;
                 }
@@ -90,7 +90,7 @@ public class LevelLoader : MonoBehaviour
             //Wait for all operations to finish
             for (int i = 0; i < asyncOperations.Count; i++)
             {
-                while (!asyncOperations[0].isDone)
+                while (!asyncOperations[i].isDone)
                 {
                     yield return null;
                 }
