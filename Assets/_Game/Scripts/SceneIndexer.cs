@@ -30,6 +30,7 @@ public class SceneIndexer : MonoBehaviour
         Bathroom2 = 19,
         DomEzila2 = 20,
         Podworko2 = 21,
+        GameEnd = 22,
     }
 
     public static SceneIndexer Instance { get; private set; }
