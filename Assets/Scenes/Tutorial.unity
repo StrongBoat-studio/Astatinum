@@ -3539,6 +3539,18 @@ PrefabInstance:
       propertyPath: _interactionDescription
       value: "[key] Id\u017A do salonu"
       objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactionDescriptionFail
+      value: "Zamkni\u0119te"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.data[0]
+      value: hasquest:10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
 --- !u!1001 &3572103766007634968

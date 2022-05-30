@@ -9,10 +9,10 @@ public class TraderTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (canTrigger)
+        /*if (canTrigger)
         {
             canTrigger = false;
             DialogueManager.Instance.EnterDialogueMode(_dialogue);
-        }
+        }*/
     }
 }
