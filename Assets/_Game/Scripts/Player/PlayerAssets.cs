@@ -35,6 +35,14 @@ public class PlayerAssets : MonoBehaviour
                 return roadSceneSpawn;
             case (int)SceneIndexer.SceneType.TutorialScene2:
                 return tutorialScene2Spawn;
+            case (int)SceneIndexer.SceneType.AstaRoom2:
+                return astaRoom2Spawn;
+            case (int)SceneIndexer.SceneType.Bathroom2:
+                return bathroom2Spawn;
+            case (int)SceneIndexer.SceneType.DomEzila2:
+                return domEzila2Spawn;
+            case (int)SceneIndexer.SceneType.Podworko2:
+                return podworko2Spawn;
             default:
                 return new Vector3(-39.2f, 0.38f, 7.6f);
         }
@@ -48,4 +56,8 @@ public class PlayerAssets : MonoBehaviour
     public Vector3 bathroomSpawn;
     public Vector3 roadSceneSpawn;
     public Vector3 tutorialScene2Spawn;
+    public Vector3 astaRoom2Spawn;
+    public Vector3 bathroom2Spawn;
+    public Vector3 domEzila2Spawn;
+    public Vector3 podworko2Spawn;
 }

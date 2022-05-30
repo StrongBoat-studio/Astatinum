@@ -2342,6 +2342,10 @@ MonoBehaviour:
   bathroomSpawn: {x: -40, y: 0.35, z: 8}
   roadSceneSpawn: {x: -14.5, y: 0.37, z: -11}
   tutorialScene2Spawn: {x: -37, y: 0.35, z: 8.3}
+  astaRoom2Spawn: {x: -38.6, y: 0.35, z: 9.4}
+  bathroom2Spawn: {x: -40, y: 0.35, z: 8}
+  domEzila2Spawn: {x: -46.59, y: 0.35, z: 5.92}
+  podworko2Spawn: {x: -3.5, y: 0.7, z: 3.74}
 --- !u!114 &899450794
 MonoBehaviour:
   m_ObjectHideFlags: 0
