@@ -279,6 +279,13 @@ public class DialogueManager : MonoBehaviour
                         }
                     }
                     break;
+                case "questadd":
+                    string questIDToAdd = param.Split('=')[0];
+                    string questStateToAdd = param.Split('=')[1];
+                    List<QuestData.QuestType> questTypes = new List<QuestData.QuestType>((QuestData.QuestType[])Enum.GetValues(typeof(QuestData.QuestType)));
+                    var quest = QuestAssets.Instance.CreateQuest(questTypes.Find(x => x.ToString() == questStateToAdd), int.Parse(questIDToAdd));
+                    GameManager.Instance.player.GetComponent<Player>().questSystem.AddQuest(quest);
+                    break;
                 default:
                     break;
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -24,7 +25,19 @@ public class CutsceneManager : MonoBehaviour
             foreach(Transform cs in _cutscenes)
             {
                 if (cs.gameObject.activeSelf)
-                    cs.GetComponentInChildren<CutsceneTextTyper>().FinishCutscene();
+                {
+                    for (int i = 0; i < SceneManager.sceneCount; i++)
+                    {
+                        if(SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.GameStartCutscene)
+                        {
+                            cs.GetComponentInChildren<GameStartCutscene>().FinishCutscene();
+                        }
+                        else if (SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Mar3KCutscene)
+                        {
+                            cs.GetComponentInChildren<CutsceneTextTyper>().FinishCutscene();
+                        }
+                    }
+                }    
             }
         }
     }
