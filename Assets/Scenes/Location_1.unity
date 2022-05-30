@@ -32407,6 +32407,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce29f499e51ddb543bda969473af7136, type: 3}
+--- !u!1 &4300865296180627676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7408029861991528882, guid: ce29f499e51ddb543bda969473af7136, type: 3}
+  m_PrefabInstance: {fileID: 4300865296180627675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &4300865296180627677
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300865296180627676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -0.69, z: 0}
+--- !u!114 &4300865296180627678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300865296180627676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDescription: "[key] Sp\xF3jrz "
+  _canBeInteractedWith: 1
+  _name: Hustawka
+  _dialogue: {fileID: 4900000, guid: a4da5e0b4fd77974bb96f8c1abd67c65, type: 3}
+  _interactCondition: 
 --- !u!4 &4301169023359298039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433249228989289596, guid: 241fd61ceb795604b9ef876d02ee6079, type: 3}
@@ -32661,7 +32696,7 @@ MonoBehaviour:
   _canBeInteractedWith: 1
   _sceneToLoad: 6
   _spawnPositionOnNewScene: {x: 0, y: 0, z: 0}
-  _interactCondition: 
+  _interactConditions: []
   _interactionDescriptionFail: 
   type: 1
 --- !u!1001 &6185860020272629168

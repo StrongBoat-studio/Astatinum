@@ -16,4 +16,4 @@ MonoBehaviour:
   title: 
   text: Kwiaty
   type: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: f5dbbebbf7e479f44be9343c256b768b, type: 2}

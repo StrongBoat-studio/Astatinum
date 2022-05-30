@@ -19,7 +19,12 @@ public class Item
         Mar3K_arm_right,
         Mar3K_body,
         Mar3K_legs,
-        Mar3k
+        Mar3k,
+        Otis,
+        Kwiat,
+        Astatinum, 
+        Hustawka,
+        SchematBudowyRobota
     }
 
     public ItemData itemData;
