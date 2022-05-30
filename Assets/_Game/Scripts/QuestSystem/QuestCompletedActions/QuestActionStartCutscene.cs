@@ -13,20 +13,16 @@ public class QuestActionStartCutscene : QuestAction
     {
         SceneManager.LoadSceneAsync((int)sceneLoad, LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync((int)sceneUnload);
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.TutorialScene2, LoadSceneMode.Additive).completed += delegate
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.AstaRoom, LoadSceneMode.Additive);
+        GameManager.Instance.currentLevelSceneIndex = (int)SceneIndexer.SceneType.AstaRoom;
+        GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteractions();
+        foreach (Inventory.InventorySlot slot in GameManager.Instance.player.GetComponent<Player>().inventory.inventorySlots)
         {
-            GameManager.Instance.currentLevelSceneIndex = (int)SceneIndexer.SceneType.TutorialScene2;
-            GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteractions();
-            foreach (Inventory.InventorySlot slot in GameManager.Instance.player.GetComponent<Player>().inventory.inventorySlots)
+            if (slot.IsEmpty()) continue;
+            if (slot.GetItem().itemData == ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K"))
             {
-                if (slot.IsEmpty()) continue;
-                if (slot.GetItem().itemData == ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K"))
-                {
-                    slot.GetItem().itemData.itemUseAction.Do(slot.GetItem());
-                }
+                slot.GetItem().itemData.itemUseAction.Do(slot.GetItem());
             }
-        };
-        //Start the cutscene
-        //LevelLoader.Instance.LoadSceneTransition(sceneLoad, sceneUnload);
+        }
     }
 }

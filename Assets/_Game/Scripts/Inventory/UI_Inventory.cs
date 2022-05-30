@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using System;
 
 public class UI_Inventory : MonoBehaviour, IItemHolder
 {
@@ -18,7 +20,6 @@ public class UI_Inventory : MonoBehaviour, IItemHolder
         //Set inventory reference
         _inventory = inventory;
         _inventory.OnInventoryItemsChange += Inventory_OnInventoryItemsChange;
-
         //Generate inventory;
         RefreshInventoryItems();
     }

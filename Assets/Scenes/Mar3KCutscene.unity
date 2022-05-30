@@ -299,7 +299,7 @@ MonoBehaviour:
   - :D
   _typeSpeed: 0.05
   _sentenceDelay: 1
-  _loadNext: 16
+  _loadNext: 8
   _unloadThis: 17
 --- !u!1 &988450213
 GameObject:
