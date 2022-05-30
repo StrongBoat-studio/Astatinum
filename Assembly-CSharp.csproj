@@ -54,6 +54,7 @@
      <Compile Include="Assets\_Game\Scripts\StartGame.cs" />
      <Compile Include="Assets\_Game\Scripts\LevelLoader.cs" />
      <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabButton.cs" />
+     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionStartCutscene.cs" />
      <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestCompletedActions\QuestActionChangeLocation.cs" />
      <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestGiver.cs" />
      <Compile Include="Assets\_Game\Scripts\Cutscenes\BathroomCutscene.cs" />
@@ -118,6 +119,7 @@
      <Compile Include="Assets\_Game\Scripts\Journal\UI_JournalTabGroup.cs" />
      <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestGoToLocationData.cs" />
      <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteHistoryData.cs" />
+     <Compile Include="Assets\_Game\Scripts\NewspaperClippings\NewspaperBye.cs" />
      <Compile Include="Assets\_Game\Scripts\Journal\WorldNote.cs" />
      <Compile Include="Assets\_Game\Scripts\Crafting\WorldCrafting.cs" />
      <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestTypes\QuestFindInforationData.cs" />
