@@ -13,7 +13,7 @@ public class SceneChanger : Interactable
 
     [SerializeField] private SceneIndexer.SceneType _sceneToLoad;
     [SerializeField] private Vector3 _spawnPositionOnNewScene;
-    [SerializeField] private string _interactCondition;
+    [SerializeField] private List<string> _interactConditions;
     [SerializeField] private string _interactionDescriptionFail;
     [SerializeField] private SceneChangerType type; 
 
@@ -66,19 +66,30 @@ public class SceneChanger : Interactable
 
     private bool CanInteract()
     {
-        if (_interactCondition == null || _interactCondition == "") return true;
+        if (_interactConditions == null || _interactConditions.Count == 0) return true;
 
-        string prefix = _interactCondition.Split(':')[0];
-        string param = _interactCondition.Split(':')[1];
+        bool canInteract = true;
 
-        switch (prefix)
+        foreach(string condition in _interactConditions)
         {
-            case "hasjournal":
-                if (GameManager.Instance.player.GetComponent<Player>().journal != null)
-                    return true;
-                return false;
-            default:
-                return true;
+            string prefix = condition.Split(':')[0];
+            string param = condition.Split(':')[1];
+
+            switch (prefix)
+            {
+                case "hasjournal":
+                    if (GameManager.Instance.player.GetComponent<Player>().journal != null) { }
+                    else canInteract = false;
+                    break;
+                case "hasquest":
+                    if (GameManager.Instance.player.GetComponent<Player>().questSystem.activeQuests.Find(x => x.questData.questID == int.Parse(param)) != null) { }
+                    else canInteract = false;
+                    break;
+                default:
+                    break;
+            }
         }
+
+        return canInteract;
     }
 }
