@@ -13,8 +13,8 @@ public class QuestActionStartCutscene : QuestAction
     {
         SceneManager.LoadSceneAsync((int)sceneLoad, LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync((int)sceneUnload);
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.AstaRoom, LoadSceneMode.Additive);
-        GameManager.Instance.currentLevelSceneIndex = (int)SceneIndexer.SceneType.AstaRoom;
+        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.AstaRoom2, LoadSceneMode.Additive);
+        GameManager.Instance.currentLevelSceneIndex = (int)SceneIndexer.SceneType.AstaRoom2;
         GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteractions();
         foreach (Inventory.InventorySlot slot in GameManager.Instance.player.GetComponent<Player>().inventory.inventorySlots)
         {
@@ -22,6 +22,7 @@ public class QuestActionStartCutscene : QuestAction
             if (slot.GetItem().itemData == ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K"))
             {
                 slot.GetItem().itemData.itemUseAction.Do(slot.GetItem());
+                GameManager.Instance.player.GetComponent<Player>().journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes.Find(x => x.noteID == 3) });
             }
         }
     }

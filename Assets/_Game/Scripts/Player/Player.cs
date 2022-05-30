@@ -24,8 +24,13 @@ public class Player : MonoBehaviour
     [SerializeField] private List<RecipeScriptableObject> _craftingRecipes;
     public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; }
 
+    //Na sztywno :)
+    public List<string> hadDialogueWith;
+
     private void Awake()
     {
+        hadDialogueWith = new List<string>();
+
         //Get UI references
         _uiInventory = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Inventory>(true);
         _uiJournal = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Journal>(true);
@@ -57,8 +62,12 @@ public class Player : MonoBehaviour
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        if (arg0.buildIndex == (int)SceneIndexer.SceneType.BathroomCutscene) return;
-        //transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+        if (arg0.buildIndex == (int)SceneIndexer.SceneType.BathroomCutscene)
+        {
+            transform.position = new Vector3(-39.2f, 0.38f, 7.6f);
+            return;
+        }
+        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void OnSceneUnloaded(Scene arg0)

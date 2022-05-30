@@ -59,4 +59,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mar3KCutscene.unity
     guid: 854276a2d1b880e41bb369fcb56c9a66
+  - enabled: 1
+    path: Assets/Scenes/Asta_room 1.unity
+    guid: 57590bcec18c03e4e83fdd02fcde9da6
+  - enabled: 1
+    path: Assets/Scenes/Bathroom 1.unity
+    guid: 421c726a9dec4fa4c9bd8174acef231f
+  - enabled: 1
+    path: Assets/Scenes/DomEzila 1.unity
+    guid: a108b92acfe72534b80fb5b306aa6e4b
+  - enabled: 1
+    path: Assets/Scenes/Location_1 1.unity
+    guid: 5a28aa329f3fc7b4caac7e901cc51d60
+  - enabled: 1
+    path: Assets/Scenes/GameEnd.unity
+    guid: 0d74c723f8e340044a7420a0c1930f33
   m_configObjects: {}

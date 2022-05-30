@@ -15,7 +15,12 @@
       "ProjectGuid": "7769bf8e-98ca-8e41-b5c5-638794ac1739",
       "DisplayName": "FMODUnityEditor",
       "ColorIndex": 1
+    },
+    "a78dc01a-1b96-da07-5c4f-3eedefb33489": {
+      "ProjectGuid": "a78dc01a-1b96-da07-5c4f-3eedefb33489",
+      "DisplayName": "InkEditor",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

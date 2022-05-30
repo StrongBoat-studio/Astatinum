@@ -50,7 +50,7 @@ public class UI_JournalPageItems : MonoBehaviour
 
         if (_page * 2 + 1 < _notes.Count)
         {
-            NoteItemsData data = _notes[_page * 2]._noteData as NoteItemsData;
+            NoteItemsData data = _notes[_page * 2 + 1]._noteData as NoteItemsData;
             SetRight(_notes[_page * 2 + 1].GetNoteTitle(), _notes[_page * 2 + 1].GetNoteText(), data.item.itemSprite);
         }
         else

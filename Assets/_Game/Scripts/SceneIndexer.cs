@@ -25,7 +25,12 @@ public class SceneIndexer : MonoBehaviour
         BathroomCutscene = 14,
         RoadScene = 15,
         TutorialScene2 = 16,
-        Mar3KCutscene = 17
+        Mar3KCutscene = 17,
+        AstaRoom2 = 18,
+        Bathroom2 = 19,
+        DomEzila2 = 20,
+        Podworko2 = 21,
+        GameEnd = 22,
     }
 
     public static SceneIndexer Instance { get; private set; }
@@ -67,6 +72,14 @@ public class SceneIndexer : MonoBehaviour
                 return _roadScene;
             case SceneType.TutorialScene2:
                 return _tutorialScene2;
+            case SceneType.AstaRoom2:
+                return _astaRoom2;
+            case SceneType.Bathroom2:
+                return _bathroom2;
+            case SceneType.DomEzila2:
+                return _domEzila2;
+            case SceneType.Podworko2:
+                return _podworko2;
             default:
                 return "Invalid scene";
         }
@@ -84,6 +97,10 @@ public class SceneIndexer : MonoBehaviour
     private string _astaRoom = "Pokój Asty";
     private string _bathroom = "£azienka";
     private string _roadScene = "Droga";
-    private string _tutorialScene2 = "Droga";
+    private string _tutorialScene2 = "Warsztat";
+    private string _astaRoom2 = "Pokój Asty";
+    private string _bathroom2 = "£azienka";
+    private string _domEzila2 = "Dom Ezila";
+    private string _podworko2 = "Podwórko 2";
 
 }

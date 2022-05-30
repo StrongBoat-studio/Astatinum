@@ -3969,6 +3969,7 @@ C# parse time         : 559ms
 candidates check time : 40ms
 console write time    : 0ms
 
+<<<<<<< HEAD
 [api-updater (non-obsolete-error-filter)] 30.05.2022 11:04:05 : Starting G:/Unity/Editors/2020.3.21f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
 ----------------------------------
@@ -4039,6 +4040,20 @@ C# parse time         : 181ms
 candidates check time : 48ms
 console write time    : 0ms
 
+<<<<<<< HEAD
+=======
+[api-updater (non-obsolete-error-filter)] 30.05.2022 12:39:08 : Starting C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 3675,0719ms
+moved types parse time: 132ms
+candidates parse time : 3ms
+C# parse time         : 554ms
+candidates check time : 63ms
+console write time    : 1ms
+
+>>>>>>> DuplicateLocations
+=======
 [api-updater (non-obsolete-error-filter)] 30.05.2022 15:23:24 : Starting G:/Unity/Editors/2020.3.21f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
 ----------------------------------
@@ -4049,3 +4064,4 @@ C# parse time         : 172ms
 candidates check time : 36ms
 console write time    : 0ms
 
+>>>>>>> BugFix

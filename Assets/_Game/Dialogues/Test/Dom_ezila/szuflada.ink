@@ -1,1 +1,1 @@
-Otwierasz szufladę #event:giveitem=Papers
+Otwierasz szufladę #event:giveitem=Papers  #event:addnote=1003

@@ -17,4 +17,4 @@ MonoBehaviour:
   text: "To ksi\u0105\u017Cka, po kt\xF3r\u0105 Ezil si\u0119ga bardzo cz\u0119sto.
     Jest jego ulubion\u0105 opowie\u015Bci\u0105 z czas\xF3w szkolnych."
   type: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 4796d1741454c4d40b177bce8a4bd4cf, type: 2}

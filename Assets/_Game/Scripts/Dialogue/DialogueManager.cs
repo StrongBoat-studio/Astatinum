@@ -100,6 +100,10 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJson)
     {
+        //Na sztywno :D
+        if (GameManager.Instance.player.GetComponent<Player>().hadDialogueWith.Find(x => x == inkJson.name) != null) { }
+        else GameManager.Instance.player.GetComponent<Player>().hadDialogueWith.Add(inkJson.name);
+
         GameManager.Instance.playerControls.Player.Disable();
         GameManager.Instance.playerControls.Interactions.Disable();
         _currentStory = new Story(inkJson.text);

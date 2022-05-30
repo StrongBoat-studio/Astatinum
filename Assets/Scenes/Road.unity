@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -971,8 +971,9 @@ MonoBehaviour:
   _interactionDescription: '[key] Rozmawiaj'
   _canBeInteractedWith: 1
   _name: Handlarz
-  _dialogue: {fileID: 4900000, guid: e0cbb1b390ec9314fb18a1dbe01cc479, type: 3}
+  _dialogue: {fileID: 4900000, guid: 5a64949daa73daa4abd21d1de0324c9d, type: 3}
   _interactCondition: 
+  _interactionDescriptionFail: 
 --- !u!65 &498876288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1698,6 +1699,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1557111739277714990, guid: 3793a087f844e814396a03f417b328c6, type: 3}
   m_PrefabInstance: {fileID: 850985009}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &924913136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924913137}
+  - component: {fileID: 924913139}
+  - component: {fileID: 924913138}
+  m_Layer: 0
+  m_Name: KONIEC DEMO :))))
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924913137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924913136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.93, y: 1.18, z: -15.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1559640197}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924913138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924913136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43bc7b25a2751e439b5c5b1043a490c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDescription: "[key] Id\u017A dalej"
+  _canBeInteractedWith: 1
+  _interactConditions:
+  - dialoguefinished:trenerzy
+  - dialoguefinished:handlarz
+  _interactionDescriptionFail: "Porozmawiaj z handlarzem i lud\u017Ami na przystanku"
+--- !u!65 &924913139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924913136}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.4, y: -2.52, z: 9.92}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &928074802
 GameObject:
   m_ObjectHideFlags: 0
@@ -24469,6 +24533,7 @@ Transform:
   - {fileID: 332821706}
   - {fileID: 1392779932}
   - {fileID: 1875306951}
+  - {fileID: 924913137}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25005,6 +25070,7 @@ MonoBehaviour:
   _name: 'Trenerzy '
   _dialogue: {fileID: 4900000, guid: d89847ec44af1ec4a84d4f5601b40868, type: 3}
   _interactCondition: 
+  _interactionDescriptionFail: 
 --- !u!65 &1840949042
 BoxCollider:
   m_ObjectHideFlags: 0
