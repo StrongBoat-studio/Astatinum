@@ -1496,6 +1496,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7181548639835293893, guid: 72e1bf396f080e84d837d11036bb7185, type: 3}
   m_PrefabInstance: {fileID: 748649418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &748649420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7181548639835293915, guid: 72e1bf396f080e84d837d11036bb7185, type: 3}
+  m_PrefabInstance: {fileID: 748649418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &748649421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748649420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDescription: '[key] Rozmawiaj'
+  _canBeInteractedWith: 1
+  _name: Ezil4
+  _dialogue: {fileID: 4900000, guid: f4990ef46d620c1469b52759bb54fc14, type: 3}
+  _interactCondition: 
+  _interactionDescriptionFail: 
 --- !u!1001 &767075937
 PrefabInstance:
   m_ObjectHideFlags: 0
