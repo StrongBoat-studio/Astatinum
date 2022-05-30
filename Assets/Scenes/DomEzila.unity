@@ -1192,7 +1192,8 @@ MonoBehaviour:
   _canBeInteractedWith: 1
   _name: Table
   _dialogue: {fileID: 4900000, guid: 45ffa69a1e70c0446860a1484eda1ecc, type: 3}
-  _interactCondition: 
+  _interactCondition: 'hasjournal:'
+  _interactionDescriptionFail: "Znajd\u017A dzienniczek"
 --- !u!135 &514692628
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1897,7 +1898,8 @@ MonoBehaviour:
   _canBeInteractedWith: 1
   _name: Fridge
   _dialogue: {fileID: 4900000, guid: cdcc79a64c9e0874a965a44f1979b3b4, type: 3}
-  _interactCondition: 
+  _interactCondition: 'hasjournal:'
+  _interactionDescriptionFail: "Znajd\u017A dzienniczek"
 --- !u!135 &788204483
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20597,7 +20599,8 @@ MonoBehaviour:
   _canBeInteractedWith: 1
   _name: Piec
   _dialogue: {fileID: 4900000, guid: 87cb75fd17e25cc4d9da1cc0172ad9c3, type: 3}
-  _interactCondition: 
+  _interactCondition: 'hasjournal:'
+  _interactionDescriptionFail: "Znajd\u017A dzienniczek"
 --- !u!1001 &2119880978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20729,8 +20732,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 316399048391762438, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
+      propertyPath: _interactCondition
+      value: 'hasjournal:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 316399048391762438, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
       propertyPath: _interactionDescription
       value: "[key] Sp\xF3jrz"
+      objectReference: {fileID: 0}
+    - target: {fileID: 316399048391762438, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
+      propertyPath: _interactionDescriptionFail
+      value: "Znajd\u017A dzienniczek"
       objectReference: {fileID: 0}
     - target: {fileID: 530877687887433920, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
       propertyPath: m_Enabled
@@ -20850,8 +20861,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5404736397238735136, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
+      propertyPath: _interactCondition
+      value: 'hasjournal:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404736397238735136, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
       propertyPath: _interactionDescription
       value: "[key] Sp\xF3jrz"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404736397238735136, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
+      propertyPath: _interactionDescriptionFail
+      value: "Znajd\u017A dzienniczek"
       objectReference: {fileID: 0}
     - target: {fileID: 5404736397238735137, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
       propertyPath: m_Radius

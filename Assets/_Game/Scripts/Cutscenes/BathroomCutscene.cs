@@ -18,6 +18,7 @@ public class BathroomCutscene : MonoBehaviour
         GameManager.Instance.playerControls.Player.Disable();
         GameManager.Instance.playerControls.Journal.Disable();
         GameManager.Instance.playerControls.Menu.Disable();
+        GameManager.Instance.mainCanvas.Find("Inventory").gameObject.SetActive(false);
     }
 
     public void EndCutscene()
@@ -29,10 +30,11 @@ public class BathroomCutscene : MonoBehaviour
     {
         GameManager.Instance.player.GetComponentInChildren<Animator>().SetTrigger("Idle");
         _animator.SetTrigger("Change");
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(4f);
         GameManager.Instance.playerControls.Player.Enable();
         GameManager.Instance.playerControls.Journal.Enable();
         GameManager.Instance.playerControls.Menu.Enable();
+        GameManager.Instance.mainCanvas.Find("Inventory").gameObject.SetActive(true);
         GameManager.Instance.player.GetComponent<PlayerInteraction>().ForceRemoveAllInteractions();
         DialogueManager.Instance.ExitDialogueMode();
 
@@ -42,10 +44,5 @@ public class BathroomCutscene : MonoBehaviour
             SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.BathroomCutscene);
         };
         yield return null;
-    }
-
-    public void LoadNextScene()
-    {
-        
     }
 }
