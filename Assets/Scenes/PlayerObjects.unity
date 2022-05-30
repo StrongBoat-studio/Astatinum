@@ -2385,9 +2385,11 @@ MonoBehaviour:
   questTalk:
   - {fileID: 11400000, guid: 39b0d770d9ad8474398b86e20d9a821b, type: 2}
   - {fileID: 11400000, guid: d937afa16bb9f7b4a85f9f64f701f531, type: 2}
+  - {fileID: 11400000, guid: 6e1ba0cd6bb33cb4f80288d055b3d97c, type: 2}
   questTalkData:
   - {fileID: 11400000, guid: 2081f4ae82da23643981374b92b4066f, type: 2}
   - {fileID: 11400000, guid: 5ffd4bf7b021fff429851c6559b9eda6, type: 2}
+  - {fileID: 11400000, guid: a0fb0c0f420bf6b4ebd1bd949adb5cc6, type: 2}
   questGoToLocation:
   - {fileID: 11400000, guid: 7f4e0cf6240fea14f904a2a43131b000, type: 2}
   - {fileID: 11400000, guid: 606085aea04e9a6429ce37bf7fa523a7, type: 2}
@@ -7581,6 +7583,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcb12a5fd3933314eb8ffbf3f1f94f41, type: 2}
   - {fileID: 11400000, guid: 15b61b60ee6115a499899c5a360a5bd6, type: 2}
   - {fileID: 11400000, guid: 92cafd44396de88429c599d4f8838f75, type: 2}
+  hadDialogueWith: []
 --- !u!114 &1538070708850626066
 MonoBehaviour:
   m_ObjectHideFlags: 0

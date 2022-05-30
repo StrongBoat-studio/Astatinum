@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51eb6743ae9a72e4cabcf25cc16b63b8, type: 3}
-  m_Name: FindGlassOfWater
+  m_Name: CheckAstatinumLevel
   m_EditorClassIdentifier: 
-  questID: 202
-  questType: 1
-  questTitle: "Pomocna d\u0142o\u0144"
-  questDescription: "We\u017A szklank\u0119 wody z kuchni"
+  questID: 403
+  questType: 6
+  questTitle: "Sprawd\u017A poziom astatinum"
+  questDescription: "Udaj si\u0119 do wartsztatu i sprawd\u017A poziom astatinum"
   autoComplete: 1
   onCompletedActions: []
   highlightQuest: 0

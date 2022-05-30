@@ -291,12 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sentences:
-  - ":O Robot se powsta\u0142"
-  - "No ja nie wierz\u0119"
-  - "Jeste\u015B geniuszem!"
-  - A no i ten...
+  - Witaj w domu...
   - "3 lata p\xF3\u017Aniej..."
-  - :D
   _typeSpeed: 0.05
   _sentenceDelay: 1
   _loadNext: 8

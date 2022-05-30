@@ -46,14 +46,6 @@ public class Player : MonoBehaviour
         _questSystem.SetPlayer(this);
         _questSystem.SetInventoryEvent(_inventory);
 
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Papers") });
-        /*inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Key") });
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-arm-left") });
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-arm-right") });
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-head") });
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-body") });
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-legs") });*/
-
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
@@ -63,6 +55,8 @@ public class Player : MonoBehaviour
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
+        if (arg0.buildIndex == (int)SceneIndexer.SceneType.OptionsMenu) return;
+
         if (arg0.buildIndex == (int)SceneIndexer.SceneType.BathroomCutscene)
         {
             transform.position = new Vector3(-39.2f, 0.38f, 7.6f);
