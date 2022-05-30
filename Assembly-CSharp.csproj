@@ -89,6 +89,7 @@
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemAssets.cs" />
+    <Compile Include="Assets\_Game\Scripts\Player\PlayerSounds.cs" />
     <Compile Include="Assets\_Game\Scripts\Player\PlayerInteraction.cs" />
     <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUsePapers.cs" />
@@ -139,7 +140,7 @@
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\Player\PlayerSounds.cs" />
+    <Compile Include="Assets\_Game\Scripts\GameEnd\GameEndManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{f88963d7-7b5b-439d-9814-37c9d5cbfa5f}.xml" />
