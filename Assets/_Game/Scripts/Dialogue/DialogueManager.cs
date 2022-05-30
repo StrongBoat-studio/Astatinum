@@ -5,6 +5,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using System;
 
@@ -108,7 +109,7 @@ public class DialogueManager : MonoBehaviour
         ContinueStory();
     }
 
-    private void ExitDialogueMode()
+    public void ExitDialogueMode()
     {
         GameManager.Instance.playerControls.Player.Enable();
         GameManager.Instance.playerControls.Interactions.Enable();
@@ -185,7 +186,7 @@ public class DialogueManager : MonoBehaviour
             _currentStory.ChooseChoiceIndex(choiceIndex);
             HideChoices();
             ContinueStory();
-            ContinueStory();
+            //ContinueStory();
         }
     }
 
@@ -238,6 +239,27 @@ public class DialogueManager : MonoBehaviour
                             Note n = new Note { _noteData = NoteAssets.Instance.notes.Find(x => x.noteID == int.Parse(eventParam)) };
                             if(!GameManager.Instance.player.GetComponent<Player>().journal.HasNote(n._noteData))
                                 GameManager.Instance.player.GetComponent<Player>().journal.AddPost(n);
+                            break;
+                        case "endcutscene":
+                            int scene = -1;
+                            foreach(var s in (SceneIndexer.SceneType[])Enum.GetValues(typeof(SceneIndexer.SceneType)))
+                            {
+                                if (s.ToString() == eventParam)
+                                {
+                                    scene = (int)s;
+                                    break;
+                                }
+                            }
+                            for (int i = 0; i < SceneManager.sceneCount; i++)
+                            {
+                                if (scene < 0) break;
+                                if(SceneManager.GetSceneAt(i).buildIndex == scene)
+                                {
+                                    List<GameObject> sceneGOs = new List<GameObject>();
+                                    sceneGOs.AddRange(SceneManager.GetSceneAt(i).GetRootGameObjects());
+                                    sceneGOs.Find(x => x.name == "Manger").GetComponent<BathroomCutscene>().EndCutscene();
+                                }
+                            }
                             break;
                     }
                     break;

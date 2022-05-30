@@ -65,8 +65,13 @@ public class CutsceneTextTyper : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync((int)_loadNext, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync((int)_unloadThis);
+            SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.PlayerObjects, LoadSceneMode.Additive).completed += delegate
+            {
+                SceneManager.LoadSceneAsync((int)_loadNext, LoadSceneMode.Additive).completed += delegate
+                {
+                    SceneManager.UnloadSceneAsync((int)_unloadThis);
+                };
+            };
         }
     }
 }
