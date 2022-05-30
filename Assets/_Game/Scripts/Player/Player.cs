@@ -51,12 +51,14 @@ public class Player : MonoBehaviour
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+        //transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+        transform.position = new Vector3(-39.2f, 0.38f, 7.6f);
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
+        if (arg0.buildIndex == (int)SceneIndexer.SceneType.BathroomCutscene) return;
+        //transform.position = PlayerAssets.Instance.GetSpawnLocationBySceneIndex(GameManager.Instance.currentLevelSceneIndex);
     }
 
     private void OnSceneUnloaded(Scene arg0)

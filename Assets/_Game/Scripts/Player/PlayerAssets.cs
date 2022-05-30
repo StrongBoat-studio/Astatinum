@@ -36,7 +36,7 @@ public class PlayerAssets : MonoBehaviour
             case (int)SceneIndexer.SceneType.TutorialScene2:
                 return tutorialScene2Spawn;
             default:
-                return new Vector3(0f, 2f, 0f);
+                return new Vector3(-39.2f, 0.38f, 7.6f);
         }
     }
 
