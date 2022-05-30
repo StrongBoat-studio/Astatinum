@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea16574bd4f6644ca2cfd329314a430, type: 3}
   m_Name: ItemUsePapers
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 880435098738677555, guid: a7d1eefb398e1e248940f8d0189dffa8, type: 3}

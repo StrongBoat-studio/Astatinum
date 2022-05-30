@@ -2337,10 +2337,11 @@ MonoBehaviour:
   domEzilaSpawn: {x: -46.59, y: 0.35, z: 5.92}
   tutorialSpawn: {x: -37, y: 0.35, z: 8.3}
   locationOneSceneSpawn: {x: -3.5, y: 0.7, z: 3.74}
-  junkyardSpawn: {x: 0.94, y: 0.34, z: -5.29}
+  junkyardSpawn: {x: 10.49, y: 0.38, z: -6.22}
   astaroomSpawn: {x: -40, y: 0.35, z: 8}
   bathroomSpawn: {x: -40, y: 0.35, z: 8}
   roadSceneSpawn: {x: -14.5, y: 0.37, z: -11}
+  tutorialScene2Spawn: {x: -37, y: 0.35, z: 8.3}
 --- !u!114 &899450794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,15 +2403,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes:
-  - {fileID: 11400000, guid: 7f33a0d80067dea48bbe8027a6204fd9, type: 2}
-  - {fileID: 11400000, guid: dc0d9507cb71b2d4e8e1ddd5a4937a1d, type: 2}
-  - {fileID: 11400000, guid: 8e954581f1f48d3478b1000b0790fdc7, type: 2}
-  - {fileID: 11400000, guid: 249e851da5ffcc74bb3c7d66fb99ee05, type: 2}
-  - {fileID: 11400000, guid: 20f2923c3dbf46444adb158c22128bc2, type: 2}
-  - {fileID: 11400000, guid: 56eaa268ef16ed446abe05af60d5ec45, type: 2}
-  - {fileID: 11400000, guid: 9bd14902afc094543a1ab8b2327f27ab, type: 2}
-  - {fileID: 11400000, guid: 9ba41e235799140479e9045787cb6b9e, type: 2}
+  - {fileID: 11400000, guid: b2fbe9a2384fdfe4ca4d6aad7f5bdd44, type: 2}
   - {fileID: 11400000, guid: 19b125e20e40ed1469786eb836c1e958, type: 2}
+  - {fileID: 11400000, guid: c4ec302d1e03da7499b2bd239ca5b1bd, type: 2}
+  - {fileID: 11400000, guid: ee415d8be171c71489ac9e5ab8d408c3, type: 2}
+  - {fileID: 11400000, guid: de2353fb817be184cbe4067aa51fb0d9, type: 2}
+  - {fileID: 11400000, guid: a2030aa54e0a3984abd6b8d18c721565, type: 2}
+  - {fileID: 11400000, guid: fe67cda87fce61b4d8cd52442c0f893c, type: 2}
+  - {fileID: 11400000, guid: 0594d228787097b41982837b24bd0132, type: 2}
+  - {fileID: 11400000, guid: 2cc0711f49d6b8345824e1a7e896ea83, type: 2}
+  - {fileID: 11400000, guid: 1f9c05fd12c3b404983f878b8c635399, type: 2}
+  - {fileID: 11400000, guid: 995214f240447c341ac8296fcb21a103, type: 2}
+  - {fileID: 11400000, guid: a3a39348b5b3dba428e0f6bcdc2b2ace, type: 2}
+  - {fileID: 11400000, guid: dff52a25bcf26334ca5c0e8c491e187c, type: 2}
+  - {fileID: 11400000, guid: df025fce7526d9d41b0a7717279ca8e2, type: 2}
+  - {fileID: 11400000, guid: e8d72e1dc022cec4cb10450e98ff2175, type: 2}
+  - {fileID: 11400000, guid: 1f772fdb741f86c4387c427aee632c33, type: 2}
+  - {fileID: 11400000, guid: 0fec64b6242f27945953a6507a59aeea, type: 2}
 --- !u!114 &899450797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7390,6 +7399,7 @@ GameObject:
   - component: {fileID: 1538070708533639571}
   - component: {fileID: 1538070708533639570}
   - component: {fileID: 6109892845491391988}
+  - component: {fileID: 1538070708533639565}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -7397,6 +7407,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1538070708533639565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538070708533639564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2425781db069a414ba7881c97161268b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1538070708533639570
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7771,8 +7793,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 56d6dc7ea6649714599043e62de2f618, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8314,8 +8336,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 56d6dc7ea6649714599043e62de2f618, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8973,8 +8995,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 56d6dc7ea6649714599043e62de2f618, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

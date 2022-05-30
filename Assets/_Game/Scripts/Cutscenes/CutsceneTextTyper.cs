@@ -9,10 +9,17 @@ public class CutsceneTextTyper : MonoBehaviour
     [SerializeField] private List<string> _sentences;
     [SerializeField] private float _typeSpeed;
     [SerializeField] private float _sentenceDelay;
-    [SerializeField] private SceneIndexer.SceneType _nextScene;
+    [SerializeField] private SceneIndexer.SceneType _loadNext;
+    [SerializeField] private SceneIndexer.SceneType _unloadThis;
 
     private void Awake()
     {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.mainCanvas.gameObject.SetActive(false);
+            GameManager.Instance.playerControls.Disable();
+        }
+
         GetComponent<TextMeshProUGUI>().text = "";
         StartCoroutine(TypeSentence());
     }
@@ -50,8 +57,16 @@ public class CutsceneTextTyper : MonoBehaviour
     public void FinishCutscene()
     {
         GetComponentInParent<CutsceneManager>().DisableSkip();
-        //Load scenes
-        SceneManager.LoadSceneAsync((int)SceneIndexer.SceneType.BathroomCutscene, LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync((int)SceneIndexer.SceneType.Cutscenes);
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.playerControls.Enable();
+            GameManager.Instance.mainCanvas.gameObject.SetActive(true);
+            SceneManager.UnloadSceneAsync((int)_unloadThis);
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync((int)_loadNext, LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync((int)_unloadThis);
+        }
     }
 }

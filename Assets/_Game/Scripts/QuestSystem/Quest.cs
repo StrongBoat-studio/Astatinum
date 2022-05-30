@@ -24,7 +24,7 @@ public class Quest
     public virtual List<string> QuestCompletionText() { return null; }
 
     protected void QuestCanBeCompleted() 
-    { 
+    {
         _canBeCompleted = true;
         if (questData.onCompletedActions != null)
         {
@@ -32,7 +32,6 @@ public class Quest
             {
                 foreach (QuestAction qa in questData.onCompletedActions)
                 {
-                    Debug.Log("QuestActions");
                     qa.Do();
                 }
                 actionDone = true;

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class Movement : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class Movement : MonoBehaviour
     private bool _jump = false;
     private Rigidbody _rb;
     private bool _check = false;
+    private int materialValue = 0;
 
     private void Awake()
     {
@@ -107,8 +110,41 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void PlayWalkEvenet()
+    {
+        SceneCheck();
+        switch(materialValue)
+        {
+            case 0: AudioManager.Instance.PlayGameAstaWalkGrassRandom(); break;
+            case 1: AudioManager.Instance.PlayGameAstaWalkSoildRandom(); break;
+        }
+    }
+
     public float GetMovementSpeed()
     {
         return _movementSpeed;
+    }
+
+    private void SceneCheck()
+    {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            if(
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.TutorialScene ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.TutorialScene2 ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.DomEzila ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.RoadScene ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.AstaRoom ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Bathroom)
+            {
+                materialValue = 1;
+            }
+            else if(
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.LocationOneScene ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Junkyard)
+            {
+                materialValue = 0;
+            }
+        }
     }
 }
