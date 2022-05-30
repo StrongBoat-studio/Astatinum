@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1517,8 +1517,40 @@ MonoBehaviour:
   _canBeInteractedWith: 1
   _name: Ezil4
   _dialogue: {fileID: 4900000, guid: f4990ef46d620c1469b52759bb54fc14, type: 3}
-  _interactCondition: 
+  _interactCondition: questfinished:403
   _interactionDescriptionFail: 
+--- !u!135 &748649422
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748649420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &748649423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748649420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae77fd620291fe4f90707ebf4b24ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDescription: '[key] Porozmawiaj'
+  _canBeInteractedWith: 1
+  _questToReceive: {fileID: 11400000, guid: e9965a505afd1324a89823f6fc4a3b17, type: 2}
+  _interactConditions:
+  - questfinished:403
+  - questfinished:202
+  _interactionDescriptionFail: "Uko\u0144cz poprzedzaj\u0105ce zadanie"
 --- !u!1001 &767075937
 PrefabInstance:
   m_ObjectHideFlags: 0

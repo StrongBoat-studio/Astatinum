@@ -52,6 +52,9 @@ public class DialogueHolder : Interactable
             case "hasjournal":
                 if (GameManager.Instance.player.GetComponent<Player>().journal != null) return true;
                 return false;
+            case "questfinished":
+                if (GameManager.Instance.player.GetComponent<Player>().questSystem.activeQuests.Find(x => x.questData.questID == int.Parse(param)) != null) return false;
+                else return true;
             default: 
                 return true;
         }
