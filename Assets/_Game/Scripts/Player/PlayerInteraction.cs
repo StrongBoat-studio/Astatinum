@@ -78,16 +78,22 @@ public class PlayerInteraction : MonoBehaviour
         //If there are no interaction distable whole UI
         if (_interactables.Count == 0)
         {
-            GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(false);
+            if (GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI() != null)
+            {
+                GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(false);
+            }
             _currentInteraction = 0;
         }
         else
         {
-            GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(true);
+            if (GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI() != null)
+            {
+                GameManager.Instance.mainCanvas.GetComponent<CanvasManager>().GetInteractionsUI().gameObject.SetActive(true);
+            }
         }
 
         //Disable all TMPro gameobjects
-        foreach(TextMeshProUGUI text in _interactionsText)
+        foreach (TextMeshProUGUI text in _interactionsText)
         {
             text.gameObject.SetActive(false);
         }

@@ -1625,6 +1625,34 @@ MonoBehaviour:
       Data3: 982433430
       Data4: -1178968076
     Path: event:/Ambience2
+  _musicAmbienceWind1:
+    Guid:
+      Data1: -1848108416
+      Data2: 1108667816
+      Data3: 402802367
+      Data4: 49029387
+    Path: event:/ambience_wind1
+  _musicAmbienceWind2:
+    Guid:
+      Data1: 7907360
+      Data2: 1109496321
+      Data3: 1438457502
+      Data4: 944127593
+    Path: event:/ambience_wind2
+  _musicAmbienceWind3:
+    Guid:
+      Data1: -1692845987
+      Data2: 1321385624
+      Data3: 1601586110
+      Data4: -1103585113
+    Path: event:/ambience_wind3
+  _musicAmbienceWind4:
+    Guid:
+      Data1: -221391905
+      Data2: 1140858965
+      Data3: -1143450198
+      Data4: -20555626
+    Path: event:/ambience_wind4
   _uiButtonHover:
     Guid:
       Data1: 30419888
@@ -1709,6 +1737,20 @@ MonoBehaviour:
       Data3: 233173650
       Data4: 632031144
     Path: event:/eventlog_open2
+  _gameJournalNextPage1:
+    Guid:
+      Data1: -1399128828
+      Data2: 1118839030
+      Data3: 807841434
+      Data4: 1710809814
+    Path: event:/nextpage1
+  _gameJournalNextPage2:
+    Guid:
+      Data1: -2112136782
+      Data2: 1313365006
+      Data3: 166743711
+      Data4: -2040179792
+    Path: event:/nextpage2
   _gameMar3KHappy:
     Guid:
       Data1: -891474692
@@ -1730,6 +1772,146 @@ MonoBehaviour:
       Data3: 731919033
       Data4: -1623120879
     Path: event:/quest_begin
+  _gameKey1:
+    Guid:
+      Data1: -2129717314
+      Data2: 1119928062
+      Data3: -2113558610
+      Data4: -1624362593
+    Path: event:/key1
+  _gameKey2:
+    Guid:
+      Data1: 759043939
+      Data2: 1337398405
+      Data3: -900013673
+      Data4: 582914650
+    Path: event:/key2
+  _gameKey3:
+    Guid:
+      Data1: -2040613610
+      Data2: 1218461949
+      Data3: 895641022
+      Data4: -1507728059
+    Path: event:/key3
+  _gameMetal1:
+    Guid:
+      Data1: -1553204924
+      Data2: 1269819862
+      Data3: -944577639
+      Data4: -538773160
+    Path: event:/metal1
+  _gameMetal2:
+    Guid:
+      Data1: 1360192410
+      Data2: 1146260983
+      Data3: -409761911
+      Data4: 1874919683
+    Path: event:/metal2
+  _gameMetal3:
+    Guid:
+      Data1: -1089471955
+      Data2: 1299077006
+      Data3: -1227931469
+      Data4: -120988800
+    Path: event:/metal3
+  _gameMetal4:
+    Guid:
+      Data1: -1366023455
+      Data2: 1091945539
+      Data3: 81327488
+      Data4: -11634570
+    Path: event:/metal4
+  _gameAstaWalkGrass1:
+    Guid:
+      Data1: -125213737
+      Data2: 1134394203
+      Data3: -919137128
+      Data4: 1610271701
+    Path: event:/walk_grass1
+  _gameAstaWalkGrass2:
+    Guid:
+      Data1: 685507483
+      Data2: 1336075864
+      Data3: 1376964531
+      Data4: 1057229527
+    Path: event:/walk_grass2
+  _gameAstaWalkGrass3:
+    Guid:
+      Data1: -638748991
+      Data2: 1144961018
+      Data3: -751841884
+      Data4: 1375377339
+    Path: event:/walk_grass3
+  _gameAstaWalkGrass4:
+    Guid:
+      Data1: -1967780547
+      Data2: 1296796343
+      Data3: -343240267
+      Data4: -517929690
+    Path: event:/walk_grass4
+  _gameAstaWalkGrass5:
+    Guid:
+      Data1: 450538363
+      Data2: 1185816351
+      Data3: -53357928
+      Data4: -812310984
+    Path: event:/walk_grass5
+  _gameAstaWalkGrass6:
+    Guid:
+      Data1: -1981185691
+      Data2: 1257675047
+      Data3: -1208535886
+      Data4: 932168029
+    Path: event:/walk_grass6
+  _gameAstaWalkSolid1:
+    Guid:
+      Data1: -929939921
+      Data2: 1277044301
+      Data3: 798037891
+      Data4: 148622850
+    Path: event:/walk_solid1
+  _gameAstaWalkSolid2:
+    Guid:
+      Data1: -380524431
+      Data2: 1242029317
+      Data3: -1082584901
+      Data4: -1079732162
+    Path: event:/walk_solid2
+  _gameAstaWalkSolid3:
+    Guid:
+      Data1: 631612267
+      Data2: 1091398273
+      Data3: 2144682884
+      Data4: 761550536
+    Path: event:/walk_solid3
+  _gameAstaWalkSolid4:
+    Guid:
+      Data1: -31899793
+      Data2: 1292042823
+      Data3: 1983210908
+      Data4: -2013842688
+    Path: event:/walk_solid4
+  _gameAstaWalkSolid5:
+    Guid:
+      Data1: 787778952
+      Data2: 1157113946
+      Data3: 1377540794
+      Data4: 770568357
+    Path: event:/walk_solid5
+  _gameAstaWalkSolid6:
+    Guid:
+      Data1: 936154195
+      Data2: 1122668533
+      Data3: 202323098
+      Data4: 1843812998
+    Path: event:/walk_solid6
+  gameAstaFootsteps:
+    Guid:
+      Data1: 1135026633
+      Data2: 1080937860
+      Data3: -1300865884
+      Data4: -441572439
+    Path: event:/Footsteps
 --- !u!4 &1797598167
 Transform:
   m_ObjectHideFlags: 0

@@ -38,6 +38,7 @@ public class DialogueHolder : Interactable
                     {
                         if(GameManager.Instance.player.GetComponent<Player>().inventory.GetFirstInventorySlotWithItemOfItemData(itemData) != null)
                         {
+                            AudioManager.Instance.PlayGameKeyRandom();
                             return true;
                         }
                     }

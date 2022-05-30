@@ -74,6 +74,7 @@ public class UI_JournalPageCharacters : MonoBehaviour
         {
             _page++;
             Refresh();
+            AudioManager.Instance.PlayGameJournalNextPage1();
         }
     }
 
@@ -83,6 +84,7 @@ public class UI_JournalPageCharacters : MonoBehaviour
         {
             _page--;
             Refresh();
+            AudioManager.Instance.PlayGameJournalNextPage2();
         }
     }
 }
