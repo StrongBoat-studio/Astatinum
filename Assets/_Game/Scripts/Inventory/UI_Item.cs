@@ -57,6 +57,8 @@ public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IE
         if(eventData.button == PointerEventData.InputButton.Left)
         {
             //lmb = use item if item has a use action assigned
+            if (GameManager.Instance.player.GetComponent<Player>().inventory.GetFirstInventorySlotWithItemOfItemData(_item.itemData) != null) return;   
+            
             if(_item.itemData.itemUseAction != null)
                 _item.itemData.itemUseAction.Do(_item);
         }

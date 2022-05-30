@@ -40,7 +40,13 @@ public class Player : MonoBehaviour
         _uiQuestSystem.SetQuestSystem(_questSystem);
         _questSystem.SetPlayer(this);
         _questSystem.SetInventoryEvent(_inventory);
-        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Papers") });
+        
+        /*inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Key") });
+        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-arm-left") });
+        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-arm-right") });
+        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-head") });
+        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-body") });
+        inventory.AddItem(new Item { itemData = ItemAssets.Instance.itemsData.Find(x => x.name == "Mar3K-legs") });*/
 
         //Scene change event
         SceneManager.sceneLoaded += OnSceneLoaded;

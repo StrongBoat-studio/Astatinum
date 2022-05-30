@@ -234,6 +234,11 @@ public class DialogueManager : MonoBehaviour
                         case "unlockjournal":
                             GameManager.Instance.player.GetComponent<Player>().UnlockJournal();
                             break;
+                        case "addnote":
+                            Note n = new Note { _noteData = NoteAssets.Instance.notes.Find(x => x.noteID == int.Parse(eventParam)) };
+                            if(!GameManager.Instance.player.GetComponent<Player>().journal.HasNote(n._noteData))
+                                GameManager.Instance.player.GetComponent<Player>().journal.AddPost(n);
+                            break;
                     }
                     break;
                 case "quest":

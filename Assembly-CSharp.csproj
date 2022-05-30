@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,9 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="G:\Visual Studio Community 2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\_Game\Scripts\Inventory\WorldItem.cs" />
     <Compile Include="Assets\_Game\Scripts\Crafting\CraftingSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseMar3K.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Assets\_Game\Scripts\Dialogue\DialogueHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\QuestSystem\QuestSystem.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemAssets.cs" />
+    <Compile Include="Assets\_Game\Scripts\Player\PlayerSounds.cs" />
     <Compile Include="Assets\_Game\Scripts\Player\PlayerInteraction.cs" />
     <Compile Include="Assets\_Game\Scripts\Interactable.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUsePapers.cs" />
@@ -138,8 +142,8 @@
     <Compile Include="Assets\_Game\Scripts\Options\OptionsMenu.cs" />
     <Compile Include="Assets\_Game\Scripts\Mar3k_anim_active.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
+    <Compile Include="Assets\_Game\Scripts\GameEnd\GameEndManager.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\Player\PlayerSounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{f88963d7-7b5b-439d-9814-37c9d5cbfa5f}.xml" />
