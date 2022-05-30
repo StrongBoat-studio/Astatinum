@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -32420,7 +32420,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4300865296180627676}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
@@ -32442,6 +32442,7 @@ MonoBehaviour:
   _name: Hustawka
   _dialogue: {fileID: 4900000, guid: a4da5e0b4fd77974bb96f8c1abd67c65, type: 3}
   _interactCondition: 
+  _interactionDescriptionFail: 
 --- !u!4 &4301169023359298039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433249228989289596, guid: 241fd61ceb795604b9ef876d02ee6079, type: 3}

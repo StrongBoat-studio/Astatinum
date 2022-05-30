@@ -24,8 +24,13 @@ public class Player : MonoBehaviour
     [SerializeField] private List<RecipeScriptableObject> _craftingRecipes;
     public List<RecipeScriptableObject> craftingRecipes { get => _craftingRecipes; }
 
+    //Na sztywno :)
+    public List<string> hadDialogueWith;
+
     private void Awake()
     {
+        hadDialogueWith = new List<string>();
+
         //Get UI references
         _uiInventory = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Inventory>(true);
         _uiJournal = GameManager.Instance.mainCanvas.GetComponentInChildren<UI_Journal>(true);

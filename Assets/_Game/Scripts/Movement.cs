@@ -133,14 +133,18 @@ public class Movement : MonoBehaviour
                 SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.TutorialScene ||
                 SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.TutorialScene2 ||
                 SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.DomEzila ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.DomEzila2 ||
                 SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.RoadScene ||
                 SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.AstaRoom ||
-                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Bathroom)
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.AstaRoom2 ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Bathroom ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Bathroom2)
             {
                 materialValue = 1;
             }
             else if(
                 SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.LocationOneScene ||
+                SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Podworko2 ||
                 SceneManager.GetSceneAt(i).buildIndex == (int)SceneIndexer.SceneType.Junkyard)
             {
                 materialValue = 0;

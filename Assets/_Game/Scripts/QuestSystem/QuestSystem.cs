@@ -85,7 +85,7 @@ public class QuestSystem
     }
 
     //This too
-    private void RemoveQuest(Quest quest)
+    public void RemoveQuest(Quest quest)
     {
         _activeQuests.Remove(quest);
         onQuestChange?.Invoke(this, new QuestChangeEventArgs { quest = quest });
