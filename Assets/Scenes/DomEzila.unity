@@ -406,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 3130274046213392120, guid: 252cf194b245c2c4f89b68b6abea377f, type: 3}
       propertyPath: quest
       value: 
-      objectReference: {fileID: 11400000, guid: 2265dc7fa6e423a448d96ca39a7e9811, type: 2}
+      objectReference: {fileID: 11400000, guid: 606085aea04e9a6429ce37bf7fa523a7, type: 2}
     - target: {fileID: 3130274046213392122, guid: 252cf194b245c2c4f89b68b6abea377f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1017,7 +1017,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescriptionFail
-      value: "Znajd\u017A dzienniczek "
+      value: "Zamkni\u0119te"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.data[0]
+      value: 'hasjournal:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.data[1]
+      value: hasquest:600
       objectReference: {fileID: 0}
     - target: {fileID: 4386533560393438044, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_RootOrder
@@ -3335,7 +3347,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescriptionFail
-      value: "Znajd\u017A dzienniczek "
+      value: "Zamkni\u0119te"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.data[0]
+      value: 'hasjournal:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
+      propertyPath: _interactConditions.Array.data[1]
+      value: hasquest:600
       objectReference: {fileID: 0}
     - target: {fileID: 4386533560393438044, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_RootOrder
