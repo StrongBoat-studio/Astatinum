@@ -42,4 +42,12 @@ public class Journal
 
         return notes;
     }
+
+    public bool HasNote(NoteData noteData)
+    {
+        if (_notesList.Find(x => x._noteData.noteID == noteData.noteID) != null)
+            return true;
+
+        return false;
+    }
 }
