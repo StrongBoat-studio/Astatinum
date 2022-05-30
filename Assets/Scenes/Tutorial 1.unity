@@ -2246,7 +2246,7 @@ MonoBehaviour:
   _interactionDescription: '[key] Rozmawiaj'
   _canBeInteractedWith: 1
   _name: Astat
-  _dialogue: {fileID: 4900000, guid: 14f1f7d355c1f864a8c3d4eaaadc19e0, type: 3}
+  _dialogue: {fileID: 4900000, guid: d8ab2074b51c26e4e831eb0f9532dc6b, type: 3}
   _interactCondition: 
 --- !u!135 &1355575122
 SphereCollider:

@@ -17,4 +17,4 @@ MonoBehaviour:
   text: "Najnowszy projekt stworzony przez Ezila. Robot wyposa\u017Cony w sztuczn\u0105
     inteligencj\u0119, kt\xF3ry ma dba\u0107 o potrzeby domownik\xF3w."
   type: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 9c768bfa6efbe8448ad7f0fc21ecd9ab, type: 2}

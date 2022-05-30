@@ -18,4 +18,4 @@ MonoBehaviour:
     mechanicznych cz\u0119\u015Bci cia\u0142a. Dawki astatinum utrzymuj\u0105 Ezila
     przy \u017Cyciu."
   type: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: c08249d4ef1197d40935082734abba86, type: 2}

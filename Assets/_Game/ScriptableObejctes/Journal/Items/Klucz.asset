@@ -17,4 +17,4 @@ MonoBehaviour:
   text: "Stary, mosi\u0119\u017Cny klucz, kt\xF3ry wypad\u0142 z ksi\u0105\u017Cki.
     Wygl\u0105da, jakby by\u0142 rzadko u\u017Cywany."
   type: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: fdf7fa6b2e52518469bef40492737641, type: 2}
