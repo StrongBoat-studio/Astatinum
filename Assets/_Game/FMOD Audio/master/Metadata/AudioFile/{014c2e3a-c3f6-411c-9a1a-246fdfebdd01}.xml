@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{014c2e3a-c3f6-411c-9a1a-246fdfebdd01}">
+		<property name="assetPath">
+			<value>AstaWalk/walk_solid2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.21875283446712018</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c7ad67c-3c2d-4c4a-b2cc-af3d3f145f8a}</destination>
+		</relationship>
+	</object>
+</objects>

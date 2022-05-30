@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e9b294e5-ce05-4a32-ac98-faf96e56f964}">
+		<property name="assetPath">
+			<value>AstaWalk/walk_grass2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31249433106575963</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c7ad67c-3c2d-4c4a-b2cc-af3d3f145f8a}</destination>
+		</relationship>
+	</object>
+</objects>

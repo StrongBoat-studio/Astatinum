@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{77fb2f05-f1d1-4418-9b5d-55f13244b14c}">
+		<property name="assetPath">
+			<value>eventlog/nextpage2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1249886621315193</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c7ad67c-3c2d-4c4a-b2cc-af3d3f145f8a}</destination>
+		</relationship>
+	</object>
+</objects>
