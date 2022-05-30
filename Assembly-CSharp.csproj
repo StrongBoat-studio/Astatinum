@@ -107,6 +107,7 @@
     <Compile Include="Assets\_Game\Scripts\Journal\NoteData\NoteItemsData.cs" />
     <Compile Include="Assets\Input System\PlayerControls.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\UI_Inventory.cs" />
+    <Compile Include="Assets\_Game\Scripts\GameEnd\GameEnder.cs" />
     <Compile Include="Assets\_Game\Scripts\Cutscenes\CutsceneTextTyper.cs" />
     <Compile Include="Assets\_Game\Scripts\Journal\Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\Mar3K.cs" />
@@ -141,7 +142,6 @@
     <Compile Include="Assets\_Game\Scripts\Journal\UI_Journal.cs" />
     <Compile Include="Assets\_Game\Scripts\GameEnd\GameEndManager.cs" />
     <Compile Include="Assets\_Game\Scripts\Inventory\ItemUseAction\ItemUseAction.cs" />
-    <Compile Include="Assets\_Game\Scripts\GameEnd\GameEnder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Game\FMOD Audio\master\Metadata\Event\{f88963d7-7b5b-439d-9814-37c9d5cbfa5f}.xml" />

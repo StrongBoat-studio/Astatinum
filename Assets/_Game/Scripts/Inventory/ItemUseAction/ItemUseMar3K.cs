@@ -11,6 +11,7 @@ public class ItemUseMar3K : ItemUseAction
     {
         if(GameManager.Instance.player.GetComponent<Player>().inventory.RemoveItem(item))
         {
+            GameManager.Instance.player.GetComponent<Player>().journal.AddPost(new Note { _noteData = NoteAssets.Instance.notes.Find(x => x.noteID == 2) });
             Instantiate(mar3kPrefab, GameManager.Instance.player.position, Quaternion.identity);
             AudioManager.Instance.PlayGameMar3KStartup();
         }
