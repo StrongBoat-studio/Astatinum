@@ -923,7 +923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _levelLoader
@@ -931,11 +931,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _sceneToLoad
-      value: 1
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactCondition
-      value: 'hasjournal:'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
@@ -943,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescriptionFail
-      value: "Znajd\u017A dzienniczek "
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4386533560393438044, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_RootOrder
@@ -1078,6 +1078,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3099475496741785762, guid: 9a3250dd0f204a047bd7d399dfa23919, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e072bfd19dce2d846bcf1dd8e6f2bb58, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3250dd0f204a047bd7d399dfa23919, type: 3}
 --- !u!4 &514692625 stripped
@@ -1085,41 +1089,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3099475496074398067, guid: 9a3250dd0f204a047bd7d399dfa23919, type: 3}
   m_PrefabInstance: {fileID: 514692624}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &514692626 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3099475496074398061, guid: 9a3250dd0f204a047bd7d399dfa23919, type: 3}
-  m_PrefabInstance: {fileID: 514692624}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &514692627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514692626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionDescription: "[key] Sp\xF3jrz"
-  _canBeInteractedWith: 1
-  _name: Table
-  _dialogue: {fileID: 4900000, guid: 45ffa69a1e70c0446860a1484eda1ecc, type: 3}
-  _interactCondition: 
---- !u!135 &514692628
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514692626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &538710568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,41 +1763,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 232530439185609438, guid: 783d59dfa517be34cb847fd08efb6a9f, type: 3}
   m_PrefabInstance: {fileID: 788204479}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &788204481 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 232530439185609408, guid: 783d59dfa517be34cb847fd08efb6a9f, type: 3}
-  m_PrefabInstance: {fileID: 788204479}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &788204482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788204481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionDescription: "[key] Sp\xF3jrz"
-  _canBeInteractedWith: 1
-  _name: Fridge
-  _dialogue: {fileID: 4900000, guid: cdcc79a64c9e0874a965a44f1979b3b4, type: 3}
-  _interactCondition: 
---- !u!135 &788204483
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788204481}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &792439403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2106,7 +2040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _sceneToLoad
-      value: 9
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
@@ -3245,7 +3179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _levelLoader
@@ -3253,11 +3187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _sceneToLoad
-      value: 5
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactCondition
-      value: 'hasjournal:'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
@@ -3265,7 +3199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescriptionFail
-      value: "Znajd\u017A dzienniczek "
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4386533560393438044, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: m_RootOrder
@@ -19927,7 +19861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _sceneToLoad
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3372149754115159391, guid: 88b4014ca30496d4fa088d1968a011ad, type: 3}
       propertyPath: _interactionDescription
@@ -20468,41 +20402,6 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6a22c88ac6849fa41aecd3ab2c1fa2cf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ae71841cbd6b74f8839ac3b6c3a099, type: 3}
---- !u!1 &2090960691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7151793153230701706, guid: a2ae71841cbd6b74f8839ac3b6c3a099, type: 3}
-  m_PrefabInstance: {fileID: 2090960690}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &2090960692
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090960691}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0.03, y: -0.09, z: 0}
---- !u!114 &2090960693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090960691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cbe9799d77443542a9ff0214831b477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionDescription: "[key] Sp\xF3jrz"
-  _canBeInteractedWith: 1
-  _name: Piec
-  _dialogue: {fileID: 4900000, guid: 87cb75fd17e25cc4d9da1cc0172ad9c3, type: 3}
-  _interactCondition: 
 --- !u!1001 &2119880978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20689,7 +20588,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 316399048391762437, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
+    - {fileID: 316399048391762438, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 062d6a657f648ea48980c0084a3c8687, type: 3}
 --- !u!1001 &5404736398205808246
 PrefabInstance:
@@ -20770,7 +20671,9 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.89
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5404736397238735137, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
+    - {fileID: 5404736397238735136, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 493725916c42ec546be8a47c78e75d09, type: 3}
 --- !u!1001 &6745309082658984390
 PrefabInstance:
