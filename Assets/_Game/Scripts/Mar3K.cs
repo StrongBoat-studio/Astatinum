@@ -35,7 +35,6 @@ public class Mar3K : MonoBehaviour
 
         Vector2 vel = GetComponent<Rigidbody>().velocity;
         Vector3 dir = (_player.position - transform.position).normalized;
-        Debug.Log(dir);
 
         if (vel == Vector2.zero)
         {

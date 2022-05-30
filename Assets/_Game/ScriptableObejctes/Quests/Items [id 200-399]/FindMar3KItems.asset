@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questID: 200
   questType: 1
-  questTitle: Mar3K
-  questDescription: Find parts to create a robot!
+  questTitle: "M\xF3j pierwszy robot"
+  questDescription: "Zbierz cz\u0119\u015Bci robota"
   autoComplete: 1
-  onCompletedAction: {fileID: 11400000, guid: f39dfe8b6fa362b40acc62e8bb43b24c, type: 2}
+  onCompletedActions:
+  - {fileID: 11400000, guid: f39dfe8b6fa362b40acc62e8bb43b24c, type: 2}
+  - {fileID: 11400000, guid: 74d133eda699a68479a9993d1d7f5ec2, type: 2}
+  highlightQuest: 0

@@ -74,7 +74,6 @@ public class QuestFindItems : Quest
 
     public override bool CompleteQuest()
     {
-        UpdateQuest();
         if (!_canBeCompleted) return false;
 
         _isCompleted = true;

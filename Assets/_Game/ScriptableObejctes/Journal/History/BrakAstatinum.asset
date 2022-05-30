@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9855395d3c7fb43b544d6ea2f4f362, type: 3}
+  m_Name: BrakAstatinum
+  m_EditorClassIdentifier: 
+  noteID: 4
+  title: Brak astatinum
+  text: "Dziadek ukrywa\u0142 przede mn\u0105, \u017Ce ko\u0144cz\u0105 si\u0119
+    dawki astatinum. Wiedzia\u0142, \u017Ce b\u0119d\u0119 si\u0119 martwi\u0107
+    i wola\u0142 udawa\u0107, \u017Ce wszystko jest w porz\u0105dku. Nie jest, nie
+    umiem pozbiera\u0107 my\u015Bli. Nie powinien mnie ok\u0142amywa\u0107. \r\nChcia\u0142am
+    o tym porozmawia\u0107, ale nie by\u0142am w stanie ukry\u0107 emocji. Kierowa\u0142a
+    mn\u0105 z\u0142o\u015B\u0107 i rozpacz. Ezil twierdzi\u0142, \u017Ce wszystko
+    b\u0119dzie dobrze. Wida\u0107 jednak by\u0142o, \u017Ce sam w to nie wierzy.
+    Nigdy nie czu\u0142am si\u0119 tak \u017Ale, jak podczas tej rozmowy. My\u015Bl
+    o utracie dziadka mnie dobija od \u015Brodka, mam tylko jego.\r\nPostanowi\u0142am
+    wyruszy\u0107 do miasta, \u017Ceby zdoby\u0107 astatinum. Na drodze stan\u0105\u0142
+    mi MAR-3K, kt\xF3ry nie chcia\u0142, \u017Cebym ryzykowa\u0142a. Nie mog\u0142am
+    odpu\u015Bci\u0107, MAR-3K idzie ze mn\u0105. Ciesz\u0119 si\u0119, \u017Ce mog\u0142am
+    na niego liczy\u0107.\r"
+  type: 0

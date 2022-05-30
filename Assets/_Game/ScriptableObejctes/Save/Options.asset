@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb484315a55cd464c924ad9626e5fcf1, type: 3}
   m_Name: Options
   m_EditorClassIdentifier: 
-  isFullscreen: 1
+  isFullscreen: 0
   qualityLevel: 0
   masterVolume: 1
   vcaMasterName: Master

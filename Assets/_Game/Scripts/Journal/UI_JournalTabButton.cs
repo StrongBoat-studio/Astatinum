@@ -14,19 +14,16 @@ public class UI_JournalTabButton : MonoBehaviour, IPointerClickHandler, IPointer
     public void OnPointerClick(PointerEventData eventData)
     {
         _tabGroup.OnTabSelected(this);
-        Debug.Log("ButtonClick");
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         _tabGroup.OnTabEnter(this);
-        Debug.Log("ButtonEnter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         _tabGroup.OnTabExit(this);
-        Debug.Log("ButtonExit");
     }
 
     public void Highlight()
